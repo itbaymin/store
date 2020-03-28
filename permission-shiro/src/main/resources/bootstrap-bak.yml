@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: permission-shiro
+  profiles:
+    include: redis,jpa,permission-shiro
+  cloud:
+    consul:
+      enabled: true
+      discovery:
+        service-name: permission-shiro
+        heartbeat:
+          enabled: true
+      config:
+        enabled: true
+        format: yaml
+        prefix: store
+        profile-separator: ':'
+        data-key: data
+        default-context: ${spring.profiles.active}/apps
+        watch:
+          enabled: true
+          delay: 10000
+          wait-time: 3
+---
+spring:
+  profiles: local
+  cloud:
+    consul:
+      host: 47.105.209.57
+      port: 8500
+---
+spring:
+  profiles: test
+  cloud:
+    consul:
+      host: 47.105.209.57
+      port: 8500
+---
+spring:
+  profiles: prod
+  cloud:
+    consul:
+      host: 47.105.209.57
+      port: 8500
+
+
+
