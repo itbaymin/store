@@ -2,6 +2,8 @@ package com.byc.permission.shiro.controller;
 
 import com.byc.permission.shiro.service.LoginService;
 import com.byc.permission.shiro.support.LoginResult;
+import com.byc.permission.shiro.support.result.JsonResult;
+import com.byc.permission.shiro.support.result.StatusCode;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;
@@ -28,12 +30,12 @@ public class LoginController {
     @PostMapping(value = "/login")
     @ResponseBody
     @Transactional
-    public String login(String username,String password) {
+    public JsonResult login(String username, String password) {
         LoginResult loginResult = loginService.login(username,password);
         if(loginResult.isLogin()){
-            return "登录成功";
+            return JsonResult.succ();
         } else {
-            return "登录失败：" + loginResult.getResult();
+            return JsonResult.fail(StatusCode.PARAM_ERROR,"登录失败：" + loginResult.getResult());
         }
     }
 
