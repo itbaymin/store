@@ -28,11 +28,12 @@
         <mysql.version>8.0.16</mysql.version>
         <springboot.version>2.1.5.RELEASE</springboot.version>
         <druid.version>1.1.10</druid.version>
-        <shiro.version>1.2.2</shiro.version>
+        <shiro.version>1.4.0</shiro.version>
         <swagger.version>2.9.2</swagger.version>
         <swagger-ui.version>2.7.0</swagger-ui.version>
         <pool2.version>2.5.0</pool2.version>
-        <shiro-redis.version>2.4.2.1-RELEASE</shiro-redis.version>
+        <shiro-redis.version>3.2.3</shiro-redis.version>
+        <shiro-thymeleaf.version>2.0.0</shiro-thymeleaf.version>
     </properties>
 
     <dependencyManagement>
@@ -70,6 +71,12 @@
                 <version>${shiro-redis.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.github.theborakompanioni</groupId>
+                <artifactId>thymeleaf-extras-shiro</artifactId>
+                <version>${shiro-thymeleaf.version}</version>
+            </dependency>
+
             <!-- lettuce pool 缓存连接池 -->
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -83,7 +90,6 @@
                 <artifactId>shiro-spring</artifactId>
                 <version>${shiro.version}</version>
             </dependency>
-
             <!--swagger-->
             <dependency>
                 <groupId>io.springfox</groupId>

@@ -67,3 +67,18 @@ spring:
     properties:
       hibernate:
         dialect: com.byc.persisent.support.MySQL5TableType
+  #redis
+  redis:
+    host: 47.105.209.57
+    port: 6379
+    password: byc123
+    timeout: 2000
+    database: 5
+    jedis:
+      pool:
+        minIdle: 5
+        maxWait: 1500
+        maxIdle: 10
+        maxActive: 100
+  thymeleaf:
+    cache: false

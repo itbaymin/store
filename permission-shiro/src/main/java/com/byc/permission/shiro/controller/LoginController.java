@@ -3,6 +3,8 @@ package com.byc.permission.shiro.controller;
 import com.byc.permission.shiro.service.LoginService;
 import com.byc.permission.shiro.support.LoginResult;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,6 +35,7 @@ public class LoginController {
     }
 
     @GetMapping(value = "/index")
+    @RequiresPermissions("主页")
     public String index() {
         return "主页";
     }
@@ -45,5 +48,10 @@ public class LoginController {
     @GetMapping("/403")
     public String unauthorizedRole(){
         return "没有权限";
+    }
+
+    @GetMapping("/error")
+    public String error(){
+        return "error";
     }
 }
