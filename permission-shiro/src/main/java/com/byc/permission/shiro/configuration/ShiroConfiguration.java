@@ -150,6 +150,12 @@ public class ShiroConfiguration {
         filterMap.put("/swagger**/**", "anon");
         filterMap.put("/webjars/**", "anon");
         filterMap.put("/v2/**", "anon");
+        //静态文件放行
+        filterMap.put("/css/**", "anon");
+        filterMap.put("/fonts/**", "anon");
+        filterMap.put("/images/**", "anon");
+        filterMap.put("/js/**", "anon");
+        filterMap.put("/lib/**", "anon");
         // 对所有用户认证
         filterMap.put("/**", "authc");
         //登录
