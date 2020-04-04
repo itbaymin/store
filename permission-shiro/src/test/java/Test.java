@@ -31,28 +31,29 @@ public class Test {
     SysUserService userService;
 
     @org.junit.Test
-    @Transactional
     public void test(){
-//        SysUser sysUser = new SysUser();
-//        sysUser.setUsername("baiyongcheng");
-//        sysUser.setPassword("byc123");
-//        sysUser.setSalt("123");
-//        SysMenu menu = new SysMenu();
-//        menu.setMenuname("主页");
-//        menuRepository.save(menu);
-//        SysRole role = new SysRole();
-//        role.setRolename("管理员");
-//        role.setMenus(Arrays.asList(menu));
-//        roleRepository.save(role);
-//        sysUser.setRoles(Arrays.asList(role));
-//        userRepository.save(sysUser);
+        String username = "admin";
+        String password = "admin";
+
+        SysUser sysUser = new SysUser();
+        sysUser.setUsername(username);
+        SimpleHash b = new SimpleHash("MD5", password, ByteSource.Util.bytes("123"),2);
+        sysUser.setPassword(b.toString());
+        sysUser.setSalt("123");
+        Optional<SysMenu> byId = menuRepository.findById(1L);
+        SysMenu menu = byId.orElse(null);
+        SysRole role = new SysRole();
+        role.setRolename("管理员");
+        role.setMenus(Arrays.asList(menu));
+        roleRepository.save(role);
+        sysUser.setRoles(Arrays.asList(role));
+        userRepository.save(sysUser);
 
 
-        SimpleHash b = new SimpleHash("MD5", ByteSource.Util.bytes("12345"), "123");
         System.out.printf(b.toString());
 
-        SysUser baiyongcheng = userService.findByUsername("baiyongcheng");
-        if(baiyongcheng==null)
+        SysUser baiyongcheng = userService.findByUsername("admin");
+        if(baiyongcheng!=null)
             System.out.println(baiyongcheng.getCreateTime());
 
 //        Optional<SysUser> byId = userRepository.findById(2L);

@@ -35,7 +35,7 @@ public class CustomRealm extends AuthorizingRealm {
             simpleAuthorizationInfo.addRole(role.getRolename());
             //添加权限
             for (SysMenu menu : role.getMenus()) {
-                simpleAuthorizationInfo.addStringPermission(menu.getMenuname());
+                simpleAuthorizationInfo.addStringPermission(menu.getPermission());
             }
         }
         return simpleAuthorizationInfo;

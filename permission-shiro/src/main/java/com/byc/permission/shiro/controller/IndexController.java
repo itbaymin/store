@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-@RequiresPermissions("主页")
+@RequiresPermissions("index")
 /**首页相关业务*/
 public class IndexController {
 
@@ -34,7 +34,7 @@ public class IndexController {
     @ResponseBody
     /**菜单数据*/
     public JsonResult menus(){
-        return null;
+        return JsonResult.succ(commonService.getMenus());
     }
 
 }

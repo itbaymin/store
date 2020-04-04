@@ -99,3 +99,35 @@
 [2020-04-04 18:50:14 485 INFO ] [main] / - Starting PermissionApplication on MrdeiMac.local with PID 1049 (/Users/mrwhite/IdeaProjects/store/permission-shiro/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
 [2020-04-04 18:50:14 490 INFO ] [main] / - No active profile set, falling back to default profiles: default
 [2020-04-04 18:50:29 103 INFO ] [main] / - Started PermissionApplication in 15.357 seconds (JVM running for 16.493)
+[2020-04-04 21:36:36 538 INFO ] [main] / - Starting PermissionApplication on MrdeiMac.local with PID 678 (/Users/mrwhite/IdeaProjects/store/permission-shiro/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-04 21:36:36 544 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-04-04 21:36:55 201 INFO ] [main] / - Started PermissionApplication in 19.943 seconds (JVM running for 22.344)
+[2020-04-04 21:39:17 056 WARN ] [http-nio-8080-exec-1] / - UnknownAccountException --> 账号不存在
+[2020-04-04 21:39:17 057 WARN ] [http-nio-8080-exec-1] / - Response failed,message:登录失败：账号不存在
+[2020-04-04 22:07:24 978 WARN ] [http-nio-8080-exec-6] / - IncorrectCredentialsException --> 密码不正确
+[2020-04-04 22:07:24 979 WARN ] [http-nio-8080-exec-6] / - Response failed,message:登录失败：密码不正确
+[2020-04-04 22:07:29 608 WARN ] [http-nio-8080-exec-8] / - IncorrectCredentialsException --> 密码不正确
+[2020-04-04 22:07:29 608 WARN ] [http-nio-8080-exec-8] / - Response failed,message:登录失败：密码不正确
+[2020-04-04 22:07:32 592 WARN ] [http-nio-8080-exec-3] / - IncorrectCredentialsException --> 密码不正确
+[2020-04-04 22:07:32 593 WARN ] [http-nio-8080-exec-3] / - Response failed,message:登录失败：密码不正确
+[2020-04-04 22:07:33 577 WARN ] [http-nio-8080-exec-2] / - IncorrectCredentialsException --> 密码不正确
+[2020-04-04 22:07:33 578 WARN ] [http-nio-8080-exec-2] / - Response failed,message:登录失败：密码不正确
+[2020-04-04 22:07:33 753 WARN ] [http-nio-8080-exec-5] / - IncorrectCredentialsException --> 密码不正确
+[2020-04-04 22:07:33 753 WARN ] [http-nio-8080-exec-5] / - Response failed,message:登录失败：密码不正确
+[2020-04-04 22:08:06 984 WARN ] [http-nio-8080-exec-9] / - IncorrectCredentialsException --> 密码不正确
+[2020-04-04 22:08:06 984 WARN ] [http-nio-8080-exec-9] / - Response failed,message:登录失败：密码不正确
+[2020-04-04 22:15:43 644 WARN ] [http-nio-8080-exec-5] / - IncorrectCredentialsException --> 密码不正确
+[2020-04-04 22:15:43 645 WARN ] [http-nio-8080-exec-5] / - Response failed,message:登录失败：密码不正确
+[2020-04-04 22:16:39 326 WARN ] [http-nio-8080-exec-6] / - IncorrectCredentialsException --> 密码不正确
+[2020-04-04 22:16:39 326 WARN ] [http-nio-8080-exec-6] / - Response failed,message:登录失败：密码不正确
+[2020-04-04 22:16:54 478 WARN ] [http-nio-8080-exec-4] / - IncorrectCredentialsException --> 密码不正确
+[2020-04-04 22:16:54 479 WARN ] [http-nio-8080-exec-4] / - Response failed,message:登录失败：密码不正确
+[2020-04-04 22:18:12 789 WARN ] [http-nio-8080-exec-7] / - IncorrectCredentialsException --> 密码不正确
+[2020-04-04 22:18:12 789 WARN ] [http-nio-8080-exec-7] / - Response failed,message:登录失败：密码不正确
+[2020-04-04 22:21:28 081 INFO ] [http-nio-8080-exec-1] / - Response success,message:操作成功
+[2020-04-04 22:25:22 196 INFO ] [main] / - Starting PermissionApplication on MrdeiMac.local with PID 841 (/Users/mrwhite/IdeaProjects/store/permission-shiro/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-04 22:25:22 202 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-04-04 22:25:35 276 INFO ] [main] / - Started PermissionApplication in 13.76 seconds (JVM running for 15.045)
+[2020-04-04 22:26:52 049 INFO ] [http-nio-8080-exec-3] / - Response success,message:操作成功
+[2020-04-04 22:28:36 680 INFO ] [http-nio-8080-exec-3] / - Response success,message:操作成功
+[2020-04-04 22:28:40 910 INFO ] [http-nio-8080-exec-4] / - Response success,message:操作成功
