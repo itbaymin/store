@@ -60,4 +60,11 @@ public class Test {
 //        System.out.println(sysUser1.getCreateTime());
     }
 
+
+    @org.junit.Test
+    @Transactional
+    public void test1(){
+        Optional<SysMenu> all = menuRepository.findById(1L);
+        System.out.println(all.orElse(null).getChildren());
+    }
 }
