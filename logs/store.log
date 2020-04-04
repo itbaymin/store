@@ -20,3 +20,16 @@
 [2020-04-04 10:34:10 232 INFO ] [http-nio-8080-exec-6] / - Response success,message:操作成功
 [2020-04-04 10:34:20 765 WARN ] [http-nio-8080-exec-2] / - Response failed,message:登录失败：IncorrectCredentialsException -- > 密码不正确：
 [2020-04-04 10:34:28 381 WARN ] [http-nio-8080-exec-4] / - Response failed,message:登录失败：UnknownAccountException -- > 账号不存在：
+[2020-04-04 14:41:51 023 INFO ] [main] / - Starting PermissionApplication on MrdeiMac.local with PID 650 (/Users/mrwhite/IdeaProjects/store/permission-shiro/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-04 14:41:51 027 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-04-04 14:42:04 209 INFO ] [main] / - Started PermissionApplication in 13.825 seconds (JVM running for 15.658)
+[2020-04-04 14:42:13 630 INFO ] [http-nio-8080-exec-4] / - Response success,message:操作成功
+[2020-04-04 14:44:17 326 INFO ] [main] / - Starting PermissionApplication on MrdeiMac.local with PID 660 (/Users/mrwhite/IdeaProjects/store/permission-shiro/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-04 14:44:17 330 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-04-04 14:44:28 730 INFO ] [main] / - Started PermissionApplication in 12.078 seconds (JVM running for 13.185)
+[2020-04-04 14:45:26 947 INFO ] [main] / - Starting PermissionApplication on MrdeiMac.local with PID 665 (/Users/mrwhite/IdeaProjects/store/permission-shiro/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-04 14:45:26 950 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-04-04 14:45:37 676 INFO ] [main] / - Started PermissionApplication in 11.441 seconds (JVM running for 12.332)
+[2020-04-04 14:46:29 876 INFO ] [main] / - Starting PermissionApplication on MrdeiMac.local with PID 669 (/Users/mrwhite/IdeaProjects/store/permission-shiro/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-04 14:46:29 879 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-04-04 14:46:41 242 INFO ] [main] / - Started PermissionApplication in 12.141 seconds (JVM running for 13.384)

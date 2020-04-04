@@ -9,6 +9,7 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -37,12 +38,6 @@ public class LoginController {
         } else {
             return JsonResult.fail(StatusCode.PARAM_ERROR,"登录失败：" + loginResult.getResult());
         }
-    }
-
-    @GetMapping(value = "/index")
-    @RequiresPermissions("主页")
-    public String index() {
-        return "index";
     }
 
     @GetMapping(value = "/logout")
