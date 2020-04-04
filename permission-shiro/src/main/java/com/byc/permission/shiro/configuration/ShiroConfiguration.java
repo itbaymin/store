@@ -2,8 +2,6 @@ package com.byc.permission.shiro.configuration;
 
 import com.byc.permission.shiro.support.CustomRealm;
 import org.apache.shiro.authc.credential.HashedCredentialsMatcher;
-import org.apache.shiro.session.SessionListener;
-import org.apache.shiro.session.mgt.DefaultSessionManager;
 import org.apache.shiro.session.mgt.SessionManager;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
 import org.apache.shiro.spring.web.ShiroFilterFactoryBean;
@@ -156,6 +154,7 @@ public class ShiroConfiguration {
         filterMap.put("/images/**", "anon");
         filterMap.put("/js/**", "anon");
         filterMap.put("/lib/**", "anon");
+        filterMap.put("/login", "anon");
         // 对所有用户认证
         filterMap.put("/**", "authc");
         //登录

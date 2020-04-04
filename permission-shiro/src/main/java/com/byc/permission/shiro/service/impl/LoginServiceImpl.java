@@ -3,6 +3,7 @@ package com.byc.permission.shiro.service.impl;
 import com.byc.permission.shiro.service.LoginService;
 import com.byc.permission.shiro.service.SysUserService;
 import com.byc.permission.shiro.support.LoginResult;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -13,6 +14,7 @@ import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
 public class LoginServiceImpl implements LoginService {
 
@@ -43,14 +45,14 @@ public class LoginServiceImpl implements LoginService {
             session.setAttribute("userName", userName);
             return LoginResult.succ();
         } catch (UnknownAccountException e) {
-            e.printStackTrace();
-            msg = "UnknownAccountException -- > 账号不存在：";
+            log.warn("UnknownAccountException --> 账号不存在");
+            msg = "账号不存在";
         } catch (IncorrectCredentialsException e) {
-            e.printStackTrace();
-            msg = "IncorrectCredentialsException -- > 密码不正确：";
+            log.warn("IncorrectCredentialsException --> 密码不正确");
+            msg = "密码不正确";
         } catch (AuthenticationException e) {
-            e.printStackTrace();
-            msg = "用户验证失败";
+            log.warn("用户验证失败");
+            msg = "AuthenticationException --> 用户验证失败";
         }
         return LoginResult.fail(msg);
     }
