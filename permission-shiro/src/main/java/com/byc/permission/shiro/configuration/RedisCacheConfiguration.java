@@ -23,14 +23,15 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 /**缓存配置*/
 public class RedisCacheConfiguration extends CachingConfigurerSupport {
 
+    public static final String DEF_KEYGEN = "keyGenerator";
+
     /*定义缓存数据 key 生成策略的bean
     包名+类名+方法名+所有参数
     */
     @Bean
-    public KeyGenerator wiselyKeyGenerator(){
+    public KeyGenerator keyGenerator(){
         return  (target, method, params) -> {
                 StringBuilder sb = new StringBuilder();
-                sb.append(target.getClass().getName());
                 sb.append(method.getName());
                 for (Object obj : params) {
                     sb.append(obj.toString());
@@ -69,7 +70,7 @@ public class RedisCacheConfiguration extends CachingConfigurerSupport {
 
         // 配置序列化（解决乱码的问题）,过期时间30秒
         org.springframework.data.redis.cache.RedisCacheConfiguration config = org.springframework.data.redis.cache.RedisCacheConfiguration.defaultCacheConfig()
-                .entryTtl(Duration.ofSeconds(30))
+                .entryTtl(Duration.ofSeconds(60))
                 .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
                 .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(jackson2JsonRedisSerializer))
                 .disableCachingNullValues();

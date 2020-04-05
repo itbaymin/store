@@ -1,5 +1,6 @@
 package com.byc.permission.shiro.service.impl;
 
+import com.byc.permission.shiro.configuration.RedisCacheConfiguration;
 import com.byc.permission.shiro.mvc.vo.MenusVO;
 import com.byc.permission.shiro.service.CommonService;
 import com.byc.permission.shiro.service.LoginService;
@@ -16,6 +17,7 @@ import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.Comparator;
@@ -31,6 +33,7 @@ public class CommonServiceImpl implements CommonService {
 
 
     @Override
+    @Cacheable(value = "menus")
     public MenusVO getMenus() {
         List<SysMenu> sysMenus = menuRepository.findByType("01");
         return MenusVO.build(sysMenus);
