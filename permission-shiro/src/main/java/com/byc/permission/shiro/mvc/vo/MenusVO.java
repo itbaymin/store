@@ -18,6 +18,7 @@ public class MenusVO {
         private int sort;
         private String permission;
         private String uri;
+        private String icon;
         private List<MenuData> children;
     }
 
@@ -27,6 +28,7 @@ public class MenusVO {
         data.setSort(menu.getSort());
         data.setPermission(menu.getPermission());
         data.setUri(menu.getUri());
+        data.setIcon(menu.getIcon());
         List<SysMenu> children = menu.getChildren();
         if(!CollectionUtils.isEmpty(children)){
             List<MenuData> collect = children.stream().map(MenusVO::build).sorted(Comparator.comparing(MenuData::getSort)).collect(Collectors.toList());
@@ -36,7 +38,7 @@ public class MenusVO {
     }
 
     public static MenusVO build(List<SysMenu> menus){
-        List<MenusVO.MenuData> collect = menus.stream().map(MenusVO::build).sorted(Comparator.comparing(MenusVO.MenuData::getSort)).collect(Collectors.toList());
+        List<MenusVO.MenuData> collect = menus.stream().filter(menu -> menu.isDisplay() && menu.isEnable()).map(MenusVO::build).sorted(Comparator.comparing(MenusVO.MenuData::getSort)).collect(Collectors.toList());
         MenusVO vo = new MenusVO();
         vo.setMenus(collect);
         return vo;

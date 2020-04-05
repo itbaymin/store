@@ -74,48 +74,41 @@
         <!-- 左侧菜单开始 -->
         <div class="left-nav">
             <div id="side-nav">
-                <ul id="nav">
-                    <li>
-                        <a href="javascript:;">
-                            <i class="iconfont left-nav-li" lay-tips="用户管理">&#xe6b8;</i>
-                            <cite>用户管理</cite>
-                            <i class="iconfont nav_right">&#xe697;</i></a>
-                        <ul class="sub-menu">
-                            <li>
-                                <a onclick="xadmin.add_tab('统计页面','welcome1.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>统计页面</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('会员列表(静态表格)','member-list.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>会员列表(静态表格)</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('会员列表(动态表格)','member-list1.html',true)">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>会员列表(动态表格)</cite></a>
-                            </li>
-                            <li>
-                                <a onclick="xadmin.add_tab('会员删除','member-del.html')">
-                                    <i class="iconfont">&#xe6a7;</i>
-                                    <cite>会员删除</cite></a>
-                            </li>
-                            <li>
-                                <a href="javascript:;">
-                                    <i class="iconfont">&#xe70b;</i>
-                                    <cite>会员管理</cite>
-                                    <i class="iconfont nav_right">&#xe697;</i></a>
-                                <ul class="sub-menu">
-                                    <li>
-                                        <a onclick="xadmin.add_tab('会员删除','member-del.html')">
-                                            <i class="iconfont">&#xe6a7;</i>
-                                            <cite>会员删除</cite></a>
-                                    </li>
-                                    <li>
-                                        <a onclick="xadmin.add_tab('等级管理','member-list1.html')">
-                                            <i class="iconfont">&#xe6a7;</i>
-                                            <cite>等级管理</cite></a>
+                <ul id="nav" th:if="${not #lists.isEmpty(menus.menus)}">
+                    <li th:each="menu,menuStat : ${menus.menus}">
+                        <!--配置uri-->
+                        <a th:if="${not #strings.isEmpty(menu.uri)}" th:onclick="xadmin.add_tab([[${menu.name}]],[[${menu.uri}]])">
+                            <i class="iconfont left-nav-li" th:lay-tips="${menu.name}" th:utext="${menu.icon}">&#xe6b8;</i>
+                            <cite th:text="${menu.name}">用户管理</cite>
+                            <i class="iconfont nav_right" th:if="${not #lists.isEmpty(menu.children)}">&#xe697;</i>
+                        </a>
+                        <!--未配置uri-->
+                        <a th:if="${#strings.isEmpty(menu.uri)}" th:href="'javascript:;'">
+                            <i class="iconfont left-nav-li" th:lay-tips="${menu.name}" th:utext="${menu.icon}">&#xe6b8;</i>
+                            <cite th:text="${menu.name}">用户管理</cite>
+                            <i class="iconfont nav_right" th:if="${not #lists.isEmpty(menu.children)}">&#xe697;</i>
+                        </a>
+                        <ul class="sub-menu" th:if="${not #lists.isEmpty(menu.children)}">
+                            <li th:each="subMenu,subMenuStat : ${menu.children}">
+                                <!--配置uri-->
+                                <a th:onclick="xadmin.add_tab([[${subMenu.name}]],[[${subMenu.uri}]])">
+                                    <i class="iconfont" th:utext="${subMenu.icon}">&#xe6a7;</i>
+                                    <cite th:text="${subMenu.name}">统计页面</cite>
+                                    <i class="iconfont nav_right" th:if="${not #lists.isEmpty(subMenu.children)}">&#xe697;</i>
+                                </a>
+                                <!--未配置uri-->
+                                <a th:if="${#strings.isEmpty(subMenu.uri)}" th:href="'javascript:;'">
+                                    <i class="iconfont" th:utext="${subMenu.icon}">&#xe6a7;</i>
+                                    <cite th:text="${subMenu.name}">统计页面</cite>
+                                    <i class="iconfont nav_right" th:if="${not #lists.isEmpty(subMenu.children)}">&#xe697;</i>
+                                </a>
+                                <ul class="sub-menu" th:if="${not #lists.isEmpty(subMenu.children)}">
+                                    <li th:each="ssubMenu,ssubMenuStat : ${subMenu.children}">
+                                        <!--配置uri-->
+                                        <a th:onclick="xadmin.add_tab([[${ssubMenu.name}]],[[${ssubMenu.uri}]])">
+                                            <i class="iconfont" th:utext="${ssubMenu.icon}">&#xe6a7;</i>
+                                            <cite th:text="${ssubMenu.name}">统计页面</cite>
+                                        </a>
                                     </li>
                                 </ul>
                             </li>

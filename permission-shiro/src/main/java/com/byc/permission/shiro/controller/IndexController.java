@@ -1,5 +1,6 @@
 package com.byc.permission.shiro.controller;
 
+import com.byc.permission.shiro.mvc.vo.MenusVO;
 import com.byc.permission.shiro.service.CommonService;
 import com.byc.permission.shiro.support.result.JsonResult;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
@@ -20,6 +21,8 @@ public class IndexController {
 
     @GetMapping(value = "/index")
     public String index(Model model) {
+        MenusVO menus = commonService.getMenus();
+        model.addAttribute("menus",menus);
         model.addAttribute("title","主页");
         return "index";
     }
