@@ -32,8 +32,8 @@ public class Test {
 
     @org.junit.Test
     public void test(){
-        String username = "admin";
-        String password = "admin";
+        String username = "system";
+        String password = "system";
 
         SysUser sysUser = new SysUser();
         sysUser.setUsername(username);
@@ -52,7 +52,7 @@ public class Test {
 
         System.out.printf(b.toString());
 
-        SysUser baiyongcheng = userService.findByUsername("admin");
+        SysUser baiyongcheng = userService.findByUsername("system");
         if(baiyongcheng!=null)
             System.out.println(baiyongcheng.getCreateTime());
 

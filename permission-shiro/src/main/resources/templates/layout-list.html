@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<html lang="en"class="x-admin-sm"  xmlns:th="http://www.thymeleaf.org" >
 <head>
     <meta charset="UTF-8">
     <title th:text="${title}"></title>
@@ -24,7 +24,7 @@
 <body>
     <div class="x-nav">
               <span class="layui-breadcrumb">
-                <a th:href="@{/}">首页</a>
+                <a th:href="@{/welcome}">首页</a>
                 <a><cite th:text="${title}"></cite></a>
               </span>
         <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" onclick="location.reload()" title="刷新">
