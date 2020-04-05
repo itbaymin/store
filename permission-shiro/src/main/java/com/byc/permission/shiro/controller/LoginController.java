@@ -41,9 +41,8 @@ public class LoginController {
     }
 
     @GetMapping(value = "/logout")
-    @ResponseBody
     public String logout() {
-        return "退出";
+        return "login";
     }
 
     @GetMapping("/403")
