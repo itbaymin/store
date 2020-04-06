@@ -18,12 +18,12 @@ layui.define(['table','layer','jquery','form'], function(exports) {
 				    none: '暂无相关数据' 
 			    },
 				parseData : function(res) {
-					$count = res.data.totalRow;
+					$count = 1;
 					return {
 						'code' : res.status,
 						'msg' : res.message,
 						'data' : res.data,
-						'count' : res.data.totalRow
+						'count' : 1
 					}
 				},
 				response : {
