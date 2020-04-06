@@ -9,3 +9,18 @@
 [2020-04-06 13:55:18 354 INFO ] [restartedMain] / - Started PermissionApplication in 10.05 seconds (JVM running for 643.72)
 [2020-04-06 13:55:22 122 INFO ] [restartedMain] / - Starting PermissionApplication on MrdeiMac.local with PID 2029 (/Users/mrwhite/IdeaProjects/store/permission-shiro/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
 [2020-04-06 13:55:22 122 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-06 14:30:12 045 INFO ] [restartedMain] / - Starting PermissionApplication on MrdeiMac.local with PID 2662 (/Users/mrwhite/IdeaProjects/store/permission-shiro/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-06 14:30:12 050 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-06 14:30:30 106 INFO ] [restartedMain] / - Started PermissionApplication in 19.165 seconds (JVM running for 21.787)
+[2020-04-06 14:30:39 384 INFO ] [http-nio-8080-exec-7] / - Response success,message:操作成功
+[2020-04-06 14:53:57 690 INFO ] [restartedMain] / - Starting PermissionApplication on MrdeiMac.local with PID 2662 (/Users/mrwhite/IdeaProjects/store/permission-shiro/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-06 14:53:57 691 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-06 14:54:06 811 INFO ] [restartedMain] / - Started PermissionApplication in 9.337 seconds (JVM running for 1438.5)
+[2020-04-06 14:58:49 162 INFO ] [restartedMain] / - Starting PermissionApplication on MrdeiMac.local with PID 2662 (/Users/mrwhite/IdeaProjects/store/permission-shiro/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-06 14:58:49 162 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-06 14:59:30 318 INFO ] [restartedMain] / - Starting PermissionApplication on MrdeiMac.local with PID 2662 (/Users/mrwhite/IdeaProjects/store/permission-shiro/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-06 14:59:30 319 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-06 14:59:40 543 INFO ] [restartedMain] / - Started PermissionApplication in 10.334 seconds (JVM running for 1772.234)
+[2020-04-06 15:01:11 997 INFO ] [restartedMain] / - Starting PermissionApplication on MrdeiMac.local with PID 2662 (/Users/mrwhite/IdeaProjects/store/permission-shiro/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-06 15:01:11 997 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-06 15:01:20 973 INFO ] [restartedMain] / - Started PermissionApplication in 9.193 seconds (JVM running for 1872.664)

@@ -6,7 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-@Slf4j
 public class TimeFormatter {
 
     public enum Format{

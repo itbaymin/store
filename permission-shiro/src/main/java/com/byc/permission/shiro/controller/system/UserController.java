@@ -1,12 +1,10 @@
 package com.byc.permission.shiro.controller.system;
 
+import com.byc.permission.shiro.mvc.param.QueryParam;
 import com.byc.permission.shiro.support.result.JsonResult;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("user")
@@ -31,7 +29,8 @@ public class UserController {
 
     @ResponseBody
     @PostMapping("list")
-    public JsonResult list(){
+    public JsonResult list(@RequestParam QueryParam param){
+        System.out.println(param);
         return null;
     }
 
