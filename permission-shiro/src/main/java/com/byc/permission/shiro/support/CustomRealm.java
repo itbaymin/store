@@ -1,6 +1,6 @@
 package com.byc.permission.shiro.support;
 
-import com.byc.permission.shiro.service.SysUserService;
+import com.byc.permission.shiro.service.system.UserService;
 import com.byc.persisent.permission.entity.SysMenu;
 import com.byc.persisent.permission.entity.SysRole;
 import com.byc.persisent.permission.entity.SysUser;
@@ -19,7 +19,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class CustomRealm extends AuthorizingRealm {
 
     @Autowired
-    private SysUserService userService;
+    private UserService userService;
 
     @Override
     /**授权*/

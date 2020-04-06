@@ -1,8 +1,8 @@
-package com.byc.permission.shiro.service;
+package com.byc.permission.shiro.service.system;
 
 import com.byc.persisent.permission.entity.SysUser;
 
-public interface SysUserService {
+public interface UserService {
 
     SysUser findByUsername(String username);
 }

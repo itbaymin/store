@@ -1,5 +1,5 @@
 import com.byc.permission.shiro.PermissionApplication;
-import com.byc.permission.shiro.service.SysUserService;
+import com.byc.permission.shiro.service.system.UserService;
 import com.byc.persisent.permission.entity.SysMenu;
 import com.byc.persisent.permission.entity.SysRole;
 import com.byc.persisent.permission.entity.SysUser;
@@ -28,7 +28,7 @@ public class Test {
     @Autowired
     SysMenuRepository menuRepository;
     @Autowired
-    SysUserService userService;
+    UserService userService;
 
     @org.junit.Test
     public void test(){

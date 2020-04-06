@@ -1,7 +1,7 @@
 package com.byc.permission.shiro.service.impl;
 
 import com.byc.permission.shiro.service.LoginService;
-import com.byc.permission.shiro.service.SysUserService;
+import com.byc.permission.shiro.service.system.UserService;
 import com.byc.permission.shiro.support.LoginResult;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 public class LoginServiceImpl implements LoginService {
 
     @Autowired
-    SysUserService userService;
+    UserService userService;
 
     @Override
     public LoginResult login(String userName, String password) {
