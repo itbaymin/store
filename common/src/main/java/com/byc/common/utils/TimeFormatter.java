@@ -1,5 +1,4 @@
 package com.byc.common.utils;
-import lombok.extern.slf4j.Slf4j;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -70,6 +69,10 @@ public class TimeFormatter {
 
     public static Long formatStr(Format format, String date) {
         return second(parseStr(format,date));
+    }
+
+    public static String formatTimestamp(Format format, Long date) {
+        return format.getFormat().format(new Date(date*1000));
     }
 
     public static String formatDate(Format format) {

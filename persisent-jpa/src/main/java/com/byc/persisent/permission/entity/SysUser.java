@@ -40,4 +40,17 @@ public class SysUser implements Serializable {
             joinColumns = {@JoinColumn(name = "user_id", foreignKey = @ForeignKey(name = "none",value = ConstraintMode.NO_CONSTRAINT))},
             inverseJoinColumns = {@JoinColumn(name = "role_id",foreignKey = @ForeignKey(name = "none",value = ConstraintMode.NO_CONSTRAINT))})
     private List<SysRole> roles;
+
+    @Override
+    public String toString() {
+        return "SysUser{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", salt='" + salt + '\'' +
+                ", state=" + state +
+                ", createTime=" + createTime +
+                ", updateTime=" + updateTime +
+                '}';
+    }
 }

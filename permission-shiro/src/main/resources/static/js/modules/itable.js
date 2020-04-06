@@ -20,9 +20,9 @@ layui.define(['table','layer','jquery','form'], function(exports) {
 				parseData : function(res) {
 					$count = res.data.totalRow;
 					return {
-						'code' : res.code,
-						'msg' : res.msg,
-						'data' : res.data.list,
+						'code' : res.status,
+						'msg' : res.message,
+						'data' : res.data,
 						'count' : res.data.totalRow
 					}
 				},

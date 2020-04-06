@@ -1,7 +1,11 @@
 package com.byc.permission.shiro.controller.system;
 
 import com.byc.permission.shiro.mvc.param.QueryParam;
+import com.byc.permission.shiro.mvc.vo.system.UserVO;
 import com.byc.permission.shiro.support.result.JsonResult;
+import com.byc.persisent.permission.entity.SysUser;
+import com.byc.persisent.permission.repository.SysUserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +14,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("user")
 /**用户管理*/
 public class UserController {
+    @Autowired
+    SysUserRepository userRepository;
 
     @GetMapping("index")
     public String index(Model model){
@@ -29,9 +35,9 @@ public class UserController {
 
     @ResponseBody
     @PostMapping("list")
-    public JsonResult list(@RequestParam QueryParam param){
-        System.out.println(param);
-        return null;
+    public JsonResult list(QueryParam param){
+       SysUser all = userRepository.findByUsername("admin");
+        return JsonResult.succ(UserVO.build(all));
     }
 
     @ResponseBody

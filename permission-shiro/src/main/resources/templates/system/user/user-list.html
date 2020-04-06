@@ -13,7 +13,7 @@
                                 <input class="layui-input"  autocomplete="off" placeholder="截止日" name="end" id="end">
                             </div>
                             <div class="layui-inline layui-show-xs-block">
-                                <input type="text" name="username"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
+                                <input type="text" name="cond"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-inline layui-show-xs-block">
                                 <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
@@ -67,7 +67,6 @@
                 var itable = layui.itable;
 
                 var where = $('#userform').serializeJSON();
-                where.type = 'all';
                 itable.render({
                     elem: '#user-table',
                     url: _ctx+'user/list',
@@ -84,20 +83,6 @@
                 })
                 itable.sort('#user-table','user');//arg1:表id;arg2:table的filter
                 itable.search('#user-table','search');//arg1:表id;arg2(可选):按钮的filter
-
-                itable.toolBar('#user-table',{
-                    deleteSelected : function(data){
-                        $.req({
-                            url:_ctx+'user/doDel',
-                            data:{
-                                users:JSON.stringify(data)
-                            },
-                            succ:function(){
-                                itable.reload('#user-table');
-                            }
-                        })
-                    }
-                });
             });
         </script>
     </div>
