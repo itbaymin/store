@@ -10,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+
 @Controller
 @RequestMapping("user")
 /**用户管理*/
@@ -37,7 +39,7 @@ public class UserController {
     @PostMapping("list")
     public JsonResult list(QueryParam param){
        SysUser all = userRepository.findByUsername("admin");
-        return JsonResult.succ(UserVO.build(all));
+        return JsonResult.succ(Arrays.asList(UserVO.build(all)));
     }
 
     @ResponseBody

@@ -86,3 +86,13 @@
 [2020-04-06 15:17:34 191 INFO ] [http-nio-8080-exec-2] / - Response success,message:操作成功
 [2020-04-06 15:19:08 139 INFO ] [http-nio-8080-exec-10] / - Response success,message:操作成功
 [2020-04-06 15:19:21 018 INFO ] [http-nio-8080-exec-2] / - Response success,message:操作成功
+[2020-04-06 15:27:53 737 INFO ] [http-nio-8080-exec-4] / - Response success,message:操作成功
+[2020-04-06 15:29:39 080 INFO ] [http-nio-8080-exec-2] / - Response success,message:操作成功
+[2020-04-06 15:31:22 431 INFO ] [http-nio-8080-exec-1] / - Response success,message:操作成功
+[2020-04-06 15:32:50 129 INFO ] [restartedMain] / - Starting PermissionApplication on MrdeiMac.local with PID 3283 (/Users/mrwhite/IdeaProjects/store/permission-shiro/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-06 15:32:50 129 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-06 15:33:00 365 INFO ] [restartedMain] / - Started PermissionApplication in 10.479 seconds (JVM running for 962.24)
+[2020-04-06 15:33:28 427 INFO ] [restartedMain] / - Starting PermissionApplication on MrdeiMac.local with PID 3463 (/Users/mrwhite/IdeaProjects/store/permission-shiro/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-06 15:33:28 434 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-06 15:33:45 498 INFO ] [restartedMain] / - Started PermissionApplication in 18.097 seconds (JVM running for 20.532)
+[2020-04-06 15:33:55 753 INFO ] [http-nio-8080-exec-2] / - Response success,message:操作成功
