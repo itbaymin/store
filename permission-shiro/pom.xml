@@ -26,6 +26,10 @@
             <groupId>com.byc</groupId>
             <artifactId>persisent-jpa</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.byc</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.shiro</groupId>
