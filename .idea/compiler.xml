@@ -7,12 +7,15 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="common" />
-        <module name="permissionshiro" />
-        <module name="persisentjpa" />
+        <module name="permission-shiro" />
+        <module name="persisent-jpa" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="persistentjpa" target="1.8" />
+      <module name="common" target="1.8" />
+      <module name="permission-shiro" target="1.8" />
+      <module name="persisent-jpa" target="1.8" />
+      <module name="store" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
