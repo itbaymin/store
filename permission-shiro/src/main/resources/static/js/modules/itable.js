@@ -8,7 +8,13 @@ layui.define(['table','layer','jquery','form'], function(exports) {
 			var options = {
 				heigth : 500,
 				//toolbar: true,
-				page : true,
+                page : { //支持传入 laypage 组件的所有参数（某些参数除外，如：jump/elem） - 详见文档
+                    layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'], //自定义分页布局
+                    curr: 1, //设定初始在第 5 页
+                    groups: 3, //只显示 1 个连续页码
+                    first: true,
+                    last: true
+                },
 				limit : 10,
 				limits : [10,15,30,50],
 				method : 'post',
@@ -18,21 +24,21 @@ layui.define(['table','layer','jquery','form'], function(exports) {
 				    none: '暂无相关数据' 
 			    },
 				parseData : function(res) {
-					$count = 1;
+					$count = res.data.count;
 					return {
 						'code' : res.status,
 						'msg' : res.message,
-						'data' : res.data,
-						'count' : 1
+						'data' : res.data.list,
+						'count' : res.data.count
 					}
 				},
 				response : {
 					statusCode : 200
 				}
-			}
+			};
 			var colappend = {
 				align : 'center'
-			}
+			};
 			if(option.cols) {
 				for(let col of option.cols[0]){
 					Object.assign(col,colappend);
@@ -62,7 +68,11 @@ layui.define(['table','layer','jquery','form'], function(exports) {
 			form.on('submit('+filter+')',function(data){
    				table.reload(tableId,{
    					page: {
-   			          curr: 1 
+                        layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'], //自定义分页布局
+                        curr: 1, //设定初始在第 5 页
+                        groups: 3, //只显示 1 个连续页码
+                        first: true,
+                        last: true
    			        },
        				where: data.field
        			})
@@ -71,7 +81,13 @@ layui.define(['table','layer','jquery','form'], function(exports) {
 		},
 		reload : function(tableId,where){
 			if(where){
-                where.page = {curr:1};
+                where.page = {
+                    layout: ['limit', 'count', 'prev', 'page', 'next', 'skip'], //自定义分页布局
+                    curr: 1, //设定初始在第 5 页
+                    groups: 3, //只显示 1 个连续页码
+                    first: true,
+                    last: true
+				};
 			}else{
 				where = {};
 			}
