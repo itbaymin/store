@@ -1,6 +1,8 @@
 package com.byc.permission.shiro.configuration;
 import java.time.Duration;
 
+import org.springframework.aop.framework.AopProxyUtils;
+import org.springframework.aop.support.AopUtils;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
@@ -23,8 +25,6 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 /**缓存配置*/
 public class RedisCacheConfiguration extends CachingConfigurerSupport {
 
-    public static final String DEF_KEYGEN = "keyGenerator";
-
     /*定义缓存数据 key 生成策略的bean
     包名+类名+方法名+所有参数
     */
@@ -32,6 +32,8 @@ public class RedisCacheConfiguration extends CachingConfigurerSupport {
     public KeyGenerator keyGenerator(){
         return  (target, method, params) -> {
                 StringBuilder sb = new StringBuilder();
+                sb.append(AopUtils.getTargetClass(target).getName());
+                sb.append(":");
                 sb.append(method.getName());
                 for (Object obj : params) {
                     sb.append(obj.toString());

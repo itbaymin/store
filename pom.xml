@@ -20,6 +20,7 @@
         <module>permission-shiro</module>
         <module>persisent-jpa</module>
         <module>common</module>
+        <module>permission-security</module>
     </modules>
 
     <properties>
