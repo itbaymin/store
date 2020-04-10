@@ -9,11 +9,11 @@ import org.springframework.util.StringUtils;
 public class QueryParam {
     private String start;
     private String end;
-    private String cond;
-    private String sort;    //排序方式
-    private String field;   //排序字段
-    private int limit;
-    private int page;
+    private String cond = "";
+    private String sort = "desc";    //排序方式
+    private String field = "id";   //排序字段
+    private int limit = 10;
+    private int page = 1;
 
     public Long getStart() {
         if(StringUtils.isEmpty(start))
@@ -28,6 +28,10 @@ public class QueryParam {
     }
 
     public boolean asc(){
-        return "".equals(sort);
+        return "asc".equals(sort.toLowerCase());
+    }
+
+    public int getPage(){
+        return page-1;
     }
 }

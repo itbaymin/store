@@ -1,4 +1,7 @@
 import com.byc.permission.shiro.PermissionApplication;
+import com.byc.permission.shiro.mvc.param.QueryParam;
+import com.byc.permission.shiro.mvc.vo.PageVo;
+import com.byc.permission.shiro.mvc.vo.system.UserVO;
 import com.byc.permission.shiro.service.system.UserService;
 import com.byc.persisent.permission.entity.SysMenu;
 import com.byc.persisent.permission.entity.SysRole;
@@ -11,6 +14,7 @@ import org.apache.shiro.util.ByteSource;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -67,5 +71,13 @@ public class Test {
     public void test1(){
         Optional<SysMenu> all = menuRepository.findById(1L);
         System.out.println(all.orElse(null).getChildren());
+    }
+
+    @org.junit.Test
+    @Transactional
+    public void test2(){
+        Page<SysUser> users = userService.findUsers(new QueryParam());
+        PageVo page = UserVO.page(users);
+        System.out.println(page);
     }
 }

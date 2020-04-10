@@ -24,12 +24,12 @@ layui.define(['table','layer','jquery','form'], function(exports) {
 				    none: '暂无相关数据' 
 			    },
 				parseData : function(res) {
-					$count = res.data.count;
+					$count = res.data.total;
 					return {
 						'code' : res.status,
 						'msg' : res.message,
 						'data' : res.data.list,
-						'count' : res.data.count
+						'count' : res.data.total
 					}
 				},
 				response : {

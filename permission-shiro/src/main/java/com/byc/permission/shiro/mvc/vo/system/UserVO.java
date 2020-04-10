@@ -1,13 +1,14 @@
 package com.byc.permission.shiro.mvc.vo.system;
 
 import com.byc.common.utils.TimeFormatter;
-import com.byc.persisent.permission.entity.SysRole;
+import com.byc.permission.shiro.mvc.vo.PageVo;
 import com.byc.persisent.permission.entity.SysUser;
 import lombok.Data;
+import org.springframework.data.domain.Page;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Data
 /**系统用户*/
@@ -27,7 +28,7 @@ public class UserVO implements Serializable {
 
     private String updateTime;
 
-    public static UserVO build(SysUser user){
+    private static UserVO build(SysUser user){
         UserVO vo = new UserVO();
         vo.setUsername(user.getUsername());
         vo.setPassword(user.getPassword());
@@ -37,5 +38,15 @@ public class UserVO implements Serializable {
         vo.setCreateTime(TimeFormatter.formatTimestamp(TimeFormatter.Format.SIMPLE,user.getCreateTime()));
         vo.setUpdateTime(TimeFormatter.formatTimestamp(TimeFormatter.Format.SIMPLE,user.getUpdateTime()));
         return vo;
+    }
+
+    public static PageVo page(Page<SysUser> page){
+        List<UserVO> collect = page.getContent().stream().map(UserVO::build).collect(Collectors.toList());
+        PageVo<UserVO> pageVo = new PageVo();
+        pageVo.setList(collect);
+        pageVo.setTotal(page.getTotalElements());
+        pageVo.setPage(page.getNumber());
+        pageVo.setSize(page.getSize());
+        return pageVo;
     }
 }

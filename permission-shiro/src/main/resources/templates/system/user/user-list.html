@@ -16,7 +16,7 @@
                                 <input type="text" name="cond"  placeholder="请输入用户名" autocomplete="off" class="layui-input">
                             </div>
                             <div class="layui-inline layui-show-xs-block">
-                                <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+                                <button class="layui-btn"  lay-submit="" lay-filter="search"><i class="layui-icon">&#xe615;</i></button>
                             </div>
                         </form>
                     </div>
@@ -26,18 +26,6 @@
                     </div>
                     <div class="layui-card-body ">
                         <table class="layui-table layui-form" lay-filter="user" id="user-table"></table>
-                    </div>
-                    <div class="layui-card-body ">
-                        <div class="page">
-                            <div>
-                              <a class="prev" href="">&lt;&lt;</a>
-                              <a class="num" href="">1</a>
-                              <span class="current">2</span>
-                              <a class="num" href="">3</a>
-                              <a class="num" href="">489</a>
-                              <a class="next" href="">&gt;&gt;</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -74,11 +62,11 @@
                     cols: [ [ //表头
                         {type: 'checkbox', fixed: 'left'}
                         ,{field: 'id', title: 'ID', width:80, sort: true, fixed: 'left'}
-                        ,{field: 'username', title: '账号'}
-                        ,{field: 'password', title: '姓名'}
-                        ,{field: 'salt', title: '角色'}
-                        //,{field: 'create_time', title: '创建时间', templet: function (d) { return $fmt_datetime(d.create_time) }}
-                        ,{field: 'updatetime', title: '更新时间'}
+                        ,{field: 'username', title: '账号', sort: true}
+                        ,{field: 'password', title: '密码'}
+                        ,{field: 'salt', title: '盐值'}
+                        ,{field: 'createTime', title: '创建时间'}
+                        ,{field: 'updateTime', title: '更新时间'}
                     ] ]
                 })
                  itable.sort('#user-table','user');//arg1:表id;arg2:table的filter
