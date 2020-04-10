@@ -36,7 +36,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/swagger**/**","/webjars/**","/v2/**","/css/**","/fonts/**","/css/**","/js/**","/images/**","/lib/**","/login").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().loginPage("/login").failureUrl("/error")
+                .formLogin().usernameParameter("username").passwordParameter("password").loginPage("/login").failureUrl("/error")
                 .and()
                 .logout().logoutUrl("/logout").logoutSuccessUrl("/index")
                 .and()

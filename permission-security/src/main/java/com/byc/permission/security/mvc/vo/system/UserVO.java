@@ -1,7 +1,7 @@
 package com.byc.permission.security.mvc.vo.system;
 
 import com.byc.common.utils.TimeFormatter;
-import com.byc.permission.shiro.mvc.vo.PageVo;
+import com.byc.permission.security.mvc.vo.PageVo;
 import com.byc.persisent.permission.entity.SysUser;
 import lombok.Data;
 import org.springframework.data.domain.Page;

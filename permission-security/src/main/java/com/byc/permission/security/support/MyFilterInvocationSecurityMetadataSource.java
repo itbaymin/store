@@ -9,6 +9,7 @@ import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 import org.springframework.stereotype.Component;
+import org.springframework.util.StringUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.*;
@@ -42,7 +43,7 @@ public class MyFilterInvocationSecurityMetadataSource implements FilterInvocatio
         Iterator<String> iterator = map.keySet().iterator();
         while (iterator.hasNext()){
             String url = iterator.next();
-            if (new AntPathRequestMatcher( url ).matches( request )) {
+            if (!StringUtils.isEmpty(url) && new AntPathRequestMatcher( url ).matches( request )) {
                 return map.get( url );
             }
         }

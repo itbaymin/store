@@ -15,3 +15,23 @@
 [2020-04-10 19:05:06 494 INFO ] [http-nio-8080-exec-6] / - Response success,message:²Ù×÷³É¹¦
 [2020-04-10 20:33:14 154 INFO ] [restartedMain] / - Starting PermissionApplication on HYGK-PC with PID 5184 (F:\IdeaWorkspace\store\permission-shiro\target\classes started by Admin in F:\IdeaWorkspace\store)
 [2020-04-10 20:33:14 156 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-10 23:06:10 856 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on DESKTOP-GODD937 with PID 2068 (E:\develop\workspace\store\permission-security\target\classes started by Mr White in E:\develop\workspace\store)
+[2020-04-10 23:06:10 856 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-10 23:06:42 057 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-10 23:06:44 073 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 34.201 seconds (JVM running for 37.535)
+[2020-04-10 23:09:31 495 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on DESKTOP-GODD937 with PID 9200 (E:\develop\workspace\store\permission-security\target\classes started by Mr White in E:\develop\workspace\store)
+[2020-04-10 23:09:31 499 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-10 23:09:44 914 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-10 23:09:46 882 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 19.458 seconds (JVM running for 22.925)
+[2020-04-10 23:21:01 295 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on DESKTOP-GODD937 with PID 6672 (E:\develop\workspace\store\permission-security\target\classes started by Mr White in E:\develop\workspace\store)
+[2020-04-10 23:21:01 303 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-10 23:22:29 703 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on DESKTOP-GODD937 with PID 10828 (E:\develop\workspace\store\permission-security\target\classes started by Mr White in E:\develop\workspace\store)
+[2020-04-10 23:22:29 703 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-10 23:23:17 776 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on DESKTOP-GODD937 with PID 11376 (E:\develop\workspace\store\permission-security\target\classes started by Mr White in E:\develop\workspace\store)
+[2020-04-10 23:23:17 776 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-10 23:23:57 093 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on DESKTOP-GODD937 with PID 1372 (E:\develop\workspace\store\permission-security\target\classes started by Mr White in E:\develop\workspace\store)
+[2020-04-10 23:23:57 093 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-10 23:24:45 544 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on DESKTOP-GODD937 with PID 11472 (E:\develop\workspace\store\permission-security\target\classes started by Mr White in E:\develop\workspace\store)
+[2020-04-10 23:24:45 560 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-10 23:25:04 637 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-10 23:25:06 433 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 21.748 seconds (JVM running for 24.164)

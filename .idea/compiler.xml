@@ -6,10 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="common" />
-        <module name="permission-security" />
-        <module name="permission-shiro" />
         <module name="persisent-jpa" />
+        <module name="common" />
+        <module name="permission-shiro" />
+        <module name="permission-security" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -19,5 +19,13 @@
       <module name="persisent-jpa" target="1.8" />
       <module name="store" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="common" options="-parameters" />
+      <module name="permission-security" options="-parameters" />
+      <module name="permission-shiro" options="-parameters" />
+      <module name="persisent-jpa" options="-parameters" />
+    </option>
   </component>
 </project>
