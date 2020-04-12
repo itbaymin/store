@@ -6,17 +6,21 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="persisent-jpa" />
         <module name="common" />
-        <module name="permission-shiro" />
         <module name="permission-security" />
+        <module name="permission-shiro" />
+        <module name="permissionshiro" />
+        <module name="persisent-jpa" />
+        <module name="persisentjpa" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="common" target="1.8" />
       <module name="permission-security" target="1.8" />
       <module name="permission-shiro" target="1.8" />
+      <module name="permissionshiro" target="1.8" />
       <module name="persisent-jpa" target="1.8" />
+      <module name="persisentjpa" target="1.8" />
       <module name="store" target="1.8" />
     </bytecodeTargetLevel>
   </component>

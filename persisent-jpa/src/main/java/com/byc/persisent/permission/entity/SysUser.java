@@ -19,7 +19,7 @@ public class SysUser implements Serializable {
     @Column(columnDefinition = "VARCHAR(30) NOT NULL COMMENT '用户名'")
     private String username;
 
-    @Column(columnDefinition = "VARCHAR(40) NOT NULL COMMENT '密码'")
+    @Column(columnDefinition = "VARCHAR(60) NOT NULL COMMENT '密码'")
     private String password;
 
     @Column(columnDefinition = "VARCHAR(30) NOT NULL COMMENT '盐值'")
