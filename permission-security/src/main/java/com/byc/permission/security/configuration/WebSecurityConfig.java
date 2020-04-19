@@ -10,6 +10,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
+import java.io.PrintWriter;
+
 /**
  * Created by baiyc
  * 2020/4/10/010 19:31
@@ -37,10 +39,25 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").defaultSuccessUrl("/index").failureUrl("/error")
+                .successHandler((req,resp,auth)->{
+                    resp.setContentType("application/json;charset=utf-8");
+                    PrintWriter out = resp.getWriter();
+                    out.write("{\"status\":200,\"message\":\"登录成功\"}");
+                    out.flush();
+                    out.close();
+                })
+                .failureHandler((req,resp,auth)->{
+                    resp.setContentType("application/json;charset=utf-8");
+                    PrintWriter out = resp.getWriter();
+                    out.write("{\"status\":403,\"message\":\"登录失败\"}");
+                    out.flush();
+                    out.close();
+                })
                 .and()
                 .logout().logoutUrl("/logout").logoutSuccessUrl("/index")
                 .and()
-                .exceptionHandling().accessDeniedPage("/error");
+                .exceptionHandling().accessDeniedPage("/error")
+                .and().csrf().disable();
         http.logout().logoutSuccessUrl("/");
     }
 

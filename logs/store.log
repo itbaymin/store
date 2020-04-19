@@ -48,3 +48,33 @@
 [2020-04-19 10:30:32 518 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
 [2020-04-19 10:30:43 042 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
 [2020-04-19 10:30:48 334 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 16.556 seconds (JVM running for 17.983)
+[2020-04-19 13:02:41 270 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on MrdeiMac.local with PID 977 (/Users/mrwhite/IdeaProjects/store/permission-security/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-19 13:02:41 271 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-19 13:02:47 325 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-19 13:02:48 740 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 7.746 seconds (JVM running for 9135.677)
+[2020-04-19 13:03:06 500 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on MrdeiMac.local with PID 977 (/Users/mrwhite/IdeaProjects/store/permission-security/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-19 13:03:06 500 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-19 13:07:08 982 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on MrdeiMac.local with PID 1885 (/Users/mrwhite/IdeaProjects/store/permission-security/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-19 13:07:08 989 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-19 13:07:22 913 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-19 13:07:27 017 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 19.039 seconds (JVM running for 20.634)
+[2020-04-19 13:14:20 030 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on MrdeiMac.local with PID 1885 (/Users/mrwhite/IdeaProjects/store/permission-security/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-19 13:14:20 031 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-19 13:14:26 813 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-19 13:14:28 610 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 8.646 seconds (JVM running for 442.229)
+[2020-04-19 13:16:49 883 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on MrdeiMac.local with PID 1962 (/Users/mrwhite/IdeaProjects/store/permission-security/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-19 13:16:49 888 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-19 13:17:01 213 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-19 13:17:04 469 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 15.505 seconds (JVM running for 17.42)
+[2020-04-19 13:19:58 554 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on MrdeiMac.local with PID 1962 (/Users/mrwhite/IdeaProjects/store/permission-security/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-19 13:19:58 555 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-19 13:20:10 827 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on MrdeiMac.local with PID 1991 (/Users/mrwhite/IdeaProjects/store/permission-security/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-19 13:20:10 834 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-19 13:20:22 440 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-19 13:20:25 713 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 15.699 seconds (JVM running for 17.43)
+[2020-04-19 13:24:27 441 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on MrdeiMac.local with PID 1991 (/Users/mrwhite/IdeaProjects/store/permission-security/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-19 13:24:27 442 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-19 13:24:37 515 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on MrdeiMac.local with PID 2026 (/Users/mrwhite/IdeaProjects/store/permission-security/target/classes started by mrwhite in /Users/mrwhite/IdeaProjects/store)
+[2020-04-19 13:24:37 520 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-19 13:24:48 410 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-19 13:24:51 652 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 14.869 seconds (JVM running for 16.528)

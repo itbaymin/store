@@ -24,7 +24,7 @@
         <div class="message">登录</div>
         <div id="darkbannerwrap"></div>
         
-        <form method="post" class="layui-form" th:action="@{/login}">
+        <form method="post" class="layui-form">
             <input name="username" placeholder="用户名"  type="text" lay-verify="required" class="layui-input" >
             <hr class="hr15">
             <input name="password" lay-verify="required" placeholder="密码"  type="password" class="layui-input">
@@ -35,21 +35,21 @@
     </div>
 
     <script>
-        // $(function  () {
-        //     layui.use('form', function(){
-        //       var form = layui.form;
-        //       //监听提交
-        //       form.on('submit(login)', function(data){
-        //         $.post("/login",data.field,function (resp) {
-        //             if(resp.status==200)
-        //                 location.href='/index';
-        //             else
-        //                 layer.msg(resp.message);
-        //         })
-        //         return false;
-        //       });
-        //     });
-        // })
+        $(function  () {
+            layui.use('form', function(){
+              var form = layui.form;
+              //监听提交
+              form.on('submit(login)', function(data){
+                $.post("/login",data.field,function (resp) {
+                    if(resp.status==200)
+                        location.href='/index';
+                    else
+                        layer.msg(resp.message);
+                })
+                return false;
+              });
+            });
+        })
     </script>
 </body>
 </html>
