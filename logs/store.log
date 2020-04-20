@@ -107,3 +107,30 @@
 [2020-04-20 10:59:24 401 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
 [2020-04-20 10:59:29 850 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
 [2020-04-20 10:59:30 631 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 6.295 seconds (JVM running for 105.111)
+[2020-04-20 13:35:09 282 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on HYGK-PC with PID 5164 (F:\IdeaWorkspace\store\permission-security\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-04-20 13:35:09 282 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-20 13:35:14 549 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-20 13:35:15 164 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 6.037 seconds (JVM running for 9449.048)
+[2020-04-20 13:38:04 428 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on HYGK-PC with PID 5164 (F:\IdeaWorkspace\store\permission-security\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-04-20 13:38:04 429 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-20 13:38:10 248 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-20 13:38:10 919 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 6.535 seconds (JVM running for 9624.792)
+[2020-04-20 13:38:58 226 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on HYGK-PC with PID 5164 (F:\IdeaWorkspace\store\permission-security\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-04-20 13:38:58 227 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-20 13:39:03 240 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-20 13:39:03 719 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 5.53 seconds (JVM running for 9677.588)
+[2020-04-20 13:39:14 239 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on HYGK-PC with PID 5164 (F:\IdeaWorkspace\store\permission-security\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-04-20 13:39:14 239 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-20 13:39:18 786 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-20 13:39:19 313 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 5.107 seconds (JVM running for 9693.182)
+[2020-04-20 13:39:28 664 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on HYGK-PC with PID 5164 (F:\IdeaWorkspace\store\permission-security\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-04-20 13:39:28 664 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-20 13:39:32 695 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-20 13:39:43 549 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on HYGK-PC with PID 5164 (F:\IdeaWorkspace\store\permission-security\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-04-20 13:39:43 550 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-20 13:39:49 090 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-20 13:39:49 498 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 5.992 seconds (JVM running for 9723.365)
+[2020-04-20 13:40:49 045 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on HYGK-PC with PID 19564 (F:\IdeaWorkspace\store\permission-security\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-04-20 13:40:49 049 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-04-20 13:41:00 403 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-04-20 13:41:02 761 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 14.385 seconds (JVM running for 15.093)

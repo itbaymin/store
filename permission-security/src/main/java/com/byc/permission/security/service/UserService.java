@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.request.RequestContextHolder;
@@ -29,6 +30,8 @@ public class UserService implements UserDetailsService {
 
     @Autowired
     SysUserRepository userRepository;
+    @Autowired
+    BCryptPasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails loadUserByUsername(String name) throws UsernameNotFoundException {
@@ -37,8 +40,9 @@ public class UserService implements UserDetailsService {
             throw new BadCredentialsException("用户名不存在");
         HttpServletRequest request = ((ServletRequestAttributes)RequestContextHolder.getRequestAttributes()).getRequest();
         String password = request.getParameter("password");
+
         // 自定义密码验证
-        if (!password.equals(user.getPassword())){
+        if (!passwordEncoder.matches(password,user.getPassword())){
             throw new BadCredentialsException("密码错误，请重新输入");
         }
         List<SimpleGrantedAuthority> simpleGrantedAuthorities = new ArrayList<>();

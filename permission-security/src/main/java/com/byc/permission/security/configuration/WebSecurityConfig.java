@@ -3,6 +3,7 @@ package com.byc.permission.security.configuration;
 import com.byc.permission.security.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -27,10 +28,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserService userService;
 
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
         //校验用户
-        auth.userDetailsService( userService ).passwordEncoder(new BCryptPasswordEncoder());
+        auth.userDetailsService( userService ).passwordEncoder(passwordEncoder());
     }
 
     @Override
