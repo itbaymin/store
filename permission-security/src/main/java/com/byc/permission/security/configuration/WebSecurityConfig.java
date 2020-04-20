@@ -1,6 +1,7 @@
 package com.byc.permission.security.configuration;
 
 import com.byc.permission.security.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -17,6 +18,7 @@ import java.io.PrintWriter;
  * 2020/4/10/010 19:31
  * Description：配置
  */
+@Slf4j
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true) // 控制权限注解
@@ -24,7 +26,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private UserService userService;
-
 
     @Override
     public void configure(AuthenticationManagerBuilder auth) throws Exception {
@@ -49,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .failureHandler((req,resp,auth)->{
                     resp.setContentType("application/json;charset=utf-8");
                     PrintWriter out = resp.getWriter();
-                    out.write("{\"status\":403,\"message\":\"登录失败\"}");
+                    out.write("{\"status\":403,\"message\":\""+auth.getMessage()+"\"}");
                     out.flush();
                     out.close();
                 })
