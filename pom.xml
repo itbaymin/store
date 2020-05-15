@@ -21,6 +21,7 @@
         <module>persisent-jpa</module>
         <module>common</module>
         <module>permission-security</module>
+        <module>api</module>
     </modules>
 
     <properties>

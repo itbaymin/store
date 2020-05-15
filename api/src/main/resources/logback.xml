@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                [%d{yyyy-MM-dd HH:mm:ss SSS} %-5p] [%thread] /%X{X-B3-TraceId} - %m%n
+            </pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+    </appender>
+    <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>logs/store.log</File>
+        <Append>true</Append>
+        <encoder>
+            <pattern>
+                [%d{yyyy-MM-dd HH:mm:ss SSS} %-5p] [%thread] /%X{X-B3-TraceId} - %m%n
+            </pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/store.%d{yyyy-MM-dd}.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <appender name="mvc" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover 保存历史记录到这个文件夹一日起为后缀 -->
+            <fileNamePattern>logs/store-mvc.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- keep 30 days' worth of history -->
+            <maxHistory>3</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%msg %n</pattern>
+            <charset>UTF-8</charset> <!-- 此处设置字符集 -->
+        </encoder>
+    </appender>
+    <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <File>logs/store-error.log</File>
+        <Append>true</Append>
+        <encoder>
+            <pattern>
+                [%d{yyyy-MM-dd HH:mm:ss SSS} %-5p] [%thread] /%X{X-B3-TraceId} - %m%n
+            </pattern>
+        </encoder>
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>ERROR</level>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/store-error.log.%d{yyyy-MM-dd}</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+    <logger name="io.lettuce.core" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE"></appender-ref>
+    </logger>
+    <logger name="system" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE"></appender-ref>
+    </logger>
+    <logger name="mvc" level="INFO" additivity="false">
+        <appender-ref ref="mvc"></appender-ref>
+    </logger>
+    <logger name="com.byc" level="INFO" additivity="false">
+        <appender-ref ref="file"/>
+    </logger>
+    <root level="DEBUG">
+        <appender-ref ref="CONSOLE"></appender-ref>
+        <appender-ref ref="error"></appender-ref>
+    </root>
+</configuration>
