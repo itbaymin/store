@@ -18,6 +18,6 @@ public class WxAccountController {
 
     @RequestMapping("test")
     public String test(){
-        return test.getTest();
+        return "sdafasdfasdf";
     }
 }
