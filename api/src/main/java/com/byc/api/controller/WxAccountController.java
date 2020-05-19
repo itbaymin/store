@@ -1,12 +1,16 @@
 package com.byc.api.controller;
 
+import com.byc.api.listener.MyListener;
 import com.byc.api.service.MessageService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.request.async.DeferredResult;
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
 import javax.servlet.http.HttpServletResponse;
 
@@ -46,5 +50,20 @@ public class WxAccountController {
         }
         DeferredResult<String> df = new DeferredResult(60000l);
         return df;
+    }
+
+    @Autowired
+    MyListener listener;
+
+    @GetMapping("/push")
+    /**EventSource测试*/
+    public SseEmitter push(@RequestParam String messageId){
+        final SseEmitter emitter = new SseEmitter(Long.MAX_VALUE);
+        try {
+            listener.addSseEmitters(messageId,emitter);
+        }catch (Exception e){
+            emitter.completeWithError(e);
+        }
+        return emitter;
     }
 }
