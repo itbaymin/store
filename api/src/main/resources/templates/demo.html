@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>信息</title>
+</head>
+<body>
+<div id='msg'>
+</div>
+<script>
+    if (typeof(EventSource) !== "undefined") {
+        var eventSource = new EventSource("/wx/message");
+
+        eventSource.onmessage = function (event) {
+            document.getElementById("msg").innerHTML = event.data;
+
+        }
+        eventSource.addEventListener('error', function (event) {
+            console.log("错误：" + event);
+        });
+        eventSource.addEventListener('open', function (event) {
+            console.log("建立连接：" + event);
+        });
+    }
+    else {
+        document.getElementById("msg").innerHTML = "抱歉，您的浏览器不支持 server-sent 事件 ...";
+    }
+</script>
+</body>
+</html>

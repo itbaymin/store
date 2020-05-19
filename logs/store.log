@@ -1,3 +1,28 @@
-[2020-05-18 20:47:27 449 INFO ] [restartedMain] / - Starting ApiApplication on HYGK-PC with PID 9228 (F:\IdeaWorkspace\store\api\target\classes started by Admin in F:\IdeaWorkspace\store)
-[2020-05-18 20:47:27 452 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
-[2020-05-18 20:47:39 805 INFO ] [restartedMain] / - Started ApiApplication in 12.96 seconds (JVM running for 13.539)
+[2020-05-19 17:09:35 274 INFO ] [restartedMain] / - Starting ApiApplication on HYGK-PC with PID 15936 (F:\IdeaWorkspace\store\api\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-19 17:09:35 276 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-05-19 17:09:48 819 INFO ] [restartedMain] / - Started ApiApplication in 14.152 seconds (JVM running for 15.088)
+[2020-05-19 17:12:03 056 INFO ] [restartedMain] / - Starting ApiApplication on HYGK-PC with PID 14940 (F:\IdeaWorkspace\store\api\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-19 17:12:03 064 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-05-19 17:12:15 219 INFO ] [restartedMain] / - Started ApiApplication in 12.697 seconds (JVM running for 13.371)
+[2020-05-19 17:13:16 800 INFO ] [restartedMain] / - Starting ApiApplication on HYGK-PC with PID 14940 (F:\IdeaWorkspace\store\api\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-19 17:13:16 801 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-05-19 17:13:22 707 INFO ] [restartedMain] / - Started ApiApplication in 6.115 seconds (JVM running for 80.854)
+[2020-05-19 17:13:30 319 INFO ] [restartedMain] / - Starting ApiApplication on HYGK-PC with PID 14940 (F:\IdeaWorkspace\store\api\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-19 17:13:30 319 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-05-19 17:13:35 728 INFO ] [restartedMain] / - Started ApiApplication in 5.447 seconds (JVM running for 93.874)
+[2020-05-19 17:14:35 810 INFO ] [restartedMain] / - Starting ApiApplication on HYGK-PC with PID 12008 (F:\IdeaWorkspace\store\api\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-19 17:14:35 812 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-05-19 17:14:50 943 INFO ] [restartedMain] / - Started ApiApplication in 15.918 seconds (JVM running for 16.536)
+[2020-05-19 17:14:56 121 INFO ] [restartedMain] / - Starting ApiApplication on HYGK-PC with PID 16012 (F:\IdeaWorkspace\store\api\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-19 17:14:56 124 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-05-19 17:15:08 172 INFO ] [restartedMain] / - Started ApiApplication in 12.805 seconds (JVM running for 13.436)
+[2020-05-19 17:16:11 159 INFO ] [restartedMain] / - Starting ApiApplication on HYGK-PC with PID 8532 (F:\IdeaWorkspace\store\api\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-19 17:16:11 163 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-05-19 17:16:23 970 INFO ] [restartedMain] / - Started ApiApplication in 13.414 seconds (JVM running for 14.264)
+[2020-05-19 17:17:57 891 INFO ] [restartedMain] / - Starting ApiApplication on HYGK-PC with PID 11792 (F:\IdeaWorkspace\store\api\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-19 17:17:57 894 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-05-19 17:18:10 498 INFO ] [restartedMain] / - Started ApiApplication in 13.285 seconds (JVM running for 14.689)
+[2020-05-19 17:18:59 632 INFO ] [restartedMain] / - Starting ApiApplication on HYGK-PC with PID 17144 (F:\IdeaWorkspace\store\api\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-19 17:18:59 635 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-05-19 17:19:20 233 INFO ] [restartedMain] / - Started ApiApplication in 21.288 seconds (JVM running for 22.072)
+[2020-05-19 17:20:44 179 ERROR] [scheduling-1] / - 定时任务异常
