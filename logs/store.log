@@ -3788,3 +3788,8 @@ Caused by: java.lang.StackOverflowError: null
 [2020-05-20 16:00:59 623 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
 [2020-05-20 16:00:59 623 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
 [2020-05-20 16:00:59 629 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 5 ms
+[2020-05-20 16:03:27 218 INFO ] [restartedMain] / - Starting SecurityPermissionApplication on HYGK-PC with PID 14568 (F:\IdeaWorkspace\store\permission-security\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-20 16:03:27 220 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-05-20 16:03:38 568 WARN ] [restartedMain] / - Could not validate configuration attributes as the SecurityMetadataSource did not return any attributes from getAllConfigAttributes()
+[2020-05-20 16:03:40 731 INFO ] [restartedMain] / - Started SecurityPermissionApplication in 14.099 seconds (JVM running for 14.914)
+[2020-05-20 16:08:09 562 INFO ] [http-nio-8080-exec-1] / - Response success,message:²Ù×÷³É¹¦

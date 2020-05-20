@@ -23,6 +23,7 @@
         <module>permission-security</module>
         <module>api</module>
         <module>im</module>
+        <module>websocket</module>
     </modules>
 
     <properties>
