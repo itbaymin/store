@@ -8,17 +8,21 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api" />
         <module name="common" />
+        <module name="im" />
         <module name="permission-security" />
         <module name="permission-shiro" />
         <module name="permissionshiro" />
         <module name="persisent-jpa" />
         <module name="persisentjpa" />
         <module name="web" />
+        <module name="websocket" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api" target="1.8" />
       <module name="common" target="1.8" />
+      <module name="im" target="1.8" />
+      <module name="netty-websocket" target="1.8" />
       <module name="permission-security" target="1.8" />
       <module name="permission-shiro" target="1.8" />
       <module name="permissionshiro" target="1.8" />
@@ -26,6 +30,7 @@
       <module name="persisentjpa" target="1.8" />
       <module name="store" target="1.8" />
       <module name="web" target="1.8" />
+      <module name="websocket" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

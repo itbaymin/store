@@ -74,7 +74,7 @@ spring:
     password: byc123
     timeout: 3000ms
     database: 4
-    jedis:
+    lettuce:
       pool:
         minIdle: 5
         maxIdle: 10

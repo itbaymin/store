@@ -22,6 +22,7 @@
         <module>common</module>
         <module>permission-security</module>
         <module>api</module>
+        <module>im</module>
     </modules>
 
     <properties>
@@ -38,6 +39,7 @@
         <shiro-redis.version>3.2.3</shiro-redis.version>
         <shiro-thymeleaf.version>2.0.0</shiro-thymeleaf.version>
         <easyexcel.version>2.1.6</easyexcel.version>
+        <netty.version>4.1.50.Final</netty.version>
     </properties>
 
     <dependencyManagement>
@@ -109,6 +111,11 @@
                 <groupId>io.springfox</groupId>
                 <artifactId>springfox-swagger-ui</artifactId>
                 <version>${swagger-ui.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
