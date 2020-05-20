@@ -19,6 +19,7 @@ import io.netty.util.CharsetUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
@@ -30,13 +31,14 @@ import static io.netty.handler.codec.http.HttpUtil.isKeepAlive;
  * 2020/5/20/020 14:44
  * Description：
  */
+@Component
 public class WebsocketHandler  extends SimpleChannelInboundHandler<Object> {
 
     private final Logger logger= LoggerFactory.getLogger(this.getClass());
 
     private WebSocketServerHandshaker handshaker;
 
-    @Value("${websockt.address}")
+    @Value("${websocket.address}")
     private String address;
 
     @Override

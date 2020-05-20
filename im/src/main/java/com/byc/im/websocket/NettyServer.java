@@ -17,10 +17,10 @@ import javax.annotation.PostConstruct;
  * Description：启动类
  */
 @Component
-public class NettyServer implements Runnable {
+public class NettyServer extends Thread {
     private final Logger logger= LoggerFactory.getLogger(this.getClass());
 
-    @Value("${websockt.port}")
+    @Value("${websocket.port}")
     private int port;
 
     public void run(){
@@ -47,7 +47,7 @@ public class NettyServer implements Runnable {
     }
 
     @PostConstruct
-    public void start() {
-        new NettyServer().start();
+    public void startServer() {
+        this.start();
     }
 }
