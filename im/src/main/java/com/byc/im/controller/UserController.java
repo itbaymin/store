@@ -23,13 +23,13 @@ import java.util.Map;
 public class UserController {
     @RequestMapping("/")
     public String tologin(){
-        return "login";
+        return "v1/login";
     }
     @RequestMapping("/doLogin")
     public String doLogin(String name, Map<String,Object> paramMap)
     {
         paramMap.put("name",name);
-        return "chatPage";
+        return "v1/chatPage";
     }
     @RequestMapping("/getOnlineUser")
     @ResponseBody

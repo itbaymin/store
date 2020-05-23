@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>胡聊</title>
+	<link rel="stylesheet" href="http://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css">
+	<meta charset="utf-8">
+	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0" />
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <style type="text/css">
+    
+    /*从右往左切换动画*/
+    .rtol{
+      animation:rtolani 0.5s;
+      -webkit-animation:rtolani 0.5s; /* Safari and Chrome */
+    }
+    @keyframes rtolani
+    {
+      0%   {left:-100%; top:10%;}
+      100% {left:0; top:10%;}
+    }
+    @-webkit-keyframes rtolani /* Safari and Chrome */
+    {
+      0%   {left:100%; top:10%;}
+      100% {left:0; top:10%;}
+    }
+ 
+    /*从右往左切换动画 321返回时无效加的这个*/
+    .rrtol{
+      animation:rrtolani 0.5s;
+      -webkit-animation:rrtolani 0.5s; /* Safari and Chrome */
+    }
+    @keyframes rrtolani
+    {
+      0%   {left:-100%; top:10%;}
+      100% {left:0; top:10%;}
+    }
+    @-webkit-keyframes rrtolani /* Safari and Chrome */
+    {
+      0%   {left:100%; top:10%;}
+      100% {left:0; top:10%;}
+    }
+    
+ 
+    /*从左往右切换动画*/
+    .ltor{
+      animation:ltorani 0.5s;
+      -webkit-animation:ltorani 0.5s; /* Safari and Chrome */
+    }
+    @keyframes ltorani
+    {
+      0%   {left:100%; top:10%;}
+      100% {left:0; top:10%;}
+    }
+ 
+    @-webkit-keyframes ltorani /* Safari and Chrome */
+    {
+      0%   {left:100%; top:10%;}
+      100% {left:0; top:10%;}
+    }
+ 
+    /*控制点击产生阴影*/
+    .shadow:active{
+      background-color: #eeeeee !important;
+      border-radius: 5px;
+    }
+ 
+    /*控制点击产生阴影*/
+    .shadow{
+      background-color: #ffffff !important;
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+	<section class="ui-panel ui-panel-center ui-border-tb">
+		<h2 class="ui-arrowlink"><span>大郎</span><span class="ui-panel-title-tips"></span></h2>
+	</section>
+	<div class="board ui-border-t ui-border-radius" style="height:750px;margin-bottom:10px">
+	</div>
+	<div class="operate">
+		<section class="ui-input-wrap ui-border-t">
+			<div class="ui-input ui-border-radius">
+				<input type="text" name="" value="" placeholder="我也说一句...">
+			</div>
+			<button class="ui-btn">发送</button>
+		</section>
+	</div>
+</div>
+</body>
+</html>
+<script>
+	new Vue({
+  	el: '#app',
+  	data: {
+
+  	}
+})
+</script>
