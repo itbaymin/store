@@ -6,87 +6,197 @@
 	<meta charset="utf-8">
 	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0" />
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <style type="text/css">
-    
-    /*从右往左切换动画*/
-    .rtol{
-      animation:rtolani 0.5s;
-      -webkit-animation:rtolani 0.5s; /* Safari and Chrome */
-    }
-    @keyframes rtolani
-    {
-      0%   {left:-100%; top:10%;}
-      100% {left:0; top:10%;}
-    }
-    @-webkit-keyframes rtolani /* Safari and Chrome */
-    {
-      0%   {left:100%; top:10%;}
-      100% {left:0; top:10%;}
-    }
- 
-    /*从右往左切换动画 321返回时无效加的这个*/
-    .rrtol{
-      animation:rrtolani 0.5s;
-      -webkit-animation:rrtolani 0.5s; /* Safari and Chrome */
-    }
-    @keyframes rrtolani
-    {
-      0%   {left:-100%; top:10%;}
-      100% {left:0; top:10%;}
-    }
-    @-webkit-keyframes rrtolani /* Safari and Chrome */
-    {
-      0%   {left:100%; top:10%;}
-      100% {left:0; top:10%;}
-    }
-    
- 
-    /*从左往右切换动画*/
-    .ltor{
-      animation:ltorani 0.5s;
-      -webkit-animation:ltorani 0.5s; /* Safari and Chrome */
-    }
-    @keyframes ltorani
-    {
-      0%   {left:100%; top:10%;}
-      100% {left:0; top:10%;}
-    }
- 
-    @-webkit-keyframes ltorani /* Safari and Chrome */
-    {
-      0%   {left:100%; top:10%;}
-      100% {left:0; top:10%;}
-    }
- 
-    /*控制点击产生阴影*/
-    .shadow:active{
-      background-color: #eeeeee !important;
-      border-radius: 5px;
-    }
- 
-    /*控制点击产生阴影*/
-    .shadow{
-      background-color: #ffffff !important;
-    }
-  </style>
+	<style type="text/css">
+
+		/*从右往左切换动画*/
+		.rtol{
+			animation:rtolani 0.5s;
+			-webkit-animation:rtolani 0.5s; /* Safari and Chrome */
+		}
+		@keyframes rtolani
+		{
+			0%   {left:-100%; top:10%;}
+			100% {left:0; top:10%;}
+		}
+		@-webkit-keyframes rtolani /* Safari and Chrome */
+		{
+			0%   {left:100%; top:10%;}
+			100% {left:0; top:10%;}
+		}
+
+		/*从右往左切换动画 321返回时无效加的这个*/
+		.rrtol{
+			animation:rrtolani 0.5s;
+			-webkit-animation:rrtolani 0.5s; /* Safari and Chrome */
+		}
+		@keyframes rrtolani
+		{
+			0%   {left:-100%; top:10%;}
+			100% {left:0; top:10%;}
+		}
+		@-webkit-keyframes rrtolani /* Safari and Chrome */
+		{
+			0%   {left:100%; top:10%;}
+			100% {left:0; top:10%;}
+		}
+
+		.chattol{
+			animation:chattolani 0.5s;
+			-webkit-animation:chattolani 0.5s; /* Safari and Chrome */
+		}
+		@keyframes chattolani
+		{
+			0%   {left:-100%; top:0;}
+			100% {left:0; top:0;}
+		}
+		@-webkit-keyframes chattolani /* Safari and Chrome */
+		{
+			0%   {left:100%; top:0%;}
+			100% {left:0; top:0%;}
+		}
+
+		/*从左往右切换动画*/
+		.ltor{
+			animation:ltorani 0.5s;
+			-webkit-animation:ltorani 0.5s; /* Safari and Chrome */
+		}
+		@keyframes ltorani
+		{
+			0%   {left:100%; top:10%;}
+			100% {left:0; top:10%;}
+		}
+		@-webkit-keyframes ltorani /* Safari and Chrome */
+		{
+			0%   {left:100%; top:10%;}
+			100% {left:0; top:10%;}
+		}
+
+		/*聊天窗动画*/
+		.chatbt{
+			animation:ltorani 0.5s;
+			-webkit-animation:ltorani 0.5s; /* Safari and Chrome */
+		}
+		@keyframes chatbtani
+		{
+			100% {botton:0%;}
+		}
+		@-webkit-keyframes chatbtani /* Safari and Chrome */
+		{
+			100% {botton:0%;}
+		}
+
+		/*控制点击产生阴影*/
+		.shadow:active{
+			background-color: #eeeeee !important;
+			border-radius: 5px;
+		}
+
+		/*控制点击产生阴影*/
+		.shadow{
+			background-color: #ffffff !important;
+		}
+
+		.ui-border-radius:before{
+			border: none;
+		}
+
+		.recmsg{
+			position: relative;
+			background: #ddd;
+			padding: 8px;
+			border-radius: 3px;
+		}
+		.recmsg:before{
+			position: absolute;
+			content: "";
+			width: 0;
+			height: 0;
+			left: -14px;
+			border-top: 5px solid transparent;
+			border-right: 14px solid #ddd;
+			border-bottom: 7px solid transparent;
+		}
+		.senmsg{
+			position: relative;
+			background: #fff;
+			padding: 8px;
+			border-radius: 3px;
+		}
+		.senmsg:before{
+			position: absolute;
+			content: "";
+			width: 0;
+			height: 0;
+			right: -14px;
+			border-top: 5px solid transparent;
+			border-left: 14px solid #fff;
+			border-bottom: 7px solid transparent;
+		}
+	</style>
 </head>
 <body>
 <div id="app">
-	
+
 	<!-- 顶部tabbar -->
-	<div class="ui-tab">
-    	<ul class="ui-tab-nav ui-border-b" style="position:fixed;z-index: 1000;height: 10%;">
-        	<li :class="msglist" @click="msgbtnde"><span>消息列表</span></li><!-- current -->
-        	<li :class="myfri" @click="myfribtnde"><span>我的朋友</span></li>
-        	<li :class="mymore" @click="mymorbtnde"><span>我的扩展</span></li>
-    	</ul>
-    	<!-- 占位 -->
-    	
+	<div v-if="active!='chat'" class="ui-tab">
+		<ul class="ui-tab-nav ui-border-b" style="position:fixed;z-index: 1000;height: 10%;">
+			<li :class="active=='message'?'current':''" @click="msgbtnde"><span>消息列表</span></li><!-- current -->
+			<li :class="active=='friend'?'current':''" @click="myfribtnde"><span>我的朋友</span></li>
+		</ul>
+		<!-- 占位 -->
 	</div>
- 
- 
-	  <!-- 消息列表页 -->
-    <div v-if="msglist=='current'" style="position:absolute;top:10%;width: 100%" :class="anistyle">
+
+	<div v-if="active=='chat'" style="position:absolute;top:0;width: 100%" :class="anistyle">
+		<section class="ui-panel ui-panel-center ui-border-tb" style="margin-bottom:0">
+			<button style="border-radius:5px;
+			position:absolute;
+			border: 2px solid #bbb;
+			padding: 3px 8px;
+			z-index: 1000;
+			top: 20%;
+			left:2%" @click="msgbtnde">返回</button><h2><span>大郎</span></h2>
+		</section>
+		<div class="board ui-border-t ui-border-radius chatbt" id="gundong" style="height:750px;overflow-y:auto;overflow-x:hidden;margin-bottom:10px;">
+			<ul class="ui-list ui-list-function ui-border-tb" style="background-color:transparent;">
+				<li style="float:left;width:100%" v-for="item in items">
+					<!-- 条目头像用户名内容 -->
+					<div class="ui-avatar">
+						<span :style="item.imgsrc"></span>
+					</div>
+					<div class="ui-list-info">
+						<p><span class="recmsg">{{item.content}}</span></p>
+					</div>
+				</li>
+				<li style="float:right;width:100%" v-for="item in items">
+					<div class="ui-list-info" style="text-align:right;padding-right:5%;">
+						<p><span class="senmsg">{{item.content}}</span></p>
+					</div>
+					<div class="ui-avatar">
+					</div>
+				</li>
+				<li style="float:left;width:100%" v-for="item in items">
+					<!-- 条目头像用户名内容 -->
+					<div class="ui-avatar">
+						<span :style="item.imgsrc"></span>
+					</div>
+					<div class="ui-list-info">
+						<p><span class="recmsg">{{item.content}}</span></p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="operate">
+			<section class="ui-input-wrap ui-border-t">
+				<div class="ui-input ui-border-radius">
+					<input type="text" v-model="message" placeholder="我也说一句...">
+				</div>
+				<button class="ui-btn" @click="sendMsg">发送</button>
+			</section>
+		</div>
+	</div>
+
+	<!-- 消息列表页 -->
+	<div v-if="active=='message'" style="position:absolute;top:10%;width: 100%" :class="anistyle">
 		<!-- 搜索条 -->
 		<div  class="ui-searchbar-wrap ui-border-b">
 			<div class="ui-searchbar ui-border-radius">
@@ -97,12 +207,12 @@
 			</div>
 			<button class="ui-searchbar-cancel">取消</button>
 		</div>
-		
+
 		<!-- 条目容器 -->
 		<ul class="ui-list ui-list-function ui-border-tb">
-			
-			
-		<!-- 消息列表项 -->
+
+
+			<!-- 消息列表项 -->
 			<li class="shadow" v-for="item in items" @click="goToChat(item)">
 				<!-- 条目头像用户名内容 -->
 				<div class="ui-avatar">
@@ -128,86 +238,13 @@
 				left: 0;
 				">{{item.mesnum}}</div>
 			</li>
-		</ul>    	
-    </div>
- 
- 
-    <!-- 我的朋友页 -->
-    <div v-if="myfri=='current'" style="position:absolute;top:10%;width: 100%" :class="anistyle">    	
-  		<!-- 搜索条 -->
-      <div  class="ui-searchbar-wrap ui-border-b">
-			<div class="ui-searchbar ui-border-radius">
-				<i class="ui-icon-search"></i>
-				<div class="ui-searchbar-text">搜索号码（2-10位）</div>
-				<div class="ui-searchbar-input"><input value="" type="tel" placeholder="搜索号码（2-10位）" autocapitalize="off"></div>
-				<i class="ui-icon-close"></i>
-			</div>
-			<button class="ui-searchbar-cancel">取消</button>
-		</div>
-  		<!--两图区域 -->
-      <div class="ui-feeds">
-        <ul>
-          <li>
-            <span :style="TopImg[0].src" @click="topImgClicked(TopImg[0].link)"></span>
-          </li>
-          <li>
-            <span :style="TopImg[1].src" @click="topImgClicked(TopImg[1].link)"></span>
-          </li>
-        </ul>
-      </div>
-      <!-- 列表选项卡 -->
-      <div class="ui-tab ">
-        <ul class="ui-tab-nav ui-border-b ">
-          <li style="text-align: left;" :class="myfri_fri" @click="myfriFri"><span>朋友列表</span></li>
-          <li style="text-align: right;" :class="myfri_gro" @click="myfriGro"><span>群聊列表</span></li>
-        </ul>
-      </div>
-      <!-- 下部列表 -->
-      
-      <div v-if="myfri_fri=='current'"><!-- 朋友列表容器 -->
-        <ul class="ui-list ui-list-single ui-list-link ui-border-tb">
-          
-          <li class="ui-border-t" v-for="friitem in frilists" @click="goToChat(friitem)">
-            <!-- 字母序号区域if条件渲染 -->
-            <div class="ui-list-info" v-if="friitem.flag=='order'">
-              <h4 class="ui-nowrap" style="margin-left: 3%;color: #666666;">{{friitem.username}}</h4>
-              <div class="ui-txt-info"></div>
-            </div>
-          
-            <!-- 朋友项区域if条件渲染 -->
-            <div class="ui-avatar-s" v-if="friitem.flag=='user' && trygroupflag(friitem.groupflag)">
-              <span :style="friitem.imgsrc"></span>
-            </div>
-            <div class="ui-list-info ui-border-t shadow" v-if="friitem.flag=='user' && trygroupflag(friitem.groupflag)">
-              <h4 class="ui-nowrap">{{friitem.username}}</h4>
-            </div>
-          </li>
-          
-        </ul>
-      </div>
-      <div v-if="myfri_gro=='current'"><!-- 群聊列表容器 -->
-        <ul class="ui-list ui-list-single ui-list-link ui-border-tb">
-          
-          <li class="ui-border-t" v-for="groitem in grolists" @click="goToChat(groitem)">
-            <!-- 字母序号区域if条件渲染 -->
-            <!-- <div class="ui-list-info" v-if="groitem.flag=='order'">
-              <h4 class="ui-nowrap" style="margin-left: 3%;color: #666666;">{{groitem.username}}</h4>
-              <div class="ui-txt-info"></div>
-            </div> -->
-          
-            <!-- 群项区域if条件渲染 -->
-            <div class="ui-avatar-s" v-if="groitem.flag=='group'">
-              <span :style="groitem.imgsrc"></span>
-            </div>
-            <div class="ui-list-info ui-border-t shadow" v-if="groitem.flag=='group'">
-              <h4 class="ui-nowrap">{{groitem.username}}</h4>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  	<!-- 我的扩展页 -->
-    <div v-if="mymore=='current'" style="position:absolute;top:10%;width: 100%" :class="anistyle">    	
+		</ul>
+	</div>
+
+
+	<!-- 我的朋友页 -->
+	<div v-if="active=='friend'" style="position:absolute;top:10%;width: 100%" :class="anistyle">
+		<!-- 搜索条 -->
 		<div  class="ui-searchbar-wrap ui-border-b">
 			<div class="ui-searchbar ui-border-radius">
 				<i class="ui-icon-search"></i>
@@ -217,220 +254,237 @@
 			</div>
 			<button class="ui-searchbar-cancel">取消</button>
 		</div>
-	 </div>
+		<!--两图区域 -->
+		<div class="ui-feeds">
+			<ul>
+				<li>
+					<span :style="TopImg[0].src" @click="topImgClicked(TopImg[0].link)"></span>
+				</li>
+				<li>
+					<span :style="TopImg[1].src" @click="topImgClicked(TopImg[1].link)"></span>
+				</li>
+			</ul>
+		</div>
+		<!-- 列表选项卡 -->
+		<div class="ui-tab ">
+			<ul class="ui-tab-nav ui-border-b ">
+				<li style="text-align: left;" :class="sub_active=='friend'?'current':''" @click="myfriFri"><span>朋友列表</span></li>
+				<li style="text-align: right;" :class="sub_active=='group'?'current':''" @click="myfriGro"><span>群聊列表</span></li>
+			</ul>
+		</div>
+		<!-- 下部列表 -->
+		<div v-if="sub_active=='friend'"><!-- 朋友列表容器 -->
+			<ul class="ui-list ui-list-single ui-list-link ui-border-tb" v-for="friitem in friendgroups">
+				<li class="ui-border-t" @click="trigger(friitem.flag)">
+					<!-- 字母序号区域if条件渲染 -->
+					<div class="ui-list-info">
+						<h4 class="ui-nowrap" style="margin-left: 3%;color: #666666;">{{friitem.name}}</h4>
+						<div class="ui-txt-info"></div>
+					</div>
+				</li>
+				<li class="ui-border-t" v-for="item in friitem.friends" v-if="trygroupflag(friitem.flag)" @click="goToChat(item)">
+					<!-- 朋友项区域if条件渲染 -->
+					<div class="ui-avatar-s">
+						<span :style="item.imgsrc"></span>
+					</div>
+					<div class="ui-list-info ui-border-t shadow">
+						<h4 class="ui-nowrap">{{item.username}}</h4>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div v-if="sub_active=='group'"><!-- 群聊列表容器 -->
+			<ul class="ui-list ui-list-single ui-list-link ui-border-tb">
+
+				<li class="ui-border-t" v-for="groitem in grolists" @click="goToChat(groitem)">
+					<!-- 群项区域if条件渲染 -->
+					<div class="ui-avatar-s" v-if="groitem.flag=='group'">
+						<span :style="groitem.imgsrc"></span>
+					</div>
+					<div class="ui-list-info ui-border-t shadow" v-if="groitem.flag=='group'">
+						<h4 class="ui-nowrap">{{groitem.username}}</h4>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
 </div>
 </body>
 </html>
 <script>
-	new Vue({
-  	el: '#app',
-  	data: {
-      groupflag:'0',
-      myfri_fri:'current',//是否选中消息列表我的朋友中的朋友列表
-      myfri_gro:'',//是否选中消息列表我的朋友中的群聊列表
-      anistyle:'',//切换动画样式类
-      msglist:'current',//是否选中消息列表
-	  myfri:'',//是否选中消息列表我的朋友
-	  mymore:'',//是否选中消息列表我的扩展
-      msglistTop:0,//消息列表滚动值(距页面顶端高度)
-      myfriTop:0,//我的朋友滚动值(距页面顶端高度)
-      mymoreTop:0,//我的扩展滚动值(距页面顶端高度)
-  	  TopImg:[
-        {
-			src:"border-radius: 5%;background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555324144&di=430a23b81be40e36546a7a13f62d87a2&imgtype=jpg&er=1&src=http%3A%2F%2Fuploads.5068.com%2Fallimg%2F1802%2F78-1P209141R8.jpg)",
-			link:"http://www.fanze.online",
+    new Vue({
+        el: '#app',
+        data: {
+            message: '',
+            groupflag:'0',
+            anistyle:'',//切换动画样式类
+            active:'chat',
+            sub_active:'friend',
+            TopImg:[
+                {
+                    src:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
+                    link:"http://www.fanze.online",
+                },
+                {
+                    src:"border-radius: 5%;background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555324144&di=430a23b81be40e36546a7a13f62d87a2&imgtype=jpg&er=1&src=http%3A%2F%2Fuploads.5068.com%2Fallimg%2F1802%2F78-1P209141R8.jpg)",
+                    link:"http://fanze.online",
+                }
+            ],
+            friendgroups:[
+                {
+                    name: '分组1',
+                    flag: '1',
+                    friends:[{
+                        username: '开发者',
+                        imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
+                        uid:'00001'
+                    },{
+                        username: '张',
+                        imgsrc:"background-image:url(http://img2.imgtn.bdimg.com/it/u=2060761043,284284863&fm=26&gp=0.jpg)",
+                        uid:'00001'
+                    }]
+                },
+                {
+                    name: '分组2',
+                    flag: '2',
+                    friends:[{
+                        username: '张',
+                        imgsrc:"background-image:url(http://img2.imgtn.bdimg.com/it/u=2060761043,284284863&fm=26&gp=0.jpg)",
+                        uid:'00001'
+                    }]
+                }],
+            //群聊列表
+            grolists:[
+                {
+                    username: 'XX即时通讯官方群',
+                    imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
+                    uid:'00002',
+                    flag:'group'
+                }
+            ],
+            //消息列表
+            items:[
+                {
+                    username: '开发者',
+                    content:'晚上哪里吃?',
+                    imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
+                    uid:'00001',
+                    time:'晚上20:07',
+                    mesnum:10
+                },
+                {
+                    username: '年华',
+                    content:'移动端怎么样了?',
+                    imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)",
+                    uid:'00003',
+                    time:'晚上20:30',
+                    mesnum:0
+                },
+                {
+                    username: '年华',
+                    content:'移动端怎么样了?',
+                    imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)",
+                    uid:'00003',
+                    time:'晚上20:30',
+                    mesnum:0
+                },
+                {
+                    username: '年华',
+                    content:'移动端怎么样了?',
+                    imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)",
+                    uid:'00003',
+                    time:'晚上20:30',
+                    mesnum:0
+                },
+                {
+                    username: '年华',
+                    content:'移动端怎么样了?',
+                    imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)",
+                    uid:'00003',
+                    time:'晚上20:30',
+                    mesnum:0
+                },
+                {
+                    username: '年华',
+                    content:'移动端怎么样了?',
+                    imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)",
+                    uid:'00003',
+                    time:'晚上20:30',
+                    mesnum:0
+                }
+            ]
         },
-        {
-			src:"border-radius: 5%;background-image:url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1555324144&di=430a23b81be40e36546a7a13f62d87a2&imgtype=jpg&er=1&src=http%3A%2F%2Fuploads.5068.com%2Fallimg%2F1802%2F78-1P209141R8.jpg)",
-			link:"http://fanze.online",
+        methods: {
+            trygroupflag:function(groupflag){
+                if(this.groupflag.search(groupflag)!=-1)
+                    return true;
+                else
+                    return false;
+            },
+            //tabbar消息列表被点击
+            msgbtnde: function() {
+                if(!(this.active=='message'))
+                    this.anistyle='rrtol';
+                this.active='message';
+                document.documentElement.scrollTop=0;
+                document.body.scrollTop=0;
+            },
+            //tabbar我的朋友被点击
+            myfribtnde: function() {
+                //判断切换前页
+                if(!(this.active=='friend'))
+                    this.anistyle='ltor';
+                this.active='friend';
+                document.documentElement.scrollTop=0;
+                document.body.scrollTop=0;
+            },
+            //我的朋友页中的朋友列表被点击
+            myfriFri:function() {
+                this.sub_active = 'friend';
+            },
+            //我的朋友页中的群聊列表被点击
+            myfriGro:function() {
+                this.sub_active = 'group';
+            },
+            //下面是指向安卓的方法
+            //消息列表朋友列表(朋友&群聊)条目被点击跳转到聊天窗口--传入后由java解析
+            goToChat:function(item) {
+                this.gochat(JSON.stringify(item));
+            },
+            trigger:function(flag) {
+                //处理分组展开逻辑
+                if(this.groupflag.search(flag)!=-1){
+                    this.groupflag=this.groupflag.replace(flag,'');
+                }else if(this.groupflag.search(flag)==-1){
+                    this.groupflag += flag;
+                }
+            },
+            //搜索框被点击
+            goToSearch:function(searchfalg) {
+                //android.gosearch(searchfalg);
+            },
+            //我的朋友页顶部图片被点击
+            topImgClicked:function(link) {
+                //android.gosearch(link);
+            },
+            gochat:function(){
+                this.active='chat';
+                this.anistyle='chattol';
+            },
+            sendMsg:function(){
+                this.items.push({
+                    username: '年华',
+                    content: this.message,
+                    imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)",
+                    uid:'00003',
+                    time:'晚上20:30',
+                    mesnum:0
+                });
+                this.$nextTick(function() {
+                    let msg = document.getElementById('gundong') // 获取对象
+                    msg.scrollTop = msg.scrollHeight // 滚动高度
+                });
+            }
         }
-      ],
-      //朋友列表
-      frilists:[
-        {
-			username: '分组1',
-			imgsrc:"",
-			uid:'',
-			flag:'order',
-			groupflag:'1'
-        },
-        {
-			username: '开发者',
-			imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
-			uid:'00001',
-			flag:'user',
-			groupflag:'1'
-        },
-        {
-			username: '小张',
-			imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
-			uid:'00002',
-			flag:'user',
-			groupflag:'1'
-        },
-        {
-			username: '咪咪',
-			imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
-			uid:'00003',
-			flag:'user',
-			groupflag:'1'
-        },
-        {
-			username: '分组2',
-			imgsrc:"",
-			uid:'',
-			flag:'order',
-			groupflag:'2'
-        },
-        {
-			username: '张',
-			imgsrc:"background-image:url(http://img2.imgtn.bdimg.com/it/u=2060761043,284284863&fm=26&gp=0.jpg)",
-			uid:'00001',
-			flag:'user',
-			groupflag:'2'
-        },
-        {
-			username: '赵',
-			imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
-			uid:'00001',
-			flag:'user',
-			groupflag:'2'
-        }
-      ],
-      //群聊列表
-      grolists:[
-        {
-			username: 'XX即时通讯官方群',
-			imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
-			uid:'00002',
-			flag:'group'
-        }
-      ],
-      //消息列表
-      items:[
-  			{
-				username: '开发者',
-				content:'晚上哪里吃?',
-				imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
-				uid:'00001',
-				time:'晚上20:07',
-				mesnum:0
-  			},
-  			{
-				username: '年华',
-				content:'移动端怎么样了?',
-				imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)",
-				uid:'00003',
-				time:'晚上20:30',
-				mesnum:0
-  			},
-  			{
-				username: '哥哥',
-				content:'在',
-				imgsrc:"background-image:url(http://placeholder.qiniudn.com/100x100)",
-				uid:'00004',
-				time:'晚上21:47',
-				mesnum:10
-  			},
-  			{
-				username: '开发者',
-				content:'晚上哪里吃?',
-				imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
-				uid:'00001',
-				time:'晚上21:47',
-				mesnum:0
-  			},
-  			{
-				username: '小美',
-				content:'你的衣服好漂亮啊!',
-				imgsrc:"background-image:url(http://img2.imgtn.bdimg.com/it/u=2060761043,284284863&fm=26&gp=0.jpg)",
-				uid:'00002',
-				time:'晚上21:47',
-				mesnum:0
-  			},
-  			{
-				username: '年华',
-				content:'移动端怎么样了?',
-				imgsrc:"background-image:url(http://placeholder.qiniudn.com/100x100)",
-				uid:'00003',
-				time:'晚上21:47',
-				mesnum:0
-  			}
-  		] 
-  	},
-  	methods: {
-     	trygroupflag:function(groupflag){
- 
-     		if(this.groupflag.search(groupflag)!=-1)
-     			return true;
-     		else
-     			return false;
-     	},
-     	//tabbar消息列表被点击
-     	msgbtnde: function() {
-        if(!(this.msglist=='current'))
-			this.anistyle='rrtol';
-	    this.msglist='current';
-	    this.myfri='null';
-	    this.mymore='null';
-        document.documentElement.scrollTop=0;
-        document.body.scrollTop=0;
-     	},
-     	//tabbar我的朋友被点击
-     	myfribtnde: function() {
-        //判断切换前页
-        if(this.msglist=='current')
-          this.anistyle='ltor';
-        if(this.mymore=='current')
-          this.anistyle='rtol';
-        
-        this.msglist='null';
-			  this.myfri='current';
-			  this.mymore='null';
-        document.documentElement.scrollTop=0;
-        document.body.scrollTop=0;
-     	},
-     	//tabbar我的扩展被点击
-     	mymorbtnde: function() {
-        this.msglist='null';
-			  this.myfri='null';
-			  this.mymore='current';
-        this.anistyle='ltor';
-        document.documentElement.scrollTop=0;
-        document.body.scrollTop=0;
-     	},
-      //我的朋友页中的朋友列表被点击
-      myfriFri:function() {
-        this.myfri_fri='current';
-        this.myfri_gro='';
-      },
-      //我的朋友页中的群聊列表被点击
-      myfriGro:function() {
-        this.myfri_fri='';
-        this.myfri_gro='current';
-      },
-      ////下面是指向安卓的方法
-      //消息列表朋友列表(朋友&群聊)条目被点击跳转到聊天窗口--传入后由java解析
-      goToChat:function(item) {
-      	//处理分组展开逻辑
-        if(item.flag=='order') {
-        	if(this.groupflag.search(item.groupflag)!=-1){
-        		this.groupflag=this.groupflag.replace(item.groupflag,'');
-        	}else if(this.groupflag.search(item.groupflag)==-1){
-        		this.groupflag += item.groupflag;
-        	}
-        }//else         
-        	//android.gochat(JSON.stringify(item));
-      },
-      //搜索框被点击
-      goToSearch:function(searchfalg) {
-        //android.gosearch(searchfalg);
-      },
-      //我的朋友页顶部图片被点击
-      topImgClicked:function(link) {
-        console.log(link);
-        //android.gosearch(link);
-      },
-  	}
-})
+    })
 </script>
