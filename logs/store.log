@@ -1,255 +1,94 @@
-[2020-05-23 10:03:07 467 INFO ] [restartedMain] / - Starting IMApplication on HYGK-PC with PID 7548 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
-[2020-05-23 10:03:07 472 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
-[2020-05-23 10:03:07 551 INFO ] [restartedMain] / - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[2020-05-23 10:03:07 552 INFO ] [restartedMain] / - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-[2020-05-23 10:03:10 398 INFO ] [restartedMain] / - Tomcat initialized with port(s): 8081 (http)
-[2020-05-23 10:03:10 415 INFO ] [restartedMain] / - Initializing ProtocolHandler ["http-nio-8081"]
-[2020-05-23 10:03:10 425 INFO ] [restartedMain] / - Starting service [Tomcat]
-[2020-05-23 10:03:10 426 INFO ] [restartedMain] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
-[2020-05-23 10:03:10 436 INFO ] [restartedMain] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
-[2020-05-23 10:03:10 437 INFO ] [restartedMain] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
-[2020-05-23 10:03:10 437 INFO ] [restartedMain] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-[2020-05-23 10:03:10 437 INFO ] [restartedMain] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-[2020-05-23 10:03:11 562 INFO ] [restartedMain] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
-[2020-05-23 10:03:11 716 INFO ] [restartedMain] / - Initializing Spring embedded WebApplicationContext
-[2020-05-23 10:03:11 716 INFO ] [restartedMain] / - Root WebApplicationContext: initialization completed in 4164 ms
-[2020-05-23 10:03:11 837 INFO ] [Thread-5] / - 正在启动websocket服务器
-[2020-05-23 10:03:12 591 INFO ] [restartedMain] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-[2020-05-23 10:03:12 725 INFO ] [Thread-5] / - webSocket服务器启动成功：[id: 0xe99c462f, L:/0:0:0:0:0:0:0:0:1234]
-[2020-05-23 10:03:12 726 INFO ] [Thread-5] / - webSocket服务器启动成功：1234
-[2020-05-23 10:03:12 791 INFO ] [restartedMain] / - Initializing ExecutorService 'applicationTaskExecutor'
-[2020-05-23 10:03:12 821 INFO ] [restartedMain] / - LiveReload server is running on port 35729
-[2020-05-23 10:03:12 982 INFO ] [restartedMain] / - Adding welcome page template: index
-[2020-05-23 10:03:13 120 INFO ] [restartedMain] / - Context refreshed
-[2020-05-23 10:03:13 166 INFO ] [restartedMain] / - Found 1 custom documentation plugin(s)
-[2020-05-23 10:03:13 216 INFO ] [restartedMain] / - Scanning for api listing references
-[2020-05-23 10:03:13 747 INFO ] [restartedMain] / - Starting ProtocolHandler ["http-nio-8081"]
-[2020-05-23 10:03:13 762 INFO ] [restartedMain] / - Tomcat started on port(s): 8081 (http) with context path ''
-[2020-05-23 10:03:13 764 INFO ] [restartedMain] / - Started IMApplication in 7.279 seconds (JVM running for 8.443)
-[2020-05-23 10:03:28 033 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2020-05-23 10:03:28 033 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
-[2020-05-23 10:03:28 039 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 6 ms
-[2020-05-23 10:33:36 345 INFO ] [restartedMain] / - Starting IMApplication on HYGK-PC with PID 13240 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
-[2020-05-23 10:33:36 347 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
-[2020-05-23 10:33:36 392 INFO ] [restartedMain] / - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[2020-05-23 10:33:36 392 INFO ] [restartedMain] / - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-[2020-05-23 10:33:38 961 INFO ] [restartedMain] / - Tomcat initialized with port(s): 8081 (http)
-[2020-05-23 10:33:38 978 INFO ] [restartedMain] / - Initializing ProtocolHandler ["http-nio-8081"]
-[2020-05-23 10:33:38 991 INFO ] [restartedMain] / - Starting service [Tomcat]
-[2020-05-23 10:33:38 991 INFO ] [restartedMain] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
-[2020-05-23 10:33:39 007 INFO ] [restartedMain] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
-[2020-05-23 10:33:39 007 INFO ] [restartedMain] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
-[2020-05-23 10:33:39 007 INFO ] [restartedMain] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-[2020-05-23 10:33:39 007 INFO ] [restartedMain] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-[2020-05-23 10:33:40 110 INFO ] [restartedMain] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
-[2020-05-23 10:33:40 290 INFO ] [restartedMain] / - Initializing Spring embedded WebApplicationContext
-[2020-05-23 10:33:40 290 INFO ] [restartedMain] / - Root WebApplicationContext: initialization completed in 3898 ms
-[2020-05-23 10:33:40 541 INFO ] [Thread-5] / - 正在启动websocket服务器
-[2020-05-23 10:33:40 879 INFO ] [Thread-5] / - webSocket服务器启动成功：[id: 0xb94acf81, L:/0:0:0:0:0:0:0:0:1234]
-[2020-05-23 10:33:40 879 INFO ] [Thread-5] / - webSocket服务器启动成功：1234
-[2020-05-23 10:33:40 994 INFO ] [restartedMain] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-[2020-05-23 10:33:41 164 INFO ] [restartedMain] / - Initializing ExecutorService 'applicationTaskExecutor'
-[2020-05-23 10:33:41 189 INFO ] [restartedMain] / - LiveReload server is running on port 35729
-[2020-05-23 10:33:41 454 INFO ] [restartedMain] / - Context refreshed
-[2020-05-23 10:33:41 486 INFO ] [restartedMain] / - Found 1 custom documentation plugin(s)
-[2020-05-23 10:33:41 513 INFO ] [restartedMain] / - Scanning for api listing references
-[2020-05-23 10:33:41 748 INFO ] [restartedMain] / - Starting ProtocolHandler ["http-nio-8081"]
-[2020-05-23 10:33:41 764 INFO ] [restartedMain] / - Tomcat started on port(s): 8081 (http) with context path ''
-[2020-05-23 10:33:41 767 INFO ] [restartedMain] / - Started IMApplication in 5.785 seconds (JVM running for 6.558)
-[2020-05-23 10:33:43 075 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2020-05-23 10:33:43 075 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
-[2020-05-23 10:33:43 080 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 5 ms
-[2020-05-23 10:33:43 257 ERROR] [http-nio-8081-exec-1] / - [THYMELEAF][http-nio-8081-exec-1] Exception processing template "login": Error resolving template [login], template might not exist or might not be accessible by any of the configured Template Resolvers
-org.thymeleaf.exceptions.TemplateInputException: Error resolving template [login], template might not exist or might not be accessible by any of the configured Template Resolvers
-	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1371)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1117)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-[2020-05-23 10:33:43 261 ERROR] [http-nio-8081-exec-1] / - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [login], template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
-org.thymeleaf.exceptions.TemplateInputException: Error resolving template [login], template might not exist or might not be accessible by any of the configured Template Resolvers
-	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
-	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
-	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
-	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
-	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
-	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1371)
-	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1117)
-	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1056)
-	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
-	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
-	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:897)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
-	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
-	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:836)
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1747)
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
-	at java.lang.Thread.run(Thread.java:748)
-[2020-05-23 10:34:20 363 INFO ] [Thread-6] / - Shutting down ExecutorService 'applicationTaskExecutor'
-[2020-05-23 10:34:20 712 INFO ] [restartedMain] / - Starting IMApplication on HYGK-PC with PID 13240 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
-[2020-05-23 10:34:20 712 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
-[2020-05-23 10:34:21 315 INFO ] [restartedMain] / - Tomcat initialized with port(s): 8081 (http)
-[2020-05-23 10:34:21 316 INFO ] [restartedMain] / - Initializing ProtocolHandler ["http-nio-8081"]
-[2020-05-23 10:34:21 317 INFO ] [restartedMain] / - Starting service [Tomcat]
-[2020-05-23 10:34:21 317 INFO ] [restartedMain] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
-[2020-05-23 10:34:21 317 INFO ] [restartedMain] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
-[2020-05-23 10:34:21 317 INFO ] [restartedMain] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
-[2020-05-23 10:34:21 317 INFO ] [restartedMain] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-[2020-05-23 10:34:21 317 INFO ] [restartedMain] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-[2020-05-23 10:34:21 317 INFO ] [restartedMain] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
-[2020-05-23 10:34:21 347 INFO ] [restartedMain] / - Initializing Spring embedded WebApplicationContext
-[2020-05-23 10:34:21 348 INFO ] [restartedMain] / - Root WebApplicationContext: initialization completed in 633 ms
-[2020-05-23 10:34:21 365 INFO ] [Thread-14] / - 正在启动websocket服务器
-[2020-05-23 10:34:21 387 INFO ] [Thread-14] / - websocket服务器已关闭
-[2020-05-23 10:34:21 500 INFO ] [restartedMain] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-[2020-05-23 10:34:21 545 INFO ] [restartedMain] / - Initializing ExecutorService 'applicationTaskExecutor'
-[2020-05-23 10:34:21 550 INFO ] [restartedMain] / - LiveReload server is running on port 35729
-[2020-05-23 10:34:21 616 INFO ] [restartedMain] / - Context refreshed
-[2020-05-23 10:34:21 617 INFO ] [restartedMain] / - Found 1 custom documentation plugin(s)
-[2020-05-23 10:34:21 621 INFO ] [restartedMain] / - Scanning for api listing references
-[2020-05-23 10:34:21 704 INFO ] [restartedMain] / - Starting ProtocolHandler ["http-nio-8081"]
-[2020-05-23 10:34:21 707 INFO ] [restartedMain] / - Tomcat started on port(s): 8081 (http) with context path ''
-[2020-05-23 10:34:21 708 INFO ] [restartedMain] / - Started IMApplication in 1.027 seconds (JVM running for 46.495)
-[2020-05-23 10:34:21 710 INFO ] [restartedMain] / - Condition evaluation unchanged
-[2020-05-23 10:34:29 488 INFO ] [restartedMain] / - Starting IMApplication on HYGK-PC with PID 4444 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
-[2020-05-23 10:34:29 490 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
-[2020-05-23 10:34:29 540 INFO ] [restartedMain] / - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[2020-05-23 10:34:29 540 INFO ] [restartedMain] / - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-[2020-05-23 10:34:31 716 INFO ] [restartedMain] / - Tomcat initialized with port(s): 8081 (http)
-[2020-05-23 10:34:31 737 INFO ] [restartedMain] / - Initializing ProtocolHandler ["http-nio-8081"]
-[2020-05-23 10:34:31 749 INFO ] [restartedMain] / - Starting service [Tomcat]
-[2020-05-23 10:34:31 750 INFO ] [restartedMain] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
-[2020-05-23 10:34:31 766 INFO ] [restartedMain] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
-[2020-05-23 10:34:31 766 INFO ] [restartedMain] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
-[2020-05-23 10:34:31 766 INFO ] [restartedMain] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-[2020-05-23 10:34:31 766 INFO ] [restartedMain] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-[2020-05-23 10:34:32 855 INFO ] [restartedMain] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
-[2020-05-23 10:34:32 969 INFO ] [restartedMain] / - Initializing Spring embedded WebApplicationContext
-[2020-05-23 10:34:32 969 INFO ] [restartedMain] / - Root WebApplicationContext: initialization completed in 3429 ms
-[2020-05-23 10:34:33 074 INFO ] [Thread-5] / - 正在启动websocket服务器
-[2020-05-23 10:34:33 386 INFO ] [Thread-5] / - webSocket服务器启动成功：[id: 0x2be9d21d, L:/0:0:0:0:0:0:0:0:1234]
-[2020-05-23 10:34:33 386 INFO ] [Thread-5] / - webSocket服务器启动成功：1234
-[2020-05-23 10:34:33 518 INFO ] [restartedMain] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-[2020-05-23 10:34:33 647 INFO ] [restartedMain] / - Initializing ExecutorService 'applicationTaskExecutor'
-[2020-05-23 10:34:33 667 INFO ] [restartedMain] / - LiveReload server is running on port 35729
-[2020-05-23 10:34:33 894 INFO ] [restartedMain] / - Context refreshed
-[2020-05-23 10:34:33 918 INFO ] [restartedMain] / - Found 1 custom documentation plugin(s)
-[2020-05-23 10:34:33 943 INFO ] [restartedMain] / - Scanning for api listing references
-[2020-05-23 10:34:34 222 INFO ] [restartedMain] / - Starting ProtocolHandler ["http-nio-8081"]
-[2020-05-23 10:34:34 240 INFO ] [restartedMain] / - Tomcat started on port(s): 8081 (http) with context path ''
-[2020-05-23 10:34:34 243 INFO ] [restartedMain] / - Started IMApplication in 5.129 seconds (JVM running for 5.832)
-[2020-05-23 10:35:27 063 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2020-05-23 10:35:27 063 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
-[2020-05-23 10:35:27 070 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 7 ms
-[2020-05-23 10:36:30 886 INFO ] [restartedMain] / - Starting IMApplication on HYGK-PC with PID 7384 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
-[2020-05-23 10:36:30 889 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
-[2020-05-23 10:36:31 050 INFO ] [restartedMain] / - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-[2020-05-23 10:36:31 050 INFO ] [restartedMain] / - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-[2020-05-23 10:36:33 539 INFO ] [restartedMain] / - Tomcat initialized with port(s): 8081 (http)
-[2020-05-23 10:36:33 557 INFO ] [restartedMain] / - Initializing ProtocolHandler ["http-nio-8081"]
-[2020-05-23 10:36:33 571 INFO ] [restartedMain] / - Starting service [Tomcat]
-[2020-05-23 10:36:33 571 INFO ] [restartedMain] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
-[2020-05-23 10:36:33 585 INFO ] [restartedMain] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
-[2020-05-23 10:36:33 585 INFO ] [restartedMain] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
-[2020-05-23 10:36:33 585 INFO ] [restartedMain] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-[2020-05-23 10:36:33 585 INFO ] [restartedMain] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-[2020-05-23 10:36:34 666 INFO ] [restartedMain] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
-[2020-05-23 10:36:34 777 INFO ] [restartedMain] / - Initializing Spring embedded WebApplicationContext
-[2020-05-23 10:36:34 777 INFO ] [restartedMain] / - Root WebApplicationContext: initialization completed in 3727 ms
-[2020-05-23 10:36:34 912 INFO ] [Thread-5] / - 正在启动websocket服务器
-[2020-05-23 10:36:35 334 INFO ] [Thread-5] / - webSocket服务器启动成功：[id: 0x14d333d3, L:/0:0:0:0:0:0:0:0:1234]
-[2020-05-23 10:36:35 334 INFO ] [Thread-5] / - webSocket服务器启动成功：1234
-[2020-05-23 10:36:35 426 INFO ] [restartedMain] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
-[2020-05-23 10:36:35 648 INFO ] [restartedMain] / - Initializing ExecutorService 'applicationTaskExecutor'
-[2020-05-23 10:36:35 710 INFO ] [restartedMain] / - LiveReload server is running on port 35729
-[2020-05-23 10:36:36 161 INFO ] [restartedMain] / - Context refreshed
-[2020-05-23 10:36:36 210 INFO ] [restartedMain] / - Found 1 custom documentation plugin(s)
-[2020-05-23 10:36:36 255 INFO ] [restartedMain] / - Scanning for api listing references
-[2020-05-23 10:36:36 565 INFO ] [restartedMain] / - Starting ProtocolHandler ["http-nio-8081"]
-[2020-05-23 10:36:36 583 INFO ] [restartedMain] / - Tomcat started on port(s): 8081 (http) with context path ''
-[2020-05-23 10:36:36 586 INFO ] [restartedMain] / - Started IMApplication in 6.543 seconds (JVM running for 7.237)
-[2020-05-23 10:36:48 531 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2020-05-23 10:36:48 532 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
-[2020-05-23 10:36:48 539 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 7 ms
+[2020-05-25 19:22:42 664 ERROR] [restartedMain] / - Application run failed
+java.lang.IllegalStateException: Failed to load property source from location 'classpath:/application.yml'
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.load(ConfigFileApplicationListener.java:556)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.loadForFileExtension(ConfigFileApplicationListener.java:502)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.load(ConfigFileApplicationListener.java:469)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.lambda$null$6(ConfigFileApplicationListener.java:450)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.lambda$load$7(ConfigFileApplicationListener.java:449)
+	at java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.load(ConfigFileApplicationListener.java:446)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.load(ConfigFileApplicationListener.java:334)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.addPropertySources(ConfigFileApplicationListener.java:209)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.postProcessEnvironment(ConfigFileApplicationListener.java:192)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.onApplicationEnvironmentPreparedEvent(ConfigFileApplicationListener.java:179)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener.onApplicationEvent(ConfigFileApplicationListener.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:54)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:347)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.byc.im.IMApplication.main(IMApplication.java:14)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.yaml.snakeyaml.parser.ParserException: while parsing a block mapping
+ in 'reader', line 4, column 3:
+      swagger:
+      ^
+expected <block end>, but found '<block mapping start>'
+ in 'reader', line 8, column 4:
+       data:
+       ^
+
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseBlockMappingKey.produce(ParserImpl.java:572)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:158)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:148)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:214)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.composeValueNode(Composer.java:236)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingChildren(Composer.java:227)
+	at org.yaml.snakeyaml.composer.Composer.composeMappingNode(Composer.java:215)
+	at org.yaml.snakeyaml.composer.Composer.composeNode(Composer.java:144)
+	at org.yaml.snakeyaml.composer.Composer.getNode(Composer.java:85)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getData(BaseConstructor.java:123)
+	at org.yaml.snakeyaml.Yaml$1.next(Yaml.java:547)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:160)
+	at org.springframework.beans.factory.config.YamlProcessor.process(YamlProcessor.java:134)
+	at org.springframework.boot.env.OriginTrackedYamlLoader.load(OriginTrackedYamlLoader.java:75)
+	at org.springframework.boot.env.YamlPropertySourceLoader.load(YamlPropertySourceLoader.java:50)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.loadDocuments(ConfigFileApplicationListener.java:574)
+	at org.springframework.boot.context.config.ConfigFileApplicationListener$Loader.load(ConfigFileApplicationListener.java:528)
+	... 28 common frames omitted
+[2020-05-25 19:23:20 013 INFO ] [restartedMain] / - Starting IMApplication on HYGK-PC with PID 10504 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-25 19:23:20 015 INFO ] [restartedMain] / - No active profile set, falling back to default profiles: default
+[2020-05-25 19:23:20 181 INFO ] [restartedMain] / - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[2020-05-25 19:23:20 181 INFO ] [restartedMain] / - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[2020-05-25 19:23:21 396 INFO ] [restartedMain] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-05-25 19:23:21 423 INFO ] [restartedMain] / - Finished Spring Data repository scanning in 12ms. Found 0 repository interfaces.
+[2020-05-25 19:23:22 251 INFO ] [restartedMain] / - Tomcat initialized with port(s): 8081 (http)
+[2020-05-25 19:23:22 268 INFO ] [restartedMain] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-05-25 19:23:22 279 INFO ] [restartedMain] / - Starting service [Tomcat]
+[2020-05-25 19:23:22 279 INFO ] [restartedMain] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-05-25 19:23:22 336 INFO ] [restartedMain] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-05-25 19:23:22 336 INFO ] [restartedMain] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-05-25 19:23:22 337 INFO ] [restartedMain] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-05-25 19:23:22 337 INFO ] [restartedMain] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-05-25 19:23:23 427 INFO ] [restartedMain] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-05-25 19:23:23 571 INFO ] [restartedMain] / - Initializing Spring embedded WebApplicationContext
+[2020-05-25 19:23:23 571 INFO ] [restartedMain] / - Root WebApplicationContext: initialization completed in 3390 ms
+[2020-05-25 19:23:23 654 INFO ] [Thread-5] / - 正在启动websocket服务器
+[2020-05-25 19:23:24 017 INFO ] [Thread-5] / - webSocket服务器启动成功：[id: 0x10caaed4, L:/0:0:0:0:0:0:0:0:1234]
+[2020-05-25 19:23:24 017 INFO ] [Thread-5] / - webSocket服务器启动成功：1234
+[2020-05-25 19:23:24 457 INFO ] [restartedMain] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-05-25 19:23:24 697 INFO ] [restartedMain] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-05-25 19:23:24 746 INFO ] [cluster-ClusterId{value='5ecbaaace9ea6b290888eb08', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:4}] to 47.105.209.57:27017
+[2020-05-25 19:23:24 825 INFO ] [cluster-ClusterId{value='5ecbaaace9ea6b290888eb08', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=77850160}
+[2020-05-25 19:23:24 883 INFO ] [restartedMain] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-05-25 19:23:24 912 INFO ] [restartedMain] / - LiveReload server is running on port 35729
+[2020-05-25 19:23:25 216 INFO ] [restartedMain] / - Context refreshed
+[2020-05-25 19:23:25 245 INFO ] [restartedMain] / - Found 1 custom documentation plugin(s)
+[2020-05-25 19:23:25 271 INFO ] [restartedMain] / - Scanning for api listing references
+[2020-05-25 19:23:25 495 INFO ] [restartedMain] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-05-25 19:23:25 515 INFO ] [restartedMain] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-05-25 19:23:25 517 INFO ] [restartedMain] / - Started IMApplication in 5.934 seconds (JVM running for 6.461)
+[2020-05-25 19:23:36 685 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-05-25 19:23:36 685 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-05-25 19:23:36 698 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 13 ms

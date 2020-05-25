@@ -5,6 +5,9 @@ spring:
     enable: true
   thymeleaf:
     cache: false
+  data:
+    mongodb:
+      uri: mongodb://im:byc123@47.105.209.57:27017/im
 websocket:
   port: 1234
   address: ws://localhost:${websocket.port}/websocket

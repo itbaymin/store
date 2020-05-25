@@ -16,8 +16,7 @@ import io.netty.handler.codec.http.HttpResponseStatus;
 import io.netty.handler.codec.http.HttpVersion;
 import io.netty.handler.codec.http.websocketx.*;
 import io.netty.util.CharsetUtil;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -31,10 +30,9 @@ import static io.netty.handler.codec.http.HttpUtil.isKeepAlive;
  * 2020/5/20/020 14:44
  * Description：
  */
+@Slf4j
 @Component
 public class WebsocketHandler  extends SimpleChannelInboundHandler<Object> {
-
-    private final Logger logger= LoggerFactory.getLogger(this.getClass());
 
     private WebSocketServerHandshaker handshaker;
 
@@ -43,7 +41,7 @@ public class WebsocketHandler  extends SimpleChannelInboundHandler<Object> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
-        logger.debug("收到消息："+msg);
+        log.debug("收到消息："+msg);
         if (msg instanceof FullHttpRequest){
             //以http请求形式接入，但是走的是websocket
             handleHttpRequest(ctx, (FullHttpRequest) msg);
@@ -56,14 +54,14 @@ public class WebsocketHandler  extends SimpleChannelInboundHandler<Object> {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         //添加连接
-        logger.debug("客户端加入连接："+ctx.channel());
+        log.debug("客户端加入连接："+ctx.channel());
 
     }
 
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         //断开连接
-        logger.debug("客户端断开连接："+ctx.channel());
+        log.debug("客户端断开连接："+ctx.channel());
         SocketChannelGroup.removeChannel(ctx.channel());
         UserGroup.removeUser(ctx.channel());
     }
@@ -86,13 +84,13 @@ public class WebsocketHandler  extends SimpleChannelInboundHandler<Object> {
         }
         // 本例程仅支持文本消息，不支持二进制消息
         if (!(frame instanceof TextWebSocketFrame)) {
-            logger.debug("本例程仅支持文本消息，不支持二进制消息");
+            log.debug("本例程仅支持文本消息，不支持二进制消息");
             throw new UnsupportedOperationException(String.format(
                     "%s frame types not supported", frame.getClass().getName()));
         }
         // 返回应答消息
         String request = ((TextWebSocketFrame) frame).text();
-        logger.debug("服务端收到：" + request);
+        log.debug("服务端收到：" + request);
         //消息分发
         WebSocketDispatcher(ctx,(TextWebSocketFrame)frame);
     }
@@ -114,7 +112,7 @@ public class WebsocketHandler  extends SimpleChannelInboundHandler<Object> {
         WebSocketServerHandshakerFactory wsFactory = new WebSocketServerHandshakerFactory(
                 address, null, false);
         handshaker = wsFactory.newHandshaker(req);
-        logger.debug("地址："+address);
+        log.debug("地址："+address);
         if (handshaker == null) {
             WebSocketServerHandshakerFactory
                     .sendUnsupportedVersionResponse(ctx.channel());

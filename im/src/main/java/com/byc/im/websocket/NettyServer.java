@@ -4,8 +4,7 @@ import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -16,15 +15,15 @@ import javax.annotation.PostConstruct;
  * 2020/5/20/020 14:41
  * Description：启动类
  */
+@Slf4j
 @Component
 public class NettyServer extends Thread {
-    private final Logger logger= LoggerFactory.getLogger(this.getClass());
 
     @Value("${websocket.port}")
     private int port;
 
     public void run(){
-        logger.info("正在启动websocket服务器");
+        log.info("正在启动websocket服务器");
         NioEventLoopGroup boss=new NioEventLoopGroup();
         NioEventLoopGroup work=new NioEventLoopGroup();
         try {
@@ -33,16 +32,16 @@ public class NettyServer extends Thread {
             bootstrap.channel(NioServerSocketChannel.class);
             bootstrap.childHandler(new WebsocketChannelInitializer());
             Channel channel = bootstrap.bind(port).sync().channel();
-            logger.info("webSocket服务器启动成功："+channel);
-            logger.info("webSocket服务器启动成功："+port);
+            log.info("webSocket服务器启动成功："+channel);
+            log.info("webSocket服务器启动成功："+port);
             channel.closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();
-            logger.info("运行出错："+e);
+            log.info("运行出错："+e);
         }finally {
             boss.shutdownGracefully();
             work.shutdownGracefully();
-            logger.info("websocket服务器已关闭");
+            log.info("websocket服务器已关闭");
         }
     }
 
