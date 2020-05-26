@@ -27,7 +27,8 @@
             <fileNamePattern>logs/store.%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
     </appender>
-
+    <Logger name="org.mongodb.driver" level="debug" />
+    <logger name="org.springframework.data.mongodb.core.MongoTemplate" level="debug" />
     <root level="DEBUG">
         <appender-ref ref="CONSOLE"></appender-ref>
         <appender-ref ref="file"></appender-ref>
