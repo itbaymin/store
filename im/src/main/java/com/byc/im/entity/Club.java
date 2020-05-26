@@ -11,35 +11,25 @@ import java.util.List;
 /**
  * Created by baiyc
  * 2020/5/25/025 19:43
- * Description：用户
+ * Description：群组
  */
 @Data
-@Document("user")
-public class User implements Serializable {
+@Document("club")
+public class Club implements Serializable {
     private Long id;
-    private String username;
-    private String password;
+    private String name;
     @Field("headImg")
     private String headImg;
-    private List<Group> groups; //分组
-    private List<Long> rooms;
+    private List<Member> members; //分组
+    @Field("create_time")
+    private LocalDateTime createTime;
 
     @Data
-    public static class Group{
-        private String name;
-        @Field("create_time")
-        private LocalDateTime createTime;
-        private List<Friend> friends;
-    }
-
-    @Data
-    public static class Friend{
+    public static class Member{
         private Long id;
         private String username;
         private String password;
         @Field("headImg")
         private String headImg;
     }
-
-
 }

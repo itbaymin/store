@@ -44,7 +44,14 @@ public class UserControllerTest {
         user.setUsername("白永程");
         user.setPassword("byc123");
         user.setHeadImg("http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg");
-        user.setFriends(Arrays.asList(1L));
+        User.Friend friend = new User.Friend();
+        friend.setUsername("白永程");
+        friend.setPassword("byc123");
+        friend.setHeadImg("http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg");
+        User.Group group = new User.Group();
+        group.setCreateTime(LocalDateTime.now());
+        group.setFriends(Arrays.asList(friend));
+        user.setGroups(Arrays.asList(group));
         userRepository.save(user);
     }
     @Test
@@ -61,7 +68,7 @@ public class UserControllerTest {
     @Test
     public void test3(){
         Message message = new Message();
-        message.setId(1L);
+        message.setId(mongoHelper.getNextSequence(MongoHelper.Collection.USER));
         message.setContent("hello");
         message.setFrom(Message.From.USER);
         message.setRecive(1L);
@@ -72,10 +79,10 @@ public class UserControllerTest {
     }
     @Test
     public void test4(){
-        Optional<Message> byId = messageRepository.findById(1L);
-        System.out.println(byId.get());
+        //Optional<Message> byId = messageRepository.findById(1L);
+        //System.out.println(byId.get());
         Query query = new Query();
-        query.addCriteria(new Criteria().where("create_time").lt(LocalDateTime.of(2020,5,26,10,0)));
+        query.addCriteria(new Criteria().where("create_time").gt(LocalDateTime.of(2020,5,26,10,0)));
         List<Message> messages = mongoTemplate.find(query, Message.class);
         System.out.println(messages);
     }
