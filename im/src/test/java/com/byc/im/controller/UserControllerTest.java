@@ -4,6 +4,7 @@ import com.byc.im.entity.Message;
 import com.byc.im.entity.User;
 import com.byc.im.repository.MessageRepository;
 import com.byc.im.repository.UserRepository;
+import com.byc.im.utils.MongoHelper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,11 +34,13 @@ public class UserControllerTest {
     MessageRepository messageRepository;
     @Autowired
     MongoTemplate mongoTemplate;
+    @Autowired
+    MongoHelper mongoHelper;
 
     @Test
     public void test(){
         User user = new User();
-        user.setId(1L);
+        user.setId(mongoHelper.getNextSequence(MongoHelper.Collection.USER));
         user.setUsername("白永程");
         user.setPassword("byc123");
         user.setHeadImg("http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg");

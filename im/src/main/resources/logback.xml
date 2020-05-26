@@ -8,7 +8,7 @@
             <charset>UTF-8</charset>
         </encoder>
         <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
-            <level>INFO</level>
+            <level>DEBUG</level>
         </filter>
     </appender>
     <appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -27,8 +27,12 @@
             <fileNamePattern>logs/store.%d{yyyy-MM-dd}.log</fileNamePattern>
         </rollingPolicy>
     </appender>
-    <Logger name="org.mongodb.driver" level="debug" />
-    <logger name="org.springframework.data.mongodb.core.MongoTemplate" level="debug" />
+    <Logger name="org.mongodb.driver" level="debug">
+        <appender-ref ref="CONSOLE"></appender-ref>
+    </Logger>
+    <logger name="org.springframework.data.mongodb.core.MongoTemplate" level="debug">
+        <appender-ref ref="CONSOLE"></appender-ref>
+    </logger>
     <root level="DEBUG">
         <appender-ref ref="CONSOLE"></appender-ref>
         <appender-ref ref="file"></appender-ref>
