@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>胡聊</title>
 	<link rel="stylesheet" href="http://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css">
 	<meta charset="utf-8">
 	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0" />
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
@@ -13,28 +14,51 @@
 		<section class="ui-panel ui-panel-center ui-border-tb">
 			<h2><span>登陆</span></h2>
 		</section>
-		<form action="">
+		<div v-if="showMsg==true" class="ui-tooltips ui-tooltips-warn">
+			<div class="ui-tooltips-cnt ui-border-b">
+				{{message}}<a class="ui-icon-close"></a>
+			</div>
+		</div>
+		<form id="logForm" th:action="@{/login}" method="post">
 			<div class="ui-form-item ui-border-b">
-				<input type="text" placeholder="用户名">
+				<input type="text" name="username" v-model="username" placeholder="用户名">
 			</div>
 			<div class="ui-form-item ui-form-item-link ui-border-b">
-				<input type="text" placeholder="密码">
-			</div>
-			<div class="ui-btn-wrap">
-				<button class="ui-btn-lg ui-btn-primary">
-					确定
-				</button>
+				<input type="password" name="password" v-model="password" placeholder="密码">
 			</div>
 		</form>
+		<div class="ui-btn-wrap">
+			<button @click="submit" class="ui-btn-lg ui-btn-primary">确定</button>
+		</div>
 	</div>
 </div>
 </body>
 </html>
 <script>
 	new Vue({
-  	el: '#app',
-  	data: {
-     
-  	}
-})
+		el: '#app',
+		data() {
+		    return{
+                username:"",
+                password:"",
+                message:"",
+                showMsg:false
+			}
+		},
+		methods: {
+			submit:function () {
+				if($.trim(this.username)==''){
+                    this.showMsg = true;
+					this.message = "请输入用户名";
+					return;
+				}
+				if($.trim(this.password)==''){
+                    this.showMsg = true;
+					this.message = "请输入密码";
+					return;
+				}
+				$("#logForm").submit();
+            }
+		}
+	})
 </script>

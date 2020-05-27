@@ -24,17 +24,22 @@ public class WebResult<T> {
     @JsonProperty("msg_key")
     private String msgKey = "";
 
-    private WebResult(T data) {
+    private WebResult(T data,String message) {
         this.data = data;
+        this.message = message;
     }
 
     private WebResult(T data, int code) {
-        this(data);
+        this(data,"");
         this.code = code;
     }
 
     public static <T> WebResult success(T data) {
-        return new WebResult(data);
+        return new WebResult(data,"");
+    }
+
+    public static <T> WebResult success(T data,String message) {
+        return new WebResult(data,message);
     }
 
     public static WebResult<String> fail(IErrorCode errorCode) {

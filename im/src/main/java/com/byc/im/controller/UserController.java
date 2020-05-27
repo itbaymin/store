@@ -1,51 +1,56 @@
 package com.byc.im.controller;
 
+import com.byc.common.mvc.WebResult;
+import com.byc.common.utils.AssertUtil;
+import com.byc.im.entity.User;
+import com.byc.im.service.UserService;
 import com.byc.im.support.ChatGroup;
 import com.byc.im.support.SocketChannelGroup;
 import com.byc.im.support.UserGroup;
 import com.byc.im.support.pojo.GroupChat;
 import com.byc.im.support.pojo.PayLoad;
-import com.byc.im.support.pojo.User;
+import com.byc.im.utils.StateCode;
 import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.util.concurrent.GlobalEventExecutor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class UserController {
+    @Autowired
+    UserService userService;
+
     @RequestMapping("/")
     public String tologin(){
-        return "v1/login";
+        return "login";
     }
-    @RequestMapping("/doLogin")
-    public String doLogin(String name, Map<String,Object> paramMap)
-    {
-        paramMap.put("name",name);
-        return "v1/chatPage";
+
+    @PostMapping("/login")
+    public String doLogin(String username, String password, Model model) {
+        User user = userService.login(username, password);
+        model.addAttribute("user",user);
+        return "index";
     }
+
     @RequestMapping("/getOnlineUser")
     @ResponseBody
-    public List<User> getOnlineUser(){
-        return UserGroup.USER;
+    public WebResult getOnlineUser(){
+        return WebResult.success(UserGroup.USER);
     }
 
     @RequestMapping("/createGroups")
     @ResponseBody
-    public Map createGroups(@RequestBody GroupChat groupChat){
-        HashMap<String, Object> map = new HashMap<>();
-        if (ChatGroup.isExist(groupChat.getGroupName())){
-            map.put("code","300");
-            map.put("data","群聊名已存在");
-            return map;
-        }else{
+    public WebResult createGroups(@RequestBody GroupChat groupChat){
+        AssertUtil.assertFalse(ChatGroup.isExist(groupChat.getGroupName()), StateCode.CODE_BUSINESS,"群聊名已存在");
         List<String> members = groupChat.getGroupMembers();
         DefaultChannelGroup group = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
         for (String member : members) {
@@ -63,26 +68,16 @@ public class UserController {
         //只保留创建者
         members.add(groupChat.getCreator());
         ChatGroup.insertChatGroupMap(groupChat.getGroupName(),group);
-        map.put("code","200");
-        map.put("data",groupChat);
-        return map;
-        }
+        return WebResult.success(groupChat);
     }
+
     @RequestMapping("/joinGroups")
     @ResponseBody
-    public Map joinGroups(String channelId,String groupName)
-    {
-        HashMap<String, Object> map = new HashMap<>();
-        if (ChatGroup.isExist(groupName)){
-            map.put("code","200");
-            ChannelGroup channels = ChatGroup.getChatGroup(groupName);
-            channels.add(SocketChannelGroup.findChannel(channelId));
-            map.put("data","已成功加入");
-        }else {
-            map.put("code","300");
-            map.put("data","邀请已失效");
-        }
-        return map;
+    public WebResult joinGroups(String channelId,String groupName) {
+        AssertUtil.assertTrue(ChatGroup.isExist(groupName),StateCode.CODE_BUSINESS,"邀请已失效");
+        ChannelGroup channels = ChatGroup.getChatGroup(groupName);
+        channels.add(SocketChannelGroup.findChannel(channelId));
+        return WebResult.success("");
     }
 
 }

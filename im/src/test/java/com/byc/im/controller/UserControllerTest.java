@@ -41,11 +41,11 @@ public class UserControllerTest {
     public void test(){
         User user = new User();
         user.setId(mongoHelper.getNextSequence(MongoHelper.Collection.USER));
-        user.setUsername("白永程");
+        user.setUsername("bai");
         user.setPassword("byc123");
         user.setHeadImg("http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg");
         User.Friend friend = new User.Friend();
-        friend.setUsername("白永程");
+        friend.setUsername("bai");
         friend.setPassword("byc123");
         friend.setHeadImg("http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg");
         User.Group group = new User.Group();
