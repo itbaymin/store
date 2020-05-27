@@ -2,7 +2,7 @@ package com.byc.im.service;
 
 import com.byc.common.utils.AssertUtil;
 import com.byc.im.entity.User;
-import com.byc.im.global.StateCode;
+import com.byc.im.support.StateCode;
 import com.byc.im.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;

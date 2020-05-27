@@ -1,11 +1,11 @@
-package com.byc.im.controller;
+package com.byc.im2.controller;
 
-import com.byc.im.support.ChatGroup;
-import com.byc.im.support.SocketChannelGroup;
-import com.byc.im.support.UserGroup;
-import com.byc.im.support.pojo.GroupChat;
-import com.byc.im.support.pojo.PayLoad;
-import com.byc.im.support.pojo.User;
+import com.byc.im2.support.ChatGroup;
+import com.byc.im2.support.SocketChannelGroup;
+import com.byc.im2.support.UserGroup;
+import com.byc.im2.support.pojo.GroupChat;
+import com.byc.im2.support.pojo.PayLoad;
+import com.byc.im2.support.pojo.User;
 import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
@@ -23,13 +23,13 @@ import java.util.Map;
 public class UserController {
     @RequestMapping("/")
     public String tologin(){
-        return "v1/login";
+        return "login";
     }
     @RequestMapping("/doLogin")
     public String doLogin(String name, Map<String,Object> paramMap)
     {
         paramMap.put("name",name);
-        return "v1/chatPage";
+        return "chatPage";
     }
     @RequestMapping("/getOnlineUser")
     @ResponseBody

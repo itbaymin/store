@@ -1,4 +1,4 @@
-package com.byc.im.global;
+package com.byc.im.support;
 
 import io.netty.channel.group.ChannelGroup;
 

@@ -24,6 +24,7 @@
         <module>api</module>
         <module>im</module>
         <module>websocket</module>
+        <module>im2</module>
     </modules>
 
     <properties>

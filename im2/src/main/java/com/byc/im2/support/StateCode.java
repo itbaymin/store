@@ -1,4 +1,4 @@
-package com.byc.im.global;
+package com.byc.im2.support;
 
 import com.byc.common.mvc.exception.IErrorCode;
 import lombok.AllArgsConstructor;

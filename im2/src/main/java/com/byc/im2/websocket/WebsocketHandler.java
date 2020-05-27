@@ -1,10 +1,10 @@
-package com.byc.im.websocket;
+package com.byc.im2.websocket;
 
-import com.byc.im.support.ChatGroup;
-import com.byc.im.support.SocketChannelGroup;
-import com.byc.im.support.UserGroup;
-import com.byc.im.support.pojo.PayLoad;
-import com.byc.im.support.pojo.User;
+import com.byc.im2.support.ChatGroup;
+import com.byc.im2.support.SocketChannelGroup;
+import com.byc.im2.support.UserGroup;
+import com.byc.im2.support.pojo.PayLoad;
+import com.byc.im2.support.pojo.User;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.netty.buffer.ByteBuf;

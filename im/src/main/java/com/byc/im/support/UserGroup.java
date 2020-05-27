@@ -1,7 +1,7 @@
-package com.byc.im.global;
+package com.byc.im.support;
 
-import com.byc.im.pojo.PayLoad;
-import com.byc.im.pojo.User;
+import com.byc.im.support.pojo.PayLoad;
+import com.byc.im.support.pojo.User;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 

@@ -1,4 +1,4 @@
-package com.byc.im.global;
+package com.byc.im2.support;
 
 import io.netty.channel.Channel;
 import io.netty.channel.ChannelId;

@@ -1,0 +1,10 @@
+server:
+  port: 8081
+spring:
+  swagger:
+    enable: true
+  thymeleaf:
+    cache: false
+websocket:
+  port: 1234
+  address: ws://localhost:${websocket.port}/websocket

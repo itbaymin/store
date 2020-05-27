@@ -1,4 +1,4 @@
-package com.byc.im.pojo;
+package com.byc.im.support.pojo;
 
 import java.util.List;
 

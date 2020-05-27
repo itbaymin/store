@@ -9,6 +9,7 @@
         <module name="api" />
         <module name="common" />
         <module name="im" />
+        <module name="im2" />
         <module name="permission-security" />
         <module name="permission-shiro" />
         <module name="permissionshiro" />
@@ -22,6 +23,7 @@
       <module name="api" target="1.8" />
       <module name="common" target="1.8" />
       <module name="im" target="1.8" />
+      <module name="im2" target="1.8" />
       <module name="netty-websocket" target="1.8" />
       <module name="permission-security" target="1.8" />
       <module name="permission-shiro" target="1.8" />

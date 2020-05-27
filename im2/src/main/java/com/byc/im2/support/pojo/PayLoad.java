@@ -1,4 +1,4 @@
-package com.byc.im.pojo;
+package com.byc.im2.support.pojo;
 
 public class PayLoad {
     /**
