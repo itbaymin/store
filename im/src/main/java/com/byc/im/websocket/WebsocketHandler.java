@@ -4,7 +4,6 @@ import com.byc.im.support.ChatGroup;
 import com.byc.im.support.SocketChannelGroup;
 import com.byc.im.support.UserGroup;
 import com.byc.im.support.pojo.PayLoad;
-import com.byc.im.support.pojo.User;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.netty.buffer.ByteBuf;
@@ -117,12 +116,12 @@ public class WebsocketHandler  extends SimpleChannelInboundHandler<Object> {
             WebSocketServerHandshakerFactory
                     .sendUnsupportedVersionResponse(ctx.channel());
         } else {
-            User user = new User(uri.substring(uri.indexOf("?") + 1), ctx.channel().id().toString());
-            UserGroup.addUser(user);
+            //绑定到用户
+            UserGroup.bindUserChannel(Long.valueOf(uri.substring(uri.indexOf("?") + 1)), ctx.channel().id().toString());
             handshaker.handshake(ctx.channel(), req);
-            SocketChannelGroup.addChannel(ctx.channel());
+            SocketChannelGroup.addChannel(,ctx.channel());
             //保存用户名和channelId
-            PayLoad payLoad = new PayLoad(PayLoad.SYS,user.toString());
+            PayLoad payLoad = new PayLoad(PayLoad.SYS,UserGroup.search(ctx.channel()));
             TextWebSocketFrame tws = new TextWebSocketFrame(payLoad.toString());
             ctx.channel().writeAndFlush(tws);
         }

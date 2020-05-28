@@ -1,7 +1,7 @@
 package com.byc.im.support;
 
+import com.byc.im.entity.User;
 import com.byc.im.support.pojo.PayLoad;
-import com.byc.im.support.pojo.User;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 
@@ -11,25 +11,35 @@ import java.util.List;
 public class UserGroup {
     public static List<User> USER=new ArrayList<>();
     public static User search(Channel channel){
-        User target = new User();
-        target.setChannelId(channel.id().toString());
         for (User user : USER) {
-            if (user.equals(target)){
+            if (user.getChannelId().equals(channel.id().toString())){
                 return user;
             }
         }
-        return target;
+        return null;
     }
+
+    /**绑定用户*/
+    public static boolean bindUserChannel(Long userId,String channelId){
+        for (User user : USER) {
+            if (user.getId().equals(userId)){
+                user.setChannelId(channelId);
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static User search(String name){
         for (User user : USER) {
-            if (user.getName().equals(name)){
+            if (user.getUsername().equals(name)){
                 return user;
             }
         }
         return null;
     }
     public static void addUser(User user){
-        User search = search(user.getName());
+        User search = search(user.getUsername());
         if (search!=null){
             Channel channel = SocketChannelGroup.findChannel(search.getChannelId());
             try {

@@ -1,12 +1,14 @@
 package com.byc.im.entity;
 
 import lombok.Data;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Created by baiyc
@@ -16,6 +18,8 @@ import java.util.List;
 @Data
 @Document("user")
 public class User implements Serializable {
+    @Transient
+    private String channelId;
     private Long id;
     private String username;
     private String password;
@@ -41,5 +45,16 @@ public class User implements Serializable {
         private String headImg;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return Objects.equals(id, user.getId());
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
