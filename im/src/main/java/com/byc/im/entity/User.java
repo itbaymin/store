@@ -23,14 +23,16 @@ public class User implements Serializable {
     private Long id;
     private String username;
     private String password;
-    @Field("headImg")
+    @Field("head_img")
     private String headImg;
     private List<Group> groups; //分组
     private List<Long> rooms;
+    private List<Friend> history;   //聊天历史记录
 
     @Data
     public static class Group{
         private String name;
+        private int flag;
         @Field("create_time")
         private LocalDateTime createTime;
         private List<Friend> friends;
@@ -40,9 +42,12 @@ public class User implements Serializable {
     public static class Friend{
         private Long id;
         private String username;
-        private String password;
-        @Field("headImg")
+        @Field("head_img")
         private String headImg;
+        @Field("unread_num")
+        private int unReadNum;
+        private String time;
+        private String content;
     }
 
     @Override

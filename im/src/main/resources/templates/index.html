@@ -184,5 +184,10 @@
 	</div>
 </div>
 </body>
+<script th:inline="javascript">
+	/*<![CDATA[*/
+    _user = /*[[${user}]]*/ {}
+    /*]]>*/
+</script>
 <script type="text/javascript" th:src="@{/static/index.js}"></script>
 </html>

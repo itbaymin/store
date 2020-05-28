@@ -37,6 +37,7 @@
         <shiro.version>1.4.0</shiro.version>
         <swagger.version>2.9.2</swagger.version>
         <swagger-ui.version>2.7.0</swagger-ui.version>
+        <fastjson.version>1.2.58</fastjson.version>
         <pool2.version>2.5.0</pool2.version>
         <shiro-redis.version>3.2.3</shiro-redis.version>
         <shiro-thymeleaf.version>2.0.0</shiro-thymeleaf.version>
@@ -56,6 +57,11 @@
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
             </dependency>
 
             <!--连接池-->

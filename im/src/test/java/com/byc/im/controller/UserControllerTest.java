@@ -40,19 +40,49 @@ public class UserControllerTest {
     @Test
     public void test(){
         User user = new User();
-        user.setId(mongoHelper.getNextSequence(MongoHelper.Collection.USER));
-        user.setUsername("bai");
+        user.setId(1L);
+        user.setUsername("bai1");
         user.setPassword("byc123");
-        user.setHeadImg("http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg");
-        User.Friend friend = new User.Friend();
-        friend.setUsername("bai");
-        friend.setPassword("byc123");
-        friend.setHeadImg("http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg");
-        User.Group group = new User.Group();
-        group.setCreateTime(LocalDateTime.now());
-        group.setFriends(Arrays.asList(friend));
-        user.setGroups(Arrays.asList(group));
+        user.setHeadImg("background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)");
+
+        User.Friend friend1 = new User.Friend();
+        friend1.setUsername("bai2");
+        friend1.setId(2L);
+        friend1.setHeadImg("background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)");
+        friend1.setUnReadNum(1);
+        friend1.setContent("hello！");
+        friend1.setTime("下午2点");
+        User.Group group1 = new User.Group();
+        group1.setName("家人");
+        group1.setFlag(1);
+        group1.setCreateTime(LocalDateTime.now());
+        group1.setFriends(Arrays.asList(friend1));
+
+        User user2 = new User();
+        user2.setId(2L);
+        user2.setUsername("bai2");
+        user2.setPassword("byc123");
+        user2.setHeadImg("background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)");
+        User.Friend friend2 = new User.Friend();
+        friend2.setUsername("bai1");
+        friend2.setId(1L);
+        friend2.setHeadImg("background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)");
+        friend2.setUnReadNum(1);
+        friend2.setContent("你好！");
+        friend2.setTime("下午2点");
+        User.Group group2 = new User.Group();
+        group1.setName("家人");
+        group1.setFlag(1);
+        group2.setCreateTime(LocalDateTime.now());
+        group2.setFriends(Arrays.asList(friend2));
+
+
+        user.setGroups(Arrays.asList(group1));
+        user.setHistory(Arrays.asList(friend1));
         userRepository.save(user);
+        user2.setGroups(Arrays.asList(group2));
+        user2.setHistory(Arrays.asList(friend2));
+        userRepository.save(user2);
     }
     @Test
     public void test1(){

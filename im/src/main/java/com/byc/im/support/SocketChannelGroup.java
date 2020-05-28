@@ -22,7 +22,10 @@ public class SocketChannelGroup {
 
     }
     public static Channel findChannel(String id){
-        return GlobalGroup.find(ChannelMap.get(id));
+        ChannelId channelId = ChannelMap.get(id);
+        if(channelId==null)
+            return null;
+        return GlobalGroup.find(channelId);
     }
     public static void send2All(TextWebSocketFrame tws){
         GlobalGroup.writeAndFlush(tws);

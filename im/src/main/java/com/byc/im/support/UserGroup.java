@@ -4,10 +4,12 @@ import com.byc.im.entity.User;
 import com.byc.im.support.pojo.PayLoad;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 public class UserGroup {
     public static List<User> USER=new ArrayList<>();
 
@@ -46,10 +48,12 @@ public class UserGroup {
         if (search!=null){
             Channel channel = SocketChannelGroup.findChannel(search.getChannelId());
             try {
-                removeUser(channel);
-                channel.disconnect().sync();
+                if(channel!=null) {
+                    removeUser(channel);
+                    channel.disconnect().sync();
+                }
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                log.error("处理顶下线异常",e);
             }
         }
         USER.add(user);

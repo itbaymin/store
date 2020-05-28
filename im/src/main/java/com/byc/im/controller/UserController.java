@@ -38,7 +38,7 @@ public class UserController {
     public String doLogin(String username, String password, Model model) {
         User user = userService.login(username, password);
         UserGroup.addUser(user);
-        model.addAttribute("user",user);
+        model.addAttribute("user", user);
         return "index";
     }
 

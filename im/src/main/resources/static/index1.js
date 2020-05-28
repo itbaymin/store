@@ -18,7 +18,29 @@ new Vue({
                 link:"http://fanze.online",
             }
         ],
-        friendgroups: _user.groups,
+        friendgroups:[
+            {
+                name: '分组1',
+                flag: '1',
+                friends:[{
+                    username: '开发者',
+                    imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
+                    uid:'00001'
+                },{
+                    username: '张',
+                    imgsrc:"background-image:url(http://img2.imgtn.bdimg.com/it/u=2060761043,284284863&fm=26&gp=0.jpg)",
+                    uid:'00001'
+                }]
+            },
+            {
+                name: '分组2',
+                flag: '2',
+                friends:[{
+                    username: '张',
+                    imgsrc:"background-image:url(http://img2.imgtn.bdimg.com/it/u=2060761043,284284863&fm=26&gp=0.jpg)",
+                    uid:'00001'
+                }]
+            }],
         //群聊列表
         grolists:[
             {
@@ -29,7 +51,56 @@ new Vue({
             }
         ],
         //消息列表
-        items: _user.history
+        items:[
+            {
+                username: '开发者',
+                content:'晚上哪里吃?',
+                imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
+                uid:'00001',
+                time:'晚上20:07',
+                mesnum:10
+            },
+            {
+                username: '年华',
+                content:'移动端怎么样了?',
+                imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)",
+                uid:'00003',
+                time:'晚上20:30',
+                mesnum:0
+            },
+            {
+                username: '年华',
+                content:'移动端怎么样了?',
+                imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)",
+                uid:'00003',
+                time:'晚上20:30',
+                mesnum:0
+            },
+            {
+                username: '年华',
+                content:'移动端怎么样了?',
+                imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)",
+                uid:'00003',
+                time:'晚上20:30',
+                mesnum:0
+            },
+            {
+                username: '年华',
+                content:'移动端怎么样了?',
+                imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)",
+                uid:'00003',
+                time:'晚上20:30',
+                mesnum:0
+            },
+            {
+                username: '年华',
+                content:'移动端怎么样了?',
+                imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)",
+                uid:'00003',
+                time:'晚上20:30',
+                mesnum:0
+            }
+        ]
     },
     methods: {
         trygroupflag:function(groupflag){
