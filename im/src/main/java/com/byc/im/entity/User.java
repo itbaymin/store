@@ -19,7 +19,7 @@ import java.util.Objects;
 @Document("user")
 public class User implements Serializable {
     @Transient
-    private String channelId;
+    private String channelId = "";
     private Long id;
     private String username;
     private String password;

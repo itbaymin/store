@@ -1,0 +1,124 @@
+/*从右往左切换动画*/
+.rtol{
+    animation:rtolani 0.5s;
+    -webkit-animation:rtolani 0.5s; /* Safari and Chrome */
+}
+@keyframes rtolani
+{
+    0%   {left:-100%; top:10%;}
+    100% {left:0; top:10%;}
+}
+@-webkit-keyframes rtolani /* Safari and Chrome */
+{
+    0%   {left:100%; top:10%;}
+    100% {left:0; top:10%;}
+}
+
+/*从右往左切换动画 321返回时无效加的这个*/
+.rrtol{
+    animation:rrtolani 0.5s;
+    -webkit-animation:rrtolani 0.5s; /* Safari and Chrome */
+}
+@keyframes rrtolani
+{
+    0%   {left:-100%; top:10%;}
+    100% {left:0; top:10%;}
+}
+@-webkit-keyframes rrtolani /* Safari and Chrome */
+{
+    0%   {left:100%; top:10%;}
+    100% {left:0; top:10%;}
+}
+
+.chattol{
+    animation:chattolani 0.5s;
+    -webkit-animation:chattolani 0.5s; /* Safari and Chrome */
+}
+@keyframes chattolani
+{
+    0%   {left:-100%; top:0;}
+    100% {left:0; top:0;}
+}
+@-webkit-keyframes chattolani /* Safari and Chrome */
+{
+    0%   {left:100%; top:0%;}
+    100% {left:0; top:0%;}
+}
+
+/*从左往右切换动画*/
+.ltor{
+    animation:ltorani 0.5s;
+    -webkit-animation:ltorani 0.5s; /* Safari and Chrome */
+}
+@keyframes ltorani
+{
+    0%   {left:100%; top:10%;}
+    100% {left:0; top:10%;}
+}
+@-webkit-keyframes ltorani /* Safari and Chrome */
+{
+    0%   {left:100%; top:10%;}
+    100% {left:0; top:10%;}
+}
+
+/*聊天窗动画*/
+.chatbt{
+    animation:ltorani 0.5s;
+    -webkit-animation:ltorani 0.5s; /* Safari and Chrome */
+}
+@keyframes chatbtani
+{
+    100% {botton:0%;}
+}
+@-webkit-keyframes chatbtani /* Safari and Chrome */
+{
+    100% {botton:0%;}
+}
+
+/*控制点击产生阴影*/
+.shadow:active{
+    background-color: #eeeeee !important;
+    border-radius: 5px;
+}
+
+/*控制点击产生阴影*/
+.shadow{
+    background-color: #ffffff !important;
+}
+
+.ui-border-radius:before{
+    border: none;
+}
+
+.recmsg{
+    position: relative;
+    background: #ddd;
+    padding: 8px;
+    border-radius: 3px;
+}
+.recmsg:before{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    left: -14px;
+    border-top: 5px solid transparent;
+    border-right: 14px solid #ddd;
+    border-bottom: 7px solid transparent;
+}
+.senmsg{
+    position: relative;
+    background: #fff;
+    padding: 8px;
+    border-radius: 3px;
+}
+.senmsg:before{
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    right: -14px;
+    border-top: 5px solid transparent;
+    border-left: 14px solid #fff;
+    border-bottom: 7px solid transparent;
+}

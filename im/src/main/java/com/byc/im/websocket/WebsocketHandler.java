@@ -1,5 +1,6 @@
 package com.byc.im.websocket;
 
+import com.byc.im.entity.User;
 import com.byc.im.support.ChatGroup;
 import com.byc.im.support.SocketChannelGroup;
 import com.byc.im.support.UserGroup;
@@ -117,11 +118,11 @@ public class WebsocketHandler  extends SimpleChannelInboundHandler<Object> {
                     .sendUnsupportedVersionResponse(ctx.channel());
         } else {
             //绑定到用户
-            UserGroup.bindUserChannel(Long.valueOf(uri.substring(uri.indexOf("?") + 1)), ctx.channel().id().toString());
+            User user = UserGroup.bindUserChannel(Long.valueOf(uri.substring(uri.indexOf("?") + 1)), ctx.channel().id().toString());
             handshaker.handshake(ctx.channel(), req);
-            SocketChannelGroup.addChannel(,ctx.channel());
+            SocketChannelGroup.addChannel(ctx.channel());
             //保存用户名和channelId
-            PayLoad payLoad = new PayLoad(PayLoad.SYS,UserGroup.search(ctx.channel()));
+            PayLoad payLoad = new PayLoad(PayLoad.SYS,user.toString());
             TextWebSocketFrame tws = new TextWebSocketFrame(payLoad.toString());
             ctx.channel().writeAndFlush(tws);
         }
@@ -182,8 +183,6 @@ public class WebsocketHandler  extends SimpleChannelInboundHandler<Object> {
             payLoad.setType(PayLoad.ERROR);
             payLoad.setData("消息发送失败！[ "+request+" ]");
             ctx.writeAndFlush(new TextWebSocketFrame(payLoad.toString()));
-        } finally {
-
         }
     }
 }

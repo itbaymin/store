@@ -10,6 +10,7 @@ import java.util.List;
 
 public class UserGroup {
     public static List<User> USER=new ArrayList<>();
+
     public static User search(Channel channel){
         for (User user : USER) {
             if (user.getChannelId().equals(channel.id().toString())){
@@ -20,14 +21,14 @@ public class UserGroup {
     }
 
     /**绑定用户*/
-    public static boolean bindUserChannel(Long userId,String channelId){
+    public static User bindUserChannel(Long userId,String channelId){
         for (User user : USER) {
             if (user.getId().equals(userId)){
                 user.setChannelId(channelId);
-                return true;
+                return user;
             }
         }
-        return false;
+        return null;
     }
 
     public static User search(String name){
@@ -38,12 +39,14 @@ public class UserGroup {
         }
         return null;
     }
+
     public static void addUser(User user){
+        //顶掉
         User search = search(user.getUsername());
         if (search!=null){
             Channel channel = SocketChannelGroup.findChannel(search.getChannelId());
             try {
-//                removeUser(channel);
+                removeUser(channel);
                 channel.disconnect().sync();
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -54,6 +57,7 @@ public class UserGroup {
         TextWebSocketFrame textWebSocketFrame = new TextWebSocketFrame(payLoad.toString());
         SocketChannelGroup.send2All(textWebSocketFrame);
     }
+
     public static void removeUser(Channel channel){
         User search = search(channel);
         USER.remove(search);
