@@ -4,6 +4,7 @@ import com.byc.im.entity.User;
 import com.byc.im.support.ChatGroup;
 import com.byc.im.support.SocketChannelGroup;
 import com.byc.im.support.UserGroup;
+import com.byc.im.support.common.APPConfig;
 import com.byc.im.support.pojo.PayLoad;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,8 +18,6 @@ import io.netty.handler.codec.http.HttpVersion;
 import io.netty.handler.codec.http.websocketx.*;
 import io.netty.util.CharsetUtil;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 
@@ -31,13 +30,15 @@ import static io.netty.handler.codec.http.HttpUtil.isKeepAlive;
  * Description：
  */
 @Slf4j
-@Component
-public class WebsocketHandler  extends SimpleChannelInboundHandler<Object> {
+public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
 
     private WebSocketServerHandshaker handshaker;
 
-    @Value("${websocket.address}")
-    private String address;
+    private APPConfig config;
+
+    public WebsocketHandler(APPConfig config) {
+        this.config = config;
+    }
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
@@ -110,9 +111,9 @@ public class WebsocketHandler  extends SimpleChannelInboundHandler<Object> {
         String uri = req.uri();
         System.out.println();
         WebSocketServerHandshakerFactory wsFactory = new WebSocketServerHandshakerFactory(
-                address, null, false);
+                config.getWebsocket().getAddr(), null, false);
         handshaker = wsFactory.newHandshaker(req);
-        log.debug("地址："+address);
+        log.debug("地址："+config.getWebsocket().getAddr());
         if (handshaker == null) {
             WebSocketServerHandshakerFactory
                     .sendUnsupportedVersionResponse(ctx.channel());

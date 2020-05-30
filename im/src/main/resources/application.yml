@@ -11,6 +11,8 @@ spring:
   data:
     mongodb:
       uri: mongodb://im:byc123@47.105.209.57:27017/im
-websocket:
-  port: 1234
-  address: ws://localhost:${websocket.port}/websocket
+
+config:
+  websocket:
+    port: 1234
+    addr: ws://localhost:${config.websocket.port}/websocket

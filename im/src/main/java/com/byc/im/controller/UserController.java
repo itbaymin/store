@@ -7,6 +7,7 @@ import com.byc.im.service.UserService;
 import com.byc.im.support.ChatGroup;
 import com.byc.im.support.SocketChannelGroup;
 import com.byc.im.support.UserGroup;
+import com.byc.im.support.common.APPConfig;
 import com.byc.im.support.pojo.GroupChat;
 import com.byc.im.support.pojo.PayLoad;
 import com.byc.im.utils.StateCode;
@@ -28,6 +29,9 @@ import java.util.List;
 public class UserController {
     @Autowired
     UserService userService;
+    @Autowired
+    APPConfig config;
+
 
     @RequestMapping("/")
     public String tologin(){
@@ -38,6 +42,7 @@ public class UserController {
     public String doLogin(String username, String password, Model model) {
         User user = userService.login(username, password);
         UserGroup.addUser(user);
+        model.addAttribute("address",config.getWebsocket().getAddr());
         model.addAttribute("user", user);
         return "index";
     }

@@ -7,6 +7,7 @@
 	<link rel="shortcut icon" th:href="@{/static/favicon.ico}">
 	<meta charset="utf-8">
 	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0" />
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
@@ -14,7 +15,8 @@
 	<!-- 顶部tabbar -->
 	<div v-if="active!='chat'" class="ui-tab">
 		<ul class="ui-tab-nav ui-border-b" style="position:fixed;z-index: 1000;height: 10%;">
-			<li :class="active=='message'?'current':''" @click="msgbtnde"><span>消息列表</span></li><!-- current -->
+			<li :class="active=='message'?'current':''" @click="msgbtnde"><span>消息列表</span></li>
+			<!-- current -->
 			<li :class="active=='friend'?'current':''" @click="myfribtnde"><span>我的朋友</span></li>
 		</ul>
 		<!-- 占位 -->
@@ -186,8 +188,52 @@
 </body>
 <script th:inline="javascript">
 	/*<![CDATA[*/
-    _user = /*[[${user}]]*/ {}
+    _user = /*[[${user}]]*/ {};
+    socket_addr = /*[[${address}]]*/'';
     /*]]>*/
+    $(function () {
+        if(!window.WebSocket){
+            window.WebSocket = window.MozWebSocket;
+        }
+        if(window.WebSocket){
+            socket = new WebSocket(socket_addr);
+
+            socket.onmessage = function(event){
+                let obj=eval('(' + event.data + ')');
+                if (obj.payLoad!=null||obj.payLoad!=undefined){
+                    if (obj.payLoad.type==Protocol.PrivateChat){
+                        showGreeting(obj);
+                    }else if (obj.payLoad.type==Protocol.GroupChat) {
+                        showGroupChat(obj);
+                    }
+                }
+                if (obj.type=="ON"){
+                    addUser(obj.data)
+                } else if (obj.type=="OFF"){
+                    deleteUser(obj.data)
+                }else if (obj.type=="SYS") {
+                    channelId=obj.data.channelId;
+                }else if (obj.type==Protocol.GroupApply){
+                    showGroupApply(obj.data);
+                }
+            };
+
+            socket.onopen = function(){
+                var ta = document.getElementById('status');
+                ta.innerHTML = "打开WebSoket 服务正常，浏览器支持WebSoket!"+"\r\n";
+                requestUsers();
+            };
+            socket.onclose = function(){
+                var ta = document.getElementById('status');
+                ta.innerHTML = "";
+                ta.innerHTML = "已断开连接"+"\r\n";
+                toastr.error("你被挤下线了");
+            };
+
+        }else{
+            alert("您的浏览器不支持WebSocket协议！");
+        }
+    })
 </script>
 <script type="text/javascript" th:src="@{/static/index.js}"></script>
 </html>

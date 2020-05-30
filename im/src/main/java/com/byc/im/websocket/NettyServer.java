@@ -1,11 +1,12 @@
 package com.byc.im.websocket;
 
+import com.byc.im.support.common.APPConfig;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.Channel;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -19,8 +20,10 @@ import javax.annotation.PostConstruct;
 @Component
 public class NettyServer extends Thread {
 
-    @Value("${websocket.port}")
-    private int port;
+    @Autowired
+    WebsocketChannelInitializer initializer;
+    @Autowired
+    APPConfig config;
 
     public void run(){
         log.info("正在启动websocket服务器");
@@ -30,10 +33,10 @@ public class NettyServer extends Thread {
             ServerBootstrap bootstrap=new ServerBootstrap();
             bootstrap.group(boss,work);
             bootstrap.channel(NioServerSocketChannel.class);
-            bootstrap.childHandler(new WebsocketChannelInitializer());
-            Channel channel = bootstrap.bind(port).sync().channel();
+            bootstrap.childHandler(initializer);
+            Channel channel = bootstrap.bind(config.getWebsocket().getPort()).sync().channel();
             log.info("webSocket服务器启动成功："+channel);
-            log.info("webSocket服务器启动成功："+port);
+            log.info("webSocket服务器启动成功："+config.getWebsocket().getPort());
             channel.closeFuture().sync();
         } catch (InterruptedException e) {
             e.printStackTrace();
