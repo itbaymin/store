@@ -12,7 +12,7 @@
 </head>
 <body>
 <div id="app">
-	<div v-if="remind.show==true" class="ui-tooltips ui-tooltips-warn">
+	<div v-if="remind.show==true" class="ui-tooltips ui-tooltips-warn" style="position: fixed;bottom: 0;z-index: 10000">
 		<div class="ui-tooltips-cnt ui-border-b">
 			{{remind.message}}<a class="ui-icon-close"></a>
 		</div>
@@ -197,6 +197,10 @@
     _addr = /*[[${address}]]*/'';
     /*]]>*/
     socket_addr = _addr+'?'+_user.id;
+    var friends = new Array();
+    for (let i in _user.groups){
+		friends.push.apply(friends,_user.groups[i].friends);
+	}
 </script>
 <script type="text/javascript" th:src="@{/static/index.js}"></script>
 </html>

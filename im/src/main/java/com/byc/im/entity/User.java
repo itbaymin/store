@@ -1,5 +1,6 @@
 package com.byc.im.entity;
 
+import com.byc.im.support.UserGroup;
 import lombok.Data;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -7,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -25,9 +27,13 @@ public class User implements Serializable {
     private String password;
     @Field("head_img")
     private String headImg;
-    private List<Group> groups; //分组
+    private List<Group> groups;     //分组
     private List<Long> rooms;
-    private List<Friend> history;   //聊天历史记录
+    private List<Friend> favorite;  //最爱
+    @Transient
+    private List<Friend> history;
+    @Transient
+    private List<Club> clubs;       //群聊
 
     @Data
     public static class Group{
@@ -48,6 +54,17 @@ public class User implements Serializable {
         private int unReadNum;
         private String time;
         private String content;
+    }
+
+    //构建参数
+    public void build(){
+        //填充聊天历史
+        this.history = new ArrayList();
+        for (Group group:groups)
+            for (Friend friend:group.getFriends()) {
+                if(UserGroup.search(friend.getId())!=null)
+                    history.add(friend);
+            }
     }
 
     @Override

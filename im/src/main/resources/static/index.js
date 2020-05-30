@@ -36,41 +36,6 @@ new Vue({
         //消息列表
         items: _user.history
     },
-    created:function(){
-        if(!window.WebSocket){
-            window.WebSocket = window.MozWebSocket;
-        }
-        if(window.WebSocket){
-            socket = new WebSocket(socket_addr);
-            socket.onmessage = function(event){
-                let obj=eval('(' + event.data + ')');
-                if (obj.payLoad!=null||obj.payLoad!=undefined){
-                    if (obj.payLoad.type==Protocol.PrivateChat){
-                        showGreeting(obj);
-                    }else if (obj.payLoad.type==Protocol.GroupChat) {
-                        showGroupChat(obj);
-                    }
-                }
-                if (obj.type=="ON"){
-                    addUser(obj.data)
-                } else if (obj.type=="OFF"){
-                    deleteUser(obj.data)
-                }else if (obj.type=="SYS") {
-                    channelId=obj.data.channelId;
-                }else if (obj.type==Protocol.GroupApply){
-                    showGroupApply(obj.data);
-                }
-            };
-            socket.onopen = function(){
-                this.showRemind("打开WebSoket 服务正常，浏览器支持WebSoket!");
-            };
-            socket.onclose = function(){
-                this.showRemind("你被挤下线了");
-            };
-        }else{
-            this.showRemind("您的浏览器不支持WebSocket协议！");
-        }
-    },
     methods: {
         trygroupflag:function(groupflag){
             if(this.groupflag.search(groupflag)!=-1)
@@ -142,13 +107,68 @@ new Vue({
                 msg.scrollTop = msg.scrollHeight // 滚动高度
             });
         },
+        //用户上线
+        online:function (data) {
+            _user.history.push(data);
+            this.alertRemind(data.username+"上线");
+        },
+        offline:function (data) {
+            console.log(data);
+            for(let i in _user.history){
+                if(_user.history[i].id==data.id){
+                    this.alertRemind(_user.history[i].username+"下线");
+                    _user.history.splice(i,1);
+                }
+            }
+        },
+        //用户下线
         showRemind:function (message) {
             this.remind.message=message;
             this.remind.show=true;
         },
+        alertRemind:function (message) {
+            this.showRemind(message);
+            setTimeout(this.hideRemind,1000);
+        },
         hideRemind:function () {
             this.remind.message='';
             this.remind.show=false;
+        }
+    },
+    created:function(){
+        var that = this;
+        if(!window.WebSocket){
+            window.WebSocket = window.MozWebSocket;
+        }
+        if(window.WebSocket){
+            socket = new WebSocket(socket_addr);
+            socket.onmessage = function(event){
+                let obj=eval('(' + event.data + ')');
+                if (obj.payLoad!=null||obj.payLoad!=undefined){
+                    if (obj.payLoad.type==Protocol.PrivateChat){
+                        showGreeting(obj);
+                    }else if (obj.payLoad.type==Protocol.GroupChat) {
+                        showGroupChat(obj);
+                    }
+                }
+                if (obj.type=="ON"){
+                    that.online(obj.data)
+                } else if (obj.type=="OFF"){
+                    that.offline(obj.data)
+                }else if (obj.type=="SYS") {
+                    // channelId=obj.data.channelId;
+                }else if (obj.type==Protocol.GroupApply){
+                    // showGroupApply(obj.data);
+                }
+            };
+            socket.onopen = function(){
+                that.showRemind("打开WebSoket 服务正常，浏览器支持WebSoket!");
+            };
+            socket.onclose = function(){
+                that.showRemind("你被挤下线了");
+            };
+        }else{
+            that.showRemind("您的浏览器不支持WebSocket协议！");
         }
     }
 });

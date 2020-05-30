@@ -78,10 +78,8 @@ public class UserControllerTest {
 
 
         user.setGroups(Arrays.asList(group1));
-        user.setHistory(Arrays.asList(friend1));
         userRepository.save(user);
         user2.setGroups(Arrays.asList(group2));
-        user2.setHistory(Arrays.asList(friend2));
         userRepository.save(user2);
     }
     @Test

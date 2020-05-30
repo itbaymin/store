@@ -6,6 +6,7 @@ import com.byc.im.support.SocketChannelGroup;
 import com.byc.im.support.UserGroup;
 import com.byc.im.support.common.APPConfig;
 import com.byc.im.support.pojo.PayLoad;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.netty.buffer.ByteBuf;
@@ -99,7 +100,7 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
      * 唯一的一次http请求，用于创建websocket
      * */
     private void handleHttpRequest(ChannelHandlerContext ctx,
-                                   FullHttpRequest req) {
+                                   FullHttpRequest req) throws JsonProcessingException {
         //要求Upgrade为websocket，过滤掉get/Post等http请求
         if (!req.decoderResult().isSuccess()
                 || (!"websocket".equals(req.headers().get("Upgrade")))) {
@@ -123,7 +124,8 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
             handshaker.handshake(ctx.channel(), req);
             SocketChannelGroup.addChannel(ctx.channel());
             //保存用户名和channelId
-            PayLoad payLoad = new PayLoad(PayLoad.SYS,user.toString());
+            ObjectMapper objectMapper = new ObjectMapper();
+            PayLoad payLoad = new PayLoad(PayLoad.SYS,objectMapper.writeValueAsString(user));
             TextWebSocketFrame tws = new TextWebSocketFrame(payLoad.toString());
             ctx.channel().writeAndFlush(tws);
         }
