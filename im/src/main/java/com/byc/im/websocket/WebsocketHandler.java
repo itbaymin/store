@@ -42,7 +42,7 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
-        log.debug("收到消息："+msg);
+        log.info("收到消息："+msg);
         if (msg instanceof FullHttpRequest){
             //以http请求形式接入，但是走的是websocket
             handleHttpRequest(ctx, (FullHttpRequest) msg);
@@ -55,14 +55,14 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
     @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         //添加连接
-        log.debug("客户端加入连接："+ctx.channel());
+        log.info("客户端加入连接："+ctx.channel());
 
     }
 
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         //断开连接
-        log.debug("客户端断开连接："+ctx.channel());
+        log.info("客户端断开连接："+ctx.channel());
         SocketChannelGroup.removeChannel(ctx.channel());
         UserGroup.removeUser(ctx.channel());
     }
@@ -85,13 +85,13 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
         }
         // 本例程仅支持文本消息，不支持二进制消息
         if (!(frame instanceof TextWebSocketFrame)) {
-            log.debug("本例程仅支持文本消息，不支持二进制消息");
+            log.info("本例程仅支持文本消息，不支持二进制消息");
             throw new UnsupportedOperationException(String.format(
                     "%s frame types not supported", frame.getClass().getName()));
         }
         // 返回应答消息
         String request = ((TextWebSocketFrame) frame).text();
-        log.debug("服务端收到：" + request);
+        log.info("服务端收到：" + request);
         //消息分发
         WebSocketDispatcher(ctx,(TextWebSocketFrame)frame);
     }
@@ -113,7 +113,7 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
         WebSocketServerHandshakerFactory wsFactory = new WebSocketServerHandshakerFactory(
                 config.getWebsocket().getAddr(), null, false);
         handshaker = wsFactory.newHandshaker(req);
-        log.debug("地址："+config.getWebsocket().getAddr());
+        log.info("地址："+config.getWebsocket().getAddr());
         if (handshaker == null) {
             WebSocketServerHandshakerFactory
                     .sendUnsupportedVersionResponse(ctx.channel());

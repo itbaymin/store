@@ -1068,3 +1068,646 @@ java.lang.NumberFormatException: For input string: "/websocket"
 	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
 	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
 	at java.lang.Thread.run(Thread.java:748)
+[2020-05-30 15:50:48 001 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 3892 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-30 15:50:48 006 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-05-30 15:50:49 252 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-05-30 15:50:49 339 INFO ] [main] / - Finished Spring Data repository scanning in 68ms. Found 2 repository interfaces.
+[2020-05-30 15:50:50 397 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-05-30 15:50:50 412 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-05-30 15:50:50 422 INFO ] [main] / - Starting service [Tomcat]
+[2020-05-30 15:50:50 423 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-05-30 15:50:50 433 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-05-30 15:50:50 434 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-05-30 15:50:50 434 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-05-30 15:50:50 434 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-05-30 15:50:51 493 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-05-30 15:50:51 622 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-05-30 15:50:51 622 INFO ] [main] / - Root WebApplicationContext: initialization completed in 3527 ms
+[2020-05-30 15:50:52 021 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-05-30 15:50:52 278 INFO ] [cluster-ClusterId{value='5ed2105ce9ea6b0f3423f48f', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:191}] to 47.105.209.57:27017
+[2020-05-30 15:50:52 303 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-05-30 15:50:52 346 INFO ] [cluster-ClusterId{value='5ed2105ce9ea6b0f3423f48f', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=66466449}
+[2020-05-30 15:50:52 561 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0x982a2eb3, L:/0:0:0:0:0:0:0:0:1234]
+[2020-05-30 15:50:52 561 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-05-30 15:50:52 697 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-05-30 15:50:52 827 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-05-30 15:50:52 953 INFO ] [main] / - Adding welcome page template: index
+[2020-05-30 15:50:53 100 INFO ] [main] / - Context refreshed
+[2020-05-30 15:50:53 127 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-05-30 15:50:53 158 INFO ] [main] / - Scanning for api listing references
+[2020-05-30 15:50:53 409 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-05-30 15:50:53 425 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-05-30 15:50:53 427 INFO ] [main] / - Started IMApplication in 5.945 seconds (JVM running for 6.47)
+[2020-05-30 15:52:30 490 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-05-30 15:52:30 490 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-05-30 15:52:30 497 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 6 ms
+[2020-05-30 15:52:31 013 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:192}] to 47.105.209.57:27017
+[2020-05-30 15:52:31 662 WARN ] [nioEventLoopGroup-3-1] / - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.NumberFormatException: For input string: "/websocket"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:578)
+	at java.lang.Long.valueOf(Long.java:803)
+	at com.byc.im.websocket.WebsocketHandler.handleHttpRequest(WebsocketHandler.java:122)
+	at com.byc.im.websocket.WebsocketHandler.channelRead0(WebsocketHandler.java:48)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:271)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-05-30 15:53:02 631 WARN ] [nioEventLoopGroup-3-2] / - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.NumberFormatException: For input string: "/websocket"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:578)
+	at java.lang.Long.valueOf(Long.java:803)
+	at com.byc.im.websocket.WebsocketHandler.handleHttpRequest(WebsocketHandler.java:122)
+	at com.byc.im.websocket.WebsocketHandler.channelRead0(WebsocketHandler.java:48)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:271)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-05-30 15:53:17 804 WARN ] [nioEventLoopGroup-3-3] / - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.NumberFormatException: For input string: "/websocket"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:578)
+	at java.lang.Long.valueOf(Long.java:803)
+	at com.byc.im.websocket.WebsocketHandler.handleHttpRequest(WebsocketHandler.java:122)
+	at com.byc.im.websocket.WebsocketHandler.channelRead0(WebsocketHandler.java:48)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:271)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-05-30 15:54:29 680 WARN ] [nioEventLoopGroup-3-4] / - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.NumberFormatException: For input string: "/websocket"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:578)
+	at java.lang.Long.valueOf(Long.java:803)
+	at com.byc.im.websocket.WebsocketHandler.handleHttpRequest(WebsocketHandler.java:122)
+	at com.byc.im.websocket.WebsocketHandler.channelRead0(WebsocketHandler.java:48)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:271)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-05-30 15:54:35 467 WARN ] [nioEventLoopGroup-3-5] / - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.NumberFormatException: For input string: "/websocket"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:578)
+	at java.lang.Long.valueOf(Long.java:803)
+	at com.byc.im.websocket.WebsocketHandler.handleHttpRequest(WebsocketHandler.java:122)
+	at com.byc.im.websocket.WebsocketHandler.channelRead0(WebsocketHandler.java:48)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:271)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-05-30 15:56:47 262 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 2272 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-30 15:56:47 265 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-05-30 15:56:48 961 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-05-30 15:56:49 058 INFO ] [main] / - Finished Spring Data repository scanning in 75ms. Found 2 repository interfaces.
+[2020-05-30 15:56:50 153 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-05-30 15:56:50 183 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-05-30 15:56:50 200 INFO ] [main] / - Starting service [Tomcat]
+[2020-05-30 15:56:50 201 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-05-30 15:56:50 213 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-05-30 15:56:50 214 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-05-30 15:56:50 214 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-05-30 15:56:50 214 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-05-30 15:56:51 323 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-05-30 15:56:51 567 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-05-30 15:56:51 567 INFO ] [main] / - Root WebApplicationContext: initialization completed in 4257 ms
+[2020-05-30 15:56:51 960 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-05-30 15:56:52 203 INFO ] [cluster-ClusterId{value='5ed211c3e9ea6b08e0ef7c51', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:193}] to 47.105.209.57:27017
+[2020-05-30 15:56:52 267 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-05-30 15:56:52 268 INFO ] [cluster-ClusterId{value='5ed211c3e9ea6b08e0ef7c51', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=63817018}
+[2020-05-30 15:56:52 515 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0x60884b13, L:/0:0:0:0:0:0:0:0:1234]
+[2020-05-30 15:56:52 516 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-05-30 15:56:52 682 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-05-30 15:56:52 805 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-05-30 15:56:52 952 INFO ] [main] / - Adding welcome page template: index
+[2020-05-30 15:56:53 078 INFO ] [main] / - Context refreshed
+[2020-05-30 15:56:53 102 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-05-30 15:56:53 131 INFO ] [main] / - Scanning for api listing references
+[2020-05-30 15:56:53 357 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-05-30 15:56:53 396 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-05-30 15:56:53 398 INFO ] [main] / - Started IMApplication in 6.757 seconds (JVM running for 7.28)
+[2020-05-30 15:56:58 241 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-05-30 15:56:58 241 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-05-30 15:56:58 246 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 5 ms
+[2020-05-30 15:56:58 791 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:194}] to 47.105.209.57:27017
+[2020-05-30 15:56:59 602 WARN ] [nioEventLoopGroup-3-1] / - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.NumberFormatException: For input string: "/websocket"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:578)
+	at java.lang.Long.valueOf(Long.java:803)
+	at com.byc.im.websocket.WebsocketHandler.handleHttpRequest(WebsocketHandler.java:122)
+	at com.byc.im.websocket.WebsocketHandler.channelRead0(WebsocketHandler.java:48)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:271)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-05-30 15:57:11 842 WARN ] [nioEventLoopGroup-3-2] / - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.NumberFormatException: For input string: "/websocket"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:578)
+	at java.lang.Long.valueOf(Long.java:803)
+	at com.byc.im.websocket.WebsocketHandler.handleHttpRequest(WebsocketHandler.java:122)
+	at com.byc.im.websocket.WebsocketHandler.channelRead0(WebsocketHandler.java:48)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:271)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-05-30 15:57:23 079 WARN ] [nioEventLoopGroup-3-3] / - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.NumberFormatException: For input string: "/websocket"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:578)
+	at java.lang.Long.valueOf(Long.java:803)
+	at com.byc.im.websocket.WebsocketHandler.handleHttpRequest(WebsocketHandler.java:122)
+	at com.byc.im.websocket.WebsocketHandler.channelRead0(WebsocketHandler.java:48)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:271)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-05-30 15:58:58 429 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 7648 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-30 15:58:58 432 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-05-30 15:58:59 736 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-05-30 15:58:59 870 INFO ] [main] / - Finished Spring Data repository scanning in 114ms. Found 2 repository interfaces.
+[2020-05-30 15:59:00 865 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-05-30 15:59:00 887 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-05-30 15:59:00 901 INFO ] [main] / - Starting service [Tomcat]
+[2020-05-30 15:59:00 902 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-05-30 15:59:00 917 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-05-30 15:59:00 917 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-05-30 15:59:00 917 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-05-30 15:59:00 918 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-05-30 15:59:02 026 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-05-30 15:59:02 211 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-05-30 15:59:02 211 INFO ] [main] / - Root WebApplicationContext: initialization completed in 3726 ms
+[2020-05-30 15:59:02 538 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-05-30 15:59:02 780 INFO ] [cluster-ClusterId{value='5ed21246e9ea6b1de0c4a145', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:195}] to 47.105.209.57:27017
+[2020-05-30 15:59:02 838 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-05-30 15:59:02 862 INFO ] [cluster-ClusterId{value='5ed21246e9ea6b1de0c4a145', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=79909859}
+[2020-05-30 15:59:03 094 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0x48e3d4cc, L:/0:0:0:0:0:0:0:0:1234]
+[2020-05-30 15:59:03 095 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-05-30 15:59:03 238 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-05-30 15:59:03 370 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-05-30 15:59:03 518 INFO ] [main] / - Adding welcome page template: index
+[2020-05-30 15:59:03 658 INFO ] [main] / - Context refreshed
+[2020-05-30 15:59:03 682 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-05-30 15:59:03 714 INFO ] [main] / - Scanning for api listing references
+[2020-05-30 15:59:03 945 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-05-30 15:59:04 030 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-05-30 15:59:04 032 INFO ] [main] / - Started IMApplication in 6.077 seconds (JVM running for 6.608)
+[2020-05-30 15:59:31 750 INFO ] [http-nio-8081-exec-3] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-05-30 15:59:31 750 INFO ] [http-nio-8081-exec-3] / - Initializing Servlet 'dispatcherServlet'
+[2020-05-30 15:59:31 755 INFO ] [http-nio-8081-exec-3] / - Completed initialization in 5 ms
+[2020-05-30 15:59:32 391 INFO ] [http-nio-8081-exec-3] / - Opened connection [connectionId{localValue:2, serverValue:196}] to 47.105.209.57:27017
+[2020-05-30 15:59:32 987 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0x9ede85cd, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:64319]
+[2020-05-30 15:59:33 129 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: zbPDalo57OZTQ9d+7c7JPg==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-05-30 15:59:33 132 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-05-30 15:59:33 133 WARN ] [nioEventLoopGroup-3-1] / - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.NumberFormatException: For input string: "/websocket"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Long.parseLong(Long.java:578)
+	at java.lang.Long.valueOf(Long.java:803)
+	at com.byc.im.websocket.WebsocketHandler.handleHttpRequest(WebsocketHandler.java:122)
+	at com.byc.im.websocket.WebsocketHandler.channelRead0(WebsocketHandler.java:48)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:99)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:103)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:324)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:296)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.logging.LoggingHandler.channelRead(LoggingHandler.java:271)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:163)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:714)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:576)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:493)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:748)
+[2020-05-30 16:01:10 736 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 10724 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-30 16:01:10 739 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-05-30 16:01:12 164 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-05-30 16:01:12 342 INFO ] [main] / - Finished Spring Data repository scanning in 159ms. Found 2 repository interfaces.
+[2020-05-30 16:01:13 027 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-05-30 16:01:13 044 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-05-30 16:01:13 054 INFO ] [main] / - Starting service [Tomcat]
+[2020-05-30 16:01:13 054 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-05-30 16:01:13 064 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-05-30 16:01:13 065 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-05-30 16:01:13 065 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-05-30 16:01:13 065 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-05-30 16:01:14 136 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-05-30 16:01:14 332 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-05-30 16:01:14 332 INFO ] [main] / - Root WebApplicationContext: initialization completed in 3545 ms
+[2020-05-30 16:01:14 669 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-05-30 16:01:14 920 INFO ] [cluster-ClusterId{value='5ed212cae9ea6b29e484c7b9', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:198}] to 47.105.209.57:27017
+[2020-05-30 16:01:14 993 INFO ] [cluster-ClusterId{value='5ed212cae9ea6b29e484c7b9', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=71477188}
+[2020-05-30 16:01:15 030 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-05-30 16:01:15 587 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0x345168bb, L:/0:0:0:0:0:0:0:0:1234]
+[2020-05-30 16:01:15 587 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-05-30 16:01:15 801 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-05-30 16:01:15 924 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-05-30 16:01:16 075 INFO ] [main] / - Adding welcome page template: index
+[2020-05-30 16:01:16 195 INFO ] [main] / - Context refreshed
+[2020-05-30 16:01:16 220 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-05-30 16:01:16 253 INFO ] [main] / - Scanning for api listing references
+[2020-05-30 16:01:16 505 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-05-30 16:01:16 522 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-05-30 16:01:16 524 INFO ] [main] / - Started IMApplication in 6.154 seconds (JVM running for 6.76)
+[2020-05-30 16:01:29 022 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-05-30 16:01:29 022 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-05-30 16:01:29 026 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 4 ms
+[2020-05-30 16:01:29 509 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:199}] to 47.105.209.57:27017
+[2020-05-30 16:01:30 357 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0x8705e33d, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:64572]
+[2020-05-30 16:01:30 390 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?2 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: MntsdXht0bqoTYdqvjNuEA==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-05-30 16:01:30 394 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-05-30 16:02:39 807 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 14012 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-05-30 16:02:39 811 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-05-30 16:02:41 197 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-05-30 16:02:41 281 INFO ] [main] / - Finished Spring Data repository scanning in 69ms. Found 2 repository interfaces.
+[2020-05-30 16:02:42 020 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-05-30 16:02:42 048 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-05-30 16:02:42 063 INFO ] [main] / - Starting service [Tomcat]
+[2020-05-30 16:02:42 063 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-05-30 16:02:42 081 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-05-30 16:02:42 081 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-05-30 16:02:42 081 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-05-30 16:02:42 082 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-05-30 16:02:43 200 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-05-30 16:02:43 423 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-05-30 16:02:43 423 INFO ] [main] / - Root WebApplicationContext: initialization completed in 3551 ms
+[2020-05-30 16:02:43 925 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-05-30 16:02:44 357 INFO ] [cluster-ClusterId{value='5ed21323e9ea6b36bcb99203', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:200}] to 47.105.209.57:27017
+[2020-05-30 16:02:44 404 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-05-30 16:02:44 552 INFO ] [cluster-ClusterId{value='5ed21323e9ea6b36bcb99203', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=194119259}
+[2020-05-30 16:02:44 707 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0xfaef8d00, L:/0:0:0:0:0:0:0:0:1234]
+[2020-05-30 16:02:44 708 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-05-30 16:02:44 872 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-05-30 16:02:44 999 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-05-30 16:02:45 118 INFO ] [main] / - Adding welcome page template: index
+[2020-05-30 16:02:45 245 INFO ] [main] / - Context refreshed
+[2020-05-30 16:02:45 268 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-05-30 16:02:45 293 INFO ] [main] / - Scanning for api listing references
+[2020-05-30 16:02:45 510 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-05-30 16:02:45 525 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-05-30 16:02:45 526 INFO ] [main] / - Started IMApplication in 6.154 seconds (JVM running for 6.772)
+[2020-05-30 16:02:49 419 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-05-30 16:02:49 419 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-05-30 16:02:49 424 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 5 ms
+[2020-05-30 16:02:49 887 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:201}] to 47.105.209.57:27017
+[2020-05-30 16:02:50 427 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0x474ce192, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:62832]
+[2020-05-30 16:02:50 590 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?2 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: ISHy8DiB41Px2+gaR7Ne7g==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-05-30 16:02:50 594 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-05-30 16:03:02 138 INFO ] [nioEventLoopGroup-3-2] / - 客户端加入连接：[id: 0x3fb38e91, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:62851]
+[2020-05-30 16:03:02 140 INFO ] [nioEventLoopGroup-3-2] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?1 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: UqQyj1TG0d3xPJB0pIjkkg==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-05-30 16:03:02 140 INFO ] [nioEventLoopGroup-3-2] / - 地址：ws://localhost:1234/websocket
+[2020-05-30 16:03:12 519 INFO ] [nioEventLoopGroup-3-2] / - 客户端断开连接：[id: 0x3fb38e91, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:62851]
+[2020-05-30 16:03:12 619 INFO ] [nioEventLoopGroup-3-3] / - 客户端加入连接：[id: 0xf7b332ba, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:62867]
+[2020-05-30 16:03:12 619 INFO ] [nioEventLoopGroup-3-3] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?1 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: ju0XpLaEY67/aorVDDOERA==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-05-30 16:03:12 619 INFO ] [nioEventLoopGroup-3-3] / - 地址：ws://localhost:1234/websocket
+[2020-05-30 16:03:13 338 INFO ] [nioEventLoopGroup-3-3] / - 客户端断开连接：[id: 0xf7b332ba, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:62867]
+[2020-05-30 16:03:13 430 INFO ] [nioEventLoopGroup-3-4] / - 客户端加入连接：[id: 0x22e728db, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:62869]
+[2020-05-30 16:03:13 434 INFO ] [nioEventLoopGroup-3-4] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?1 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: OgaNn7wQjA5RdV5VyI4lEQ==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-05-30 16:03:13 434 INFO ] [nioEventLoopGroup-3-4] / - 地址：ws://localhost:1234/websocket
+[2020-05-30 16:03:14 083 INFO ] [nioEventLoopGroup-3-4] / - 客户端断开连接：[id: 0x22e728db, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:62869]
+[2020-05-30 16:03:14 181 INFO ] [nioEventLoopGroup-3-5] / - 客户端加入连接：[id: 0x5678c942, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:62871]
+[2020-05-30 16:03:14 182 INFO ] [nioEventLoopGroup-3-5] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?1 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: TRgsOTreAYzGvqulo4Liqg==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-05-30 16:03:14 182 INFO ] [nioEventLoopGroup-3-5] / - 地址：ws://localhost:1234/websocket

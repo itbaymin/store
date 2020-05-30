@@ -12,6 +12,11 @@
 </head>
 <body>
 <div id="app">
+	<div v-if="remind.show==true" class="ui-tooltips ui-tooltips-warn">
+		<div class="ui-tooltips-cnt ui-border-b">
+			{{remind.message}}<a class="ui-icon-close"></a>
+		</div>
+	</div>
 	<!-- 顶部tabbar -->
 	<div v-if="active!='chat'" class="ui-tab">
 		<ul class="ui-tab-nav ui-border-b" style="position:fixed;z-index: 1000;height: 10%;">
@@ -189,51 +194,9 @@
 <script th:inline="javascript">
 	/*<![CDATA[*/
     _user = /*[[${user}]]*/ {};
-    socket_addr = /*[[${address}]]*/'';
+    _addr = /*[[${address}]]*/'';
     /*]]>*/
-    $(function () {
-        if(!window.WebSocket){
-            window.WebSocket = window.MozWebSocket;
-        }
-        if(window.WebSocket){
-            socket = new WebSocket(socket_addr);
-
-            socket.onmessage = function(event){
-                let obj=eval('(' + event.data + ')');
-                if (obj.payLoad!=null||obj.payLoad!=undefined){
-                    if (obj.payLoad.type==Protocol.PrivateChat){
-                        showGreeting(obj);
-                    }else if (obj.payLoad.type==Protocol.GroupChat) {
-                        showGroupChat(obj);
-                    }
-                }
-                if (obj.type=="ON"){
-                    addUser(obj.data)
-                } else if (obj.type=="OFF"){
-                    deleteUser(obj.data)
-                }else if (obj.type=="SYS") {
-                    channelId=obj.data.channelId;
-                }else if (obj.type==Protocol.GroupApply){
-                    showGroupApply(obj.data);
-                }
-            };
-
-            socket.onopen = function(){
-                var ta = document.getElementById('status');
-                ta.innerHTML = "打开WebSoket 服务正常，浏览器支持WebSoket!"+"\r\n";
-                requestUsers();
-            };
-            socket.onclose = function(){
-                var ta = document.getElementById('status');
-                ta.innerHTML = "";
-                ta.innerHTML = "已断开连接"+"\r\n";
-                toastr.error("你被挤下线了");
-            };
-
-        }else{
-            alert("您的浏览器不支持WebSocket协议！");
-        }
-    })
+    socket_addr = _addr+'?'+_user.id;
 </script>
 <script type="text/javascript" th:src="@{/static/index.js}"></script>
 </html>

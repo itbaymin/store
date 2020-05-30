@@ -1,10 +1,15 @@
+var socket;
 new Vue({
     el: '#app',
     data: {
+        remind:{
+            show:false,
+            message:''
+        },
         message: '',
         groupflag:'0',
         anistyle:'',            //切换动画样式类
-        active:'chat',          //当前页面类型
+        active:'message',       //当前页面类型
         sub_active:'friend',    //当前选项卡
         chat_type:'',           //聊天类型
         chat_id: 0,             //聊天对象id
@@ -30,6 +35,41 @@ new Vue({
         ],
         //消息列表
         items: _user.history
+    },
+    created:function(){
+        if(!window.WebSocket){
+            window.WebSocket = window.MozWebSocket;
+        }
+        if(window.WebSocket){
+            socket = new WebSocket(socket_addr);
+            socket.onmessage = function(event){
+                let obj=eval('(' + event.data + ')');
+                if (obj.payLoad!=null||obj.payLoad!=undefined){
+                    if (obj.payLoad.type==Protocol.PrivateChat){
+                        showGreeting(obj);
+                    }else if (obj.payLoad.type==Protocol.GroupChat) {
+                        showGroupChat(obj);
+                    }
+                }
+                if (obj.type=="ON"){
+                    addUser(obj.data)
+                } else if (obj.type=="OFF"){
+                    deleteUser(obj.data)
+                }else if (obj.type=="SYS") {
+                    channelId=obj.data.channelId;
+                }else if (obj.type==Protocol.GroupApply){
+                    showGroupApply(obj.data);
+                }
+            };
+            socket.onopen = function(){
+                this.showRemind("打开WebSoket 服务正常，浏览器支持WebSoket!");
+            };
+            socket.onclose = function(){
+                this.showRemind("你被挤下线了");
+            };
+        }else{
+            this.showRemind("您的浏览器不支持WebSocket协议！");
+        }
     },
     methods: {
         trygroupflag:function(groupflag){
@@ -101,6 +141,14 @@ new Vue({
                 let msg = document.getElementById('gundong') // 获取对象
                 msg.scrollTop = msg.scrollHeight // 滚动高度
             });
+        },
+        showRemind:function (message) {
+            this.remind.message=message;
+            this.remind.show=true;
+        },
+        hideRemind:function () {
+            this.remind.message='';
+            this.remind.show=false;
         }
     }
-})
+});
