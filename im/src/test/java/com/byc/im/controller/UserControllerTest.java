@@ -19,6 +19,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+import static org.springframework.data.mongodb.core.query.Query.query;
+
 /**
  * Created by baiyc
  * 2020/5/25/025 19:46
@@ -97,10 +99,11 @@ public class UserControllerTest {
     public void test3(){
         Message message = new Message();
         message.setId(mongoHelper.getNextSequence(MongoHelper.Collection.USER));
-        message.setContent("hello");
+        message.setContent("helloasdfasdfas");
         message.setFrom(Message.From.USER);
-        message.setRecive(1L);
-        message.setSend(2L);
+        message.setRecive(3L);
+        message.setSend(1L);
+        message.setHeadImg("background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)");
         message.setCreateTime(LocalDateTime.now());
         message.setType(Message.MsgType.TXT);
         messageRepository.save(message);
@@ -111,6 +114,13 @@ public class UserControllerTest {
         //System.out.println(byId.get());
         Query query = new Query();
         query.addCriteria(new Criteria().where("create_time").gt(LocalDateTime.of(2020,5,26,10,0)));
+        List<Message> messages = mongoTemplate.find(query, Message.class);
+        System.out.println(messages);
+    }
+    @Test
+    public void test5(){
+        Criteria criteria = new Criteria().orOperator(Criteria.where("send").is(1).and("recive").is(2), Criteria.where("recive").is(1).and("send").is(2));
+        Query query = query(criteria);
         List<Message> messages = mongoTemplate.find(query, Message.class);
         System.out.println(messages);
     }

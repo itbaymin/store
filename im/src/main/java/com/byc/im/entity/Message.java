@@ -18,6 +18,8 @@ public class Message implements Serializable {
     private Long id;
     private From from;
     private Long send;
+    @Field("head_img")
+    private String headImg;
     private Long recive;
     private MsgType type;
     private String content;

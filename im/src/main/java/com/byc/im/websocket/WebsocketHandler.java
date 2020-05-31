@@ -160,7 +160,8 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
             JsonNode jsonNode = objectMapper.readTree(request);
             String type=jsonNode.path("payLoad").path("type").asText();
             if (type.equals(PayLoad.PVP)){
-                String channelId=jsonNode.path("target").asText();
+                Long targetId = jsonNode.path("target").asLong();
+                String channelId = UserGroup.search(targetId).getChannelId();
                 Channel channel = SocketChannelGroup.findChannel(channelId);
                 if (channel!=null){
                     channel.writeAndFlush(new TextWebSocketFrame(request));

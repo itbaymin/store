@@ -23,18 +23,19 @@ new Vue({
                 link:"http://fanze.online",
             }
         ],
+        user:_user,
         friendgroups: _user.groups,
         //群聊列表
         grolists:[
             {
-                username: 'XX即时通讯官方群',
                 imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
-                uid:'00002',
-                flag:'group'
+                uid:'00002'
             }
         ],
         //消息列表
-        items: _user.history
+        items: _user.history,
+        //聊天信息
+        messages: {}
     },
     methods: {
         trygroupflag:function(groupflag){
@@ -68,10 +69,28 @@ new Vue({
         myfriGro:function() {
             this.sub_active = 'group';
         },
-        //下面是指向安卓的方法
-        //消息列表朋友列表(朋友&群聊)条目被点击跳转到聊天窗口--传入后由java解析
+        //聊天
         goToChat:function(item) {
-            this.gochat(JSON.stringify(item));
+            var that = this;
+            if(!that.messages.list){
+                //获取聊天信息
+                $.post(_ctx+"message/list",{
+                    send:that.user.id,
+                    recive:item.id
+                },function (data) {
+                    if(data.status==200){
+                        that.messages.list = data.data;
+                        that.messages.username = item.username;
+                        that.messages.id = item.id;
+                        that.messages.imgsrc = item.imgsrc;
+                    }else {
+                        that.alertRemind("获取消息失败");
+                    }
+                })
+            }
+            //渲染聊天信息
+
+            this.gochat();
         },
         trigger:function(flag) {
             //处理分组展开逻辑
@@ -94,18 +113,26 @@ new Vue({
             this.anistyle='chattol';
         },
         sendMsg:function(){
-            this.items.push({
-                username: '年华',
+            this.messages.list.push({
                 content: this.message,
-                imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)",
-                uid:'00003',
-                time:'晚上20:30',
-                mesnum:0
+                imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)"
             });
             this.$nextTick(function() {
                 let msg = document.getElementById('gundong') // 获取对象
                 msg.scrollTop = msg.scrollHeight // 滚动高度
             });
+            let msg={
+                source:_user.id,
+                target:this.messages.id,
+                payLoad:{
+                    type: "P",
+                    code:"200",
+                    data:this.message,
+                    imgsrc:this.messages.imgsrc
+                }
+            }
+            if(socket.readyState == WebSocket.OPEN)
+                socket.send(JSON.stringify(msg));
         },
         //用户上线
         online:function (data) {
@@ -145,9 +172,12 @@ new Vue({
             socket.onmessage = function(event){
                 let obj=eval('(' + event.data + ')');
                 if (obj.payLoad!=null||obj.payLoad!=undefined){
-                    if (obj.payLoad.type==Protocol.PrivateChat){
-                        showGreeting(obj);
-                    }else if (obj.payLoad.type==Protocol.GroupChat) {
+                    if (obj.payLoad.type=="P"){
+                        that.messages.list.push({
+                            content: obj.payLoad.data,
+                            imgsrc: obj.payLoad.imgsrc
+                        });
+                    }else if (obj.payLoad.type=="G") {
                         showGroupChat(obj);
                     }
                 }
@@ -157,8 +187,6 @@ new Vue({
                     that.offline(obj.data)
                 }else if (obj.type=="SYS") {
                     // channelId=obj.data.channelId;
-                }else if (obj.type==Protocol.GroupApply){
-                    // showGroupApply(obj.data);
                 }
             };
             socket.onopen = function(){

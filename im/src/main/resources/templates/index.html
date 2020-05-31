@@ -14,7 +14,7 @@
 <div id="app">
 	<div v-if="remind.show==true" class="ui-tooltips ui-tooltips-warn" style="position: fixed;bottom: 0;z-index: 10000">
 		<div class="ui-tooltips-cnt ui-border-b">
-			{{remind.message}}<a class="ui-icon-close"></a>
+			{{remind.message}}<a class="ui-icon-close" @click="remind.show=false"></a>
 		</div>
 	</div>
 	<!-- 顶部tabbar -->
@@ -35,11 +35,11 @@
 			padding: 3px 8px;
 			z-index: 1000;
 			top: 20%;
-			left:2%" @click="msgbtnde">返回</button><h2><span>大郎</span></h2>
+			left:2%" @click="msgbtnde">返回</button><h2><span>{{messages.username}}</span></h2>
 		</section>
-		<div class="board ui-border-t ui-border-radius chatbt" id="gundong" style="height:750px;overflow-y:auto;overflow-x:hidden;margin-bottom:10px;">
-			<ul class="ui-list ui-list-function ui-border-tb" style="background-color:transparent;">
-				<li style="float:left;width:100%" v-for="item in items">
+		<div class="board ui-border-t ui-border-radius chatbt" id="gundong" style="height:600px;overflow-y:auto;overflow-x:hidden;margin-bottom:10px;">
+			<ul class="ui-list ui-list-function ui-border-tb" v-for="item in messages.list" style="background-color:transparent;">
+				<li style="float:left;width:100%" v-if="item.id!=user.id">
 					<!-- 条目头像用户名内容 -->
 					<div class="ui-avatar">
 						<span :style="item.imgsrc"></span>
@@ -48,20 +48,11 @@
 						<p><span class="recmsg">{{item.content}}</span></p>
 					</div>
 				</li>
-				<li style="float:right;width:100%" v-for="item in items">
+				<li style="float:right;width:100%" v-if="item.id==user.id">
 					<div class="ui-list-info" style="text-align:right;padding-right:5%;">
 						<p><span class="senmsg">{{item.content}}</span></p>
 					</div>
 					<div class="ui-avatar">
-					</div>
-				</li>
-				<li style="float:left;width:100%" v-for="item in items">
-					<!-- 条目头像用户名内容 -->
-					<div class="ui-avatar">
-						<span :style="item.imgsrc"></span>
-					</div>
-					<div class="ui-list-info">
-						<p><span class="recmsg">{{item.content}}</span></p>
 					</div>
 				</li>
 			</ul>
@@ -91,8 +82,6 @@
 
 		<!-- 条目容器 -->
 		<ul class="ui-list ui-list-function ui-border-tb">
-
-
 			<!-- 消息列表项 -->
 			<li class="shadow" v-for="item in items" @click="goToChat(item)">
 				<!-- 条目头像用户名内容 -->
@@ -195,12 +184,16 @@
 	/*<![CDATA[*/
     _user = /*[[${user}]]*/ {};
     _addr = /*[[${address}]]*/'';
+    _ctx = /*[[@{/}]]*/'';
     /*]]>*/
     socket_addr = _addr+'?'+_user.id;
-    var friends = new Array();
+    friends = new Array();
     for (let i in _user.groups){
 		friends.push.apply(friends,_user.groups[i].friends);
 	}
+	$.ajaxSetup({
+        async: false
+    });
 </script>
 <script type="text/javascript" th:src="@{/static/index.js}"></script>
 </html>
