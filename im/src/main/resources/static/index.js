@@ -13,6 +13,11 @@ new Vue({
         sub_active:'friend',    //当前选项卡
         chat_type:'',           //聊天类型
         chat_id: 0,             //聊天对象id
+        curr_friend:{},
+        curr_records:[],
+        curr_user:_user,
+        //朋友及聊天信息
+        friends:friends,
         TopImg:[
             {
                 src:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
@@ -23,19 +28,13 @@ new Vue({
                 link:"http://fanze.online",
             }
         ],
-        user:_user,
-        friendgroups: _user.groups,
         //群聊列表
         grolists:[
             {
-                imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
+                headImg:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
                 uid:'00002'
             }
-        ],
-        //消息列表
-        items: _user.history,
-        //聊天信息
-        messages: {}
+        ]
     },
     methods: {
         trygroupflag:function(groupflag){
@@ -69,28 +68,40 @@ new Vue({
         myfriGro:function() {
             this.sub_active = 'group';
         },
+        //获取朋友信息
+        getFriend:function (id) {
+            for (let i in friends){
+                if(friends[i].id==id)
+                    return friends[i];
+            }
+            return undefined;
+        },
         //聊天
         goToChat:function(item) {
-            var that = this;
-            if(!that.messages.list){
+            this.curr_friend = this.getFriend(item.id);
+            this.addRecord(item.id);
+            this.curr_records = this.curr_friend.records;
+            this.gochat();
+        },
+        addRecord:function (target,record) {
+            let friend = this.getFriend(target)
+            if(!friend.records){
+                var that = this;
                 //获取聊天信息
                 $.post(_ctx+"message/list",{
-                    send:that.user.id,
-                    recive:item.id
+                    send:this.curr_user.id,
+                    recive:this.curr_friend.id
                 },function (data) {
                     if(data.status==200){
-                        that.messages.list = data.data;
-                        that.messages.username = item.username;
-                        that.messages.id = item.id;
-                        that.messages.imgsrc = item.imgsrc;
+                        that.curr_friend.records = data.data;
                     }else {
                         that.alertRemind("获取消息失败");
                     }
                 })
             }
-            //渲染聊天信息
-
-            this.gochat();
+            if(record)
+                this.curr_friend.records.push(record);
+            this.scroll();
         },
         trigger:function(flag) {
             //处理分组展开逻辑
@@ -112,39 +123,46 @@ new Vue({
             this.active='chat';
             this.anistyle='chattol';
         },
+        scroll:function () {
+            if(this.active=='chat')
+                this.$nextTick(function() {
+                    let msg = document.getElementById('gundong') // 获取对象
+                    msg.scrollTop = msg.scrollHeight // 滚动高度
+                });
+        },
         sendMsg:function(){
-            this.messages.list.push({
+            let newMsg = {
+                send: this.curr_user.id,
                 content: this.message,
-                imgsrc:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)"
-            });
-            this.$nextTick(function() {
-                let msg = document.getElementById('gundong') // 获取对象
-                msg.scrollTop = msg.scrollHeight // 滚动高度
-            });
+                headImg:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)"
+            }
+            this.addRecord(this.curr_friend.id,newMsg);
+            this.scroll();
             let msg={
-                source:_user.id,
-                target:this.messages.id,
+                source:this.curr_user.id,
+                target:this.curr_friend.id,
                 payLoad:{
                     type: "P",
                     code:"200",
                     data:this.message,
-                    imgsrc:this.messages.imgsrc
+                    headImg:this.curr_friend.headImg
                 }
             }
             if(socket.readyState == WebSocket.OPEN)
                 socket.send(JSON.stringify(msg));
+            this.message = '';
         },
         //用户上线
         online:function (data) {
-            _user.history.push(data);
+            this.curr_user.history.push(data);
             this.alertRemind(data.username+"上线");
         },
         offline:function (data) {
             console.log(data);
-            for(let i in _user.history){
-                if(_user.history[i].id==data.id){
-                    this.alertRemind(_user.history[i].username+"下线");
-                    _user.history.splice(i,1);
+            for(let i in this.curr_user.history){
+                if(this.curr_user.history[i].id==data.id){
+                    this.alertRemind(this.curr_user.history[i].username+"下线");
+                    this.curr_user.history.splice(i,1);
                 }
             }
         },
@@ -173,10 +191,12 @@ new Vue({
                 let obj=eval('(' + event.data + ')');
                 if (obj.payLoad!=null||obj.payLoad!=undefined){
                     if (obj.payLoad.type=="P"){
-                        that.messages.list.push({
+                        that.addRecord(obj.source,{
+                            send:obj.source,
                             content: obj.payLoad.data,
-                            imgsrc: obj.payLoad.imgsrc
+                            headImg: obj.payLoad.headImg
                         });
+                        that.curr_records = that.curr_friend.records;
                     }else if (obj.payLoad.type=="G") {
                         showGroupChat(obj);
                     }
@@ -197,6 +217,14 @@ new Vue({
             };
         }else{
             that.showRemind("您的浏览器不支持WebSocket协议！");
+        }
+    },
+    watch:{
+        curr_friend: {
+            handler(n,o){
+                console.log(n,o);
+            },
+            deep: true
         }
     }
 });
