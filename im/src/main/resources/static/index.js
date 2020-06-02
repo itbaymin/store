@@ -16,8 +16,6 @@ new Vue({
         curr_friend:{},
         curr_records:[],
         curr_user:_user,
-        //朋友及聊天信息
-        friends:friends,
         TopImg:[
             {
                 src:"background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)",
@@ -90,17 +88,17 @@ new Vue({
                 //获取聊天信息
                 $.post(_ctx+"message/list",{
                     send:this.curr_user.id,
-                    recive:this.curr_friend.id
+                    recive:target
                 },function (data) {
                     if(data.status==200){
-                        that.curr_friend.records = data.data;
+                        friend.records = data.data;
                     }else {
                         that.alertRemind("获取消息失败");
                     }
                 })
             }
             if(record)
-                this.curr_friend.records.push(record);
+                friend.records.push(record);
             this.scroll();
         },
         trigger:function(flag) {
@@ -122,6 +120,7 @@ new Vue({
         gochat:function(){
             this.active='chat';
             this.anistyle='chattol';
+            this.scroll();
         },
         scroll:function () {
             if(this.active=='chat')
