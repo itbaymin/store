@@ -195,7 +195,6 @@ new Vue({
                             content: obj.payLoad.data,
                             headImg: obj.payLoad.headImg
                         });
-                        that.curr_records = that.curr_friend.records;
                     }else if (obj.payLoad.type=="G") {
                         showGroupChat(obj);
                     }
