@@ -22,7 +22,7 @@ import static org.springframework.data.mongodb.core.query.Query.query;
  * Description：用户业务
  */
 @Service
-public class UserService {
+public class IMService {
     @Autowired
     UserRepository userRepository;
     @Autowired
@@ -42,5 +42,10 @@ public class UserService {
                 Criteria.where("recive").is(send).and("send").is(recive));
         Query query = query(criteria);
         return mongoTemplate.find(query,Message.class);
+    }
+
+    /**保存消息*/
+    public void save(){
+
     }
 }

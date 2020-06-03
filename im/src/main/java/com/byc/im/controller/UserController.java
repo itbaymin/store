@@ -3,7 +3,7 @@ package com.byc.im.controller;
 import com.byc.common.mvc.WebResult;
 import com.byc.common.utils.AssertUtil;
 import com.byc.im.entity.User;
-import com.byc.im.service.UserService;
+import com.byc.im.service.IMService;
 import com.byc.im.support.ChatGroup;
 import com.byc.im.support.SocketChannelGroup;
 import com.byc.im.support.UserGroup;
@@ -28,7 +28,7 @@ import java.util.List;
 @Controller
 public class UserController {
     @Autowired
-    UserService userService;
+    IMService IMService;
     @Autowired
     APPConfig config;
 
@@ -40,7 +40,7 @@ public class UserController {
 
     @PostMapping("/login")
     public String doLogin(String username, String password, Model model) {
-        User user = userService.login(username, password);
+        User user = IMService.login(username, password);
         UserGroup.addUser(user);
         user.build();
         model.addAttribute("address",config.getWebsocket().getAddr());

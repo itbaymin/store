@@ -1,6 +1,7 @@
 package com.byc.im.websocket;
 
 import com.byc.im.entity.User;
+import com.byc.im.service.IMService;
 import com.byc.im.support.ChatGroup;
 import com.byc.im.support.SocketChannelGroup;
 import com.byc.im.support.UserGroup;
@@ -36,6 +37,8 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
     private WebSocketServerHandshaker handshaker;
 
     private APPConfig config;
+
+    private IMService IMService;
 
     public WebsocketHandler(APPConfig config) {
         this.config = config;
