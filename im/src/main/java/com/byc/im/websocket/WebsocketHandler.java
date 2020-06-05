@@ -6,9 +6,8 @@ import com.byc.im.support.ChatGroup;
 import com.byc.im.support.SocketChannelGroup;
 import com.byc.im.support.UserGroup;
 import com.byc.im.support.common.APPConfig;
-import com.byc.im.support.pojo.PayLoad;
+import com.byc.im.support.pojo.Messages;
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -97,7 +96,7 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
         String request = ((TextWebSocketFrame) frame).text();
         log.info("服务端收到：" + request);
         //消息分发
-        WebSocketDispatcher(ctx,(TextWebSocketFrame)frame);
+        WebSocketDispatcher(ctx,request);
     }
     /**
      * 唯一的一次http请求，用于创建websocket
@@ -128,8 +127,8 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
             SocketChannelGroup.addChannel(ctx.channel());
             //保存用户名和channelId
             ObjectMapper objectMapper = new ObjectMapper();
-            PayLoad payLoad = new PayLoad(PayLoad.SYS,objectMapper.writeValueAsString(user));
-            TextWebSocketFrame tws = new TextWebSocketFrame(payLoad.toString());
+            Messages message = Messages.build(Messages.SYS,objectMapper.writeValueAsString(user));
+            TextWebSocketFrame tws = new TextWebSocketFrame(message.toString());
             ctx.channel().writeAndFlush(tws);
         }
     }
@@ -155,26 +154,25 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
     /**
      * 消息分发器
      * **/
-    private static void WebSocketDispatcher(ChannelHandlerContext ctx, TextWebSocketFrame frame){
-        String request = frame.text();
+    private static void WebSocketDispatcher(ChannelHandlerContext ctx, String request){
         ObjectMapper objectMapper = new ObjectMapper();
-        PayLoad payLoad = new PayLoad();
         try {
-            JsonNode jsonNode = objectMapper.readTree(request);
-            String type=jsonNode.path("payLoad").path("type").asText();
-            if (type.equals(PayLoad.PVP)){
-                Long targetId = jsonNode.path("target").asLong();
+            Messages messages = objectMapper.readValue(request.getBytes(), Messages.class);
+            String type=messages.getPayLoad().getType();
+            if (type.equals(Messages.PVP)){
+                Long targetId = messages.getPayLoad().getTarget();
                 String channelId = UserGroup.search(targetId).getChannelId();
                 Channel channel = SocketChannelGroup.findChannel(channelId);
                 if (channel!=null){
                     channel.writeAndFlush(new TextWebSocketFrame(request));
                 }else{
-                    throw  new IOException();
+                    throw new IOException();
                 }
-            }else if (type.equals(PayLoad.PVG)){
-                String groupChatName=jsonNode.path("target").asText();
-                String channelId = jsonNode.path("source").asText();
-                io.netty.channel.group.ChannelGroup channels = ChatGroup.getChatGroup(groupChatName);
+            }else if (type.equals(Messages.PVG)){
+                Long targetId = messages.getPayLoad().getTarget();
+                Long sourceId = messages.getPayLoad().getSource();
+                String channelId = UserGroup.search(sourceId).getChannelId();
+                io.netty.channel.group.ChannelGroup channels = ChatGroup.getChatGroup(targetId);
                 if (channels!=null){
                     Channel channel = SocketChannelGroup.findChannel(channelId);
                     //不给自己发消息
@@ -182,14 +180,11 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
                     channels.writeAndFlush(new TextWebSocketFrame(request));
                     channels.add(channel);
                 }else {
-                    throw  new IOException();
+                    throw new IOException();
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
-            payLoad.setType(PayLoad.ERROR);
-            payLoad.setData("消息发送失败！[ "+request+" ]");
-            ctx.writeAndFlush(new TextWebSocketFrame(payLoad.toString()));
+            ctx.writeAndFlush(new TextWebSocketFrame(Messages.err("消息发送失败！[ "+request+" ]").toString()));
         }
     }
 }

@@ -1,7 +1,7 @@
 package com.byc.im.support;
 
 import com.byc.im.entity.User;
-import com.byc.im.support.pojo.PayLoad;
+import com.byc.im.support.pojo.Messages;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.netty.channel.Channel;
@@ -69,26 +69,26 @@ public class UserGroup {
             }
         }
         USER.add(user);
-        PayLoad payLoad = null;
+        Messages message = null;
         try {
-            payLoad = new PayLoad(PayLoad.ONLINE, objectMapper.writeValueAsString(user));
+            message = Messages.build(Messages.ONLINE, objectMapper.writeValueAsString(user));
         } catch (JsonProcessingException e) {
             log.error("序列化异常",e);
         }
-        TextWebSocketFrame textWebSocketFrame = new TextWebSocketFrame(payLoad.toString());
+        TextWebSocketFrame textWebSocketFrame = new TextWebSocketFrame(message.toString());
         SocketChannelGroup.send2All(textWebSocketFrame);
     }
 
     public static void removeUser(Channel channel) {
         User user = search(channel);
         USER.remove(user);
-        PayLoad payLoad = null;
+        Messages message = null;
         try {
-            payLoad = new PayLoad(PayLoad.OFFLINE, objectMapper.writeValueAsString(user));
+            message = Messages.build(Messages.OFFLINE, objectMapper.writeValueAsString(user));
         } catch (JsonProcessingException e) {
             log.error("序列化异常",e);
         }
-        TextWebSocketFrame textWebSocketFrame = new TextWebSocketFrame(payLoad.toString());
+        TextWebSocketFrame textWebSocketFrame = new TextWebSocketFrame(message.toString());
         SocketChannelGroup.send2All(textWebSocketFrame);
     }
 }

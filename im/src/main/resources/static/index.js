@@ -188,22 +188,23 @@ new Vue({
             socket = new WebSocket(socket_addr);
             socket.onmessage = function(event){
                 let obj=eval('(' + event.data + ')');
-                if (obj.payLoad!=null||obj.payLoad!=undefined){
-                    if (obj.payLoad.type=="P"){
-                        that.addRecord(obj.source,{
-                            send:obj.source,
-                            content: obj.payLoad.data,
-                            headImg: obj.payLoad.headImg
-                        });
-                    }else if (obj.payLoad.type=="G") {
-                        showGroupChat(obj);
-                    }
+                if(obj.code!="200"){
+                    that.alertRemind(obj.message);
+                    return;
                 }
-                if (obj.type=="ON"){
+                if (obj.payLoad.type=="P"){
+                    that.addRecord(obj.payLoad.source,{
+                        send:obj.payLoad.source,
+                        content: obj.payLoad.data,
+                        headImg: obj.payLoad.headImg
+                    });
+                }else if (obj.payLoad.type=="G") {
+                    showGroupChat(obj);
+                }else if (obj.payLoad.type=="ON"){
                     that.online(obj.data)
-                } else if (obj.type=="OFF"){
+                } else if (obj.payLoad.type=="OFF"){
                     that.offline(obj.data)
-                }else if (obj.type=="SYS") {
+                }else if (obj.payLoad.type=="SYS") {
                     // channelId=obj.data.channelId;
                 }
             };

@@ -6,8 +6,8 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 public class ChatGroup {
-    private static ConcurrentMap<String, ChannelGroup> chatGroupMap=new ConcurrentHashMap<>();
-    public static boolean insertChatGroupMap(String name, ChannelGroup channels){
+    private static ConcurrentMap<Long, ChannelGroup> chatGroupMap=new ConcurrentHashMap<>();
+    public static boolean insertChatGroupMap(Long name, ChannelGroup channels){
         if (name!=null&&channels!=null){
             if (!chatGroupMap.containsKey(name)){
                 //防止内存溢出
@@ -20,7 +20,7 @@ public class ChatGroup {
         }
         return false;
     }
-    public static ChannelGroup getChatGroup(String name){
+    public static ChannelGroup getChatGroup(Long name){
         return chatGroupMap.get(name);
     }
     public static boolean isExist(String name){

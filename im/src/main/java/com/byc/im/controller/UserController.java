@@ -9,7 +9,7 @@ import com.byc.im.support.SocketChannelGroup;
 import com.byc.im.support.UserGroup;
 import com.byc.im.support.common.APPConfig;
 import com.byc.im.support.pojo.GroupChat;
-import com.byc.im.support.pojo.PayLoad;
+import com.byc.im.support.pojo.Messages;
 import com.byc.im.utils.StateCode;
 import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
@@ -65,8 +65,8 @@ public class UserController {
         }
         //广播邀请信息
         members.clear();
-        PayLoad payLoad = new PayLoad(PayLoad.GROUP_APPLY,groupChat.toString());
-        TextWebSocketFrame textWebSocketFrame = new TextWebSocketFrame(payLoad.toString());
+        Messages message = Messages.build(Messages.GROUP_APPLY, groupChat.toString());
+        TextWebSocketFrame textWebSocketFrame = new TextWebSocketFrame(message.toString());
         //发送信息出去
         group.writeAndFlush(textWebSocketFrame);
         //清空
@@ -74,7 +74,7 @@ public class UserController {
         group.add(SocketChannelGroup.findChannel(groupChat.getCreator()));
         //只保留创建者
         members.add(groupChat.getCreator());
-        ChatGroup.insertChatGroupMap(groupChat.getGroupName(),group);
+        ChatGroup.insertChatGroupMap(1L,group);
         return WebResult.success(groupChat);
     }
 
@@ -82,7 +82,7 @@ public class UserController {
     @ResponseBody
     public WebResult joinGroups(String channelId,String groupName) {
         AssertUtil.assertTrue(ChatGroup.isExist(groupName),StateCode.CODE_BUSINESS,"邀请已失效");
-        ChannelGroup channels = ChatGroup.getChatGroup(groupName);
+        ChannelGroup channels = ChatGroup.getChatGroup(1L);
         channels.add(SocketChannelGroup.findChannel(channelId));
         return WebResult.success("");
     }
