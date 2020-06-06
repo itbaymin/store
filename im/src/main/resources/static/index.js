@@ -134,7 +134,7 @@ new Vue({
                 send: this.curr_user.id,
                 data: {
                     content:this.message,
-                    headImg:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)"
+                    headImg:this.curr_user.headImg
                 }
             }
             this.addRecord(this.curr_friend.id,newMsg);
