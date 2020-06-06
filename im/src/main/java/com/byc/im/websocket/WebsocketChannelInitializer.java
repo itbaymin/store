@@ -1,5 +1,6 @@
 package com.byc.im.websocket;
 
+import com.byc.im.service.IMService;
 import com.byc.im.support.common.APPConfig;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
@@ -19,6 +20,8 @@ import org.springframework.stereotype.Component;
 public class WebsocketChannelInitializer  extends ChannelInitializer<SocketChannel> {
     @Autowired
     APPConfig config;
+    @Autowired
+    IMService service;
 
     @Override
     protected void initChannel(SocketChannel ch) {
@@ -26,6 +29,6 @@ public class WebsocketChannelInitializer  extends ChannelInitializer<SocketChann
         ch.pipeline().addLast("http-codec",new HttpServerCodec());
         ch.pipeline().addLast("aggregator",new HttpObjectAggregator(65536));
         ch.pipeline().addLast("http-chunked",new ChunkedWriteHandler());
-        ch.pipeline().addLast("handler",new WebsocketHandler(config));
+        ch.pipeline().addLast("handler",new WebsocketHandler(config,service));
     }
 }

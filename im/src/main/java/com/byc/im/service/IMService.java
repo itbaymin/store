@@ -3,8 +3,10 @@ package com.byc.im.service;
 import com.byc.common.utils.AssertUtil;
 import com.byc.im.entity.Message;
 import com.byc.im.entity.User;
-import com.byc.im.utils.StateCode;
 import com.byc.im.repository.UserRepository;
+import com.byc.im.support.pojo.Messages;
+import com.byc.im.utils.MongoHelper;
+import com.byc.im.utils.StateCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -27,6 +29,8 @@ public class IMService {
     UserRepository userRepository;
     @Autowired
     MongoTemplate mongoTemplate;
+    @Autowired
+    MongoHelper mongoHelper;
 
     /**登陆*/
     public User login(String username,String password){
@@ -44,8 +48,13 @@ public class IMService {
         return mongoTemplate.find(query,Message.class);
     }
 
-    /**保存消息*/
-    public void save(){
-
+    /**保存消息
+     * @param user
+     * @param jsonNode
+     * @param payLoad */
+    public void saveMessage(Message.From user, Object jsonNode, Messages.Payload payLoad){
+        Message message = Message.build(user, jsonNode, payLoad);
+        message.setId(mongoHelper.getNextSequence(MongoHelper.Collection.MESSAGE));
+        mongoTemplate.save(message);
     }
 }

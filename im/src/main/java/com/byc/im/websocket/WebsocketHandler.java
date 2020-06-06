@@ -1,5 +1,6 @@
 package com.byc.im.websocket;
 
+import com.byc.im.entity.Message;
 import com.byc.im.entity.User;
 import com.byc.im.service.IMService;
 import com.byc.im.support.ChatGroup;
@@ -37,10 +38,11 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
 
     private APPConfig config;
 
-    private IMService IMService;
+    private IMService service;
 
-    public WebsocketHandler(APPConfig config) {
+    public WebsocketHandler(APPConfig config,IMService service) {
         this.config = config;
+        this.service = service;
     }
 
     @Override
@@ -135,7 +137,7 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
     /**
      * 拒绝不合法的http请求，并返回
      * */
-    private static void sendHttpResponse(ChannelHandlerContext ctx,
+    private void sendHttpResponse(ChannelHandlerContext ctx,
                                          FullHttpRequest req, DefaultFullHttpResponse res) {
         // 返回应答给客户端
         if (res.status().code() != 200) {
@@ -154,7 +156,7 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
     /**
      * 消息分发器
      * **/
-    private static void WebSocketDispatcher(ChannelHandlerContext ctx, String request){
+    private void WebSocketDispatcher(ChannelHandlerContext ctx, String request){
         ObjectMapper objectMapper = new ObjectMapper();
         try {
             Messages messages = objectMapper.readValue(request.getBytes(), Messages.class);
@@ -164,6 +166,9 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
                 String channelId = UserGroup.search(targetId).getChannelId();
                 Channel channel = SocketChannelGroup.findChannel(channelId);
                 if (channel!=null){
+                    //保存消息
+                    Object data = messages.getPayLoad().getData();
+                    service.saveMessage(Message.From.USER,data,messages.getPayLoad());
                     channel.writeAndFlush(new TextWebSocketFrame(request));
                 }else{
                     throw new IOException();

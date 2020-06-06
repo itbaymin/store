@@ -96,9 +96,9 @@ new Vue({
                         that.alertRemind("获取消息失败");
                     }
                 })
+            }else{
+                record && friend.records.push(record);
             }
-            if(record)
-                friend.records.push(record);
             this.scroll();
         },
         trigger:function(flag) {
