@@ -132,19 +132,20 @@ new Vue({
         sendMsg:function(){
             let newMsg = {
                 send: this.curr_user.id,
-                content: this.message,
-                headImg:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)"
+                data: {
+                    content:this.message,
+                    headImg:"background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)"
+                }
             }
             this.addRecord(this.curr_friend.id,newMsg);
             this.scroll();
             let msg={
-                source:this.curr_user.id,
-                target:this.curr_friend.id,
+                code:"200",
                 payLoad:{
+                    source:this.curr_user.id,
+                    target:this.curr_friend.id,
                     type: "P",
-                    code:"200",
-                    data:this.message,
-                    headImg:this.curr_friend.headImg
+                    data:newMsg.data
                 }
             }
             if(socket.readyState == WebSocket.OPEN)
@@ -153,11 +154,11 @@ new Vue({
         },
         //用户上线
         online:function (data) {
+            console.log(data)
             this.curr_user.history.push(data);
             this.alertRemind(data.username+"上线");
         },
         offline:function (data) {
-            console.log(data);
             for(let i in this.curr_user.history){
                 if(this.curr_user.history[i].id==data.id){
                     this.alertRemind(this.curr_user.history[i].username+"下线");
@@ -188,6 +189,7 @@ new Vue({
             socket = new WebSocket(socket_addr);
             socket.onmessage = function(event){
                 let obj=eval('(' + event.data + ')');
+                console.log("收到消息：",obj);
                 if(obj.code!="200"){
                     that.alertRemind(obj.message);
                     return;
@@ -195,15 +197,14 @@ new Vue({
                 if (obj.payLoad.type=="P"){
                     that.addRecord(obj.payLoad.source,{
                         send:obj.payLoad.source,
-                        content: obj.payLoad.data,
-                        headImg: obj.payLoad.headImg
+                        data: obj.payLoad.data
                     });
                 }else if (obj.payLoad.type=="G") {
-                    showGroupChat(obj);
+                    showGroupChat(obj.payLoad);
                 }else if (obj.payLoad.type=="ON"){
-                    that.online(obj.data)
+                    that.online(obj.payLoad.data)
                 } else if (obj.payLoad.type=="OFF"){
-                    that.offline(obj.data)
+                    that.offline(obj.payLoad.data)
                 }else if (obj.payLoad.type=="SYS") {
                     // channelId=obj.data.channelId;
                 }

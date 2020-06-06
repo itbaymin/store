@@ -3,11 +3,13 @@ package com.byc.im.controller;
 import com.byc.common.mvc.WebResult;
 import com.byc.im.entity.Message;
 import com.byc.im.service.IMService;
+import com.byc.im.vo.MessageVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("message")
@@ -19,7 +21,7 @@ public class MessageController {
     @RequestMapping("list")
     public WebResult messages(Long send,Long recive){
         List<Message> messages = IMService.findMessages(send, recive);
-        return WebResult.success(messages);
+        return WebResult.success(messages.stream().map(MessageVO::of).collect(Collectors.toList()));
     }
 
     @RequestMapping("test")

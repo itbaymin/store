@@ -2,8 +2,6 @@ package com.byc.im.support;
 
 import com.byc.im.entity.User;
 import com.byc.im.support.pojo.Messages;
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +12,6 @@ import java.util.List;
 @Slf4j
 public class UserGroup {
     public static List<User> USER=new ArrayList<>();
-    public static ObjectMapper objectMapper = new ObjectMapper();
 
     public static User search(Channel channel){
         for (User user : USER) {
@@ -69,25 +66,17 @@ public class UserGroup {
             }
         }
         USER.add(user);
-        Messages message = null;
-        try {
-            message = Messages.build(Messages.ONLINE, objectMapper.writeValueAsString(user));
-        } catch (JsonProcessingException e) {
-            log.error("序列化异常",e);
-        }
+        Messages message = Messages.build(Messages.ONLINE, user);
         TextWebSocketFrame textWebSocketFrame = new TextWebSocketFrame(message.toString());
         SocketChannelGroup.send2All(textWebSocketFrame);
     }
 
     public static void removeUser(Channel channel) {
         User user = search(channel);
+        if(user==null)
+            return;
         USER.remove(user);
-        Messages message = null;
-        try {
-            message = Messages.build(Messages.OFFLINE, objectMapper.writeValueAsString(user));
-        } catch (JsonProcessingException e) {
-            log.error("序列化异常",e);
-        }
+        Messages message = Messages.build(Messages.OFFLINE, user);
         TextWebSocketFrame textWebSocketFrame = new TextWebSocketFrame(message.toString());
         SocketChannelGroup.send2All(textWebSocketFrame);
     }
