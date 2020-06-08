@@ -48,6 +48,7 @@ new Vue({
         },
         cancelSearch:function () {
             this.searchFlag = '';
+            this.searchInput="";
         },
         clearSearch:function () {
             this.searchInput="";
