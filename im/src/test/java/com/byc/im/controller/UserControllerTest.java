@@ -45,7 +45,7 @@ public class UserControllerTest {
         user.setId(1L);
         user.setUsername("bai1");
         user.setPassword("byc123");
-        user.setHeadImg("background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)");
+        user.setHeadImg(2);
 
         User.Friend friend1 = new User.Friend();
         friend1.setUsername("bai2");
@@ -64,7 +64,7 @@ public class UserControllerTest {
         user2.setId(2L);
         user2.setUsername("bai2");
         user2.setPassword("byc123");
-        user2.setHeadImg("background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)");
+        user2.setHeadImg(1);
         User.Friend friend2 = new User.Friend();
         friend2.setUsername("bai1");
         friend2.setId(1L);

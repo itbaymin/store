@@ -1,5 +1,6 @@
 package com.byc.im.service;
 
+import com.byc.common.mvc.WebResult;
 import com.byc.common.utils.AssertUtil;
 import com.byc.im.entity.Message;
 import com.byc.im.entity.User;
@@ -7,6 +8,7 @@ import com.byc.im.repository.UserRepository;
 import com.byc.im.support.pojo.Messages;
 import com.byc.im.utils.MongoHelper;
 import com.byc.im.utils.StateCode;
+import org.apache.commons.lang3.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -56,5 +58,19 @@ public class IMService {
         Message message = Message.build(user, jsonNode, payLoad);
         message.setId(mongoHelper.getNextSequence(MongoHelper.Collection.MESSAGE));
         mongoTemplate.save(message);
+    }
+
+    /**用户注册*/
+    public WebResult register(String username, String password) {
+        User user = mongoTemplate.findOne(query(where("username").is(username)), User.class);
+        AssertUtil.assertNull(user,StateCode.CODE_BUSINESS,"用户名已存在");
+        user = new User();
+        user.setId(mongoHelper.getNextSequence(MongoHelper.Collection.USER));
+        user.setUsername(username);
+        user.setPassword(password);
+        int random = RandomUtils.nextInt(1, 4);
+        user.setHeadImg(random);
+        mongoTemplate.save(user);
+        return WebResult.success("");
     }
 }

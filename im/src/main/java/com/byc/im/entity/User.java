@@ -5,6 +5,7 @@ import lombok.Data;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.util.CollectionUtils;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -60,11 +61,12 @@ public class User implements Serializable {
     public void build(){
         //填充聊天历史
         this.history = new ArrayList();
-        for (Group group:groups)
-            for (Friend friend:group.getFriends()) {
-                if(UserGroup.search(friend.getId())!=null)
-                    history.add(friend);
-            }
+        if(!CollectionUtils.isEmpty(groups))
+            for (Group group:groups)
+                for (Friend friend:group.getFriends()) {
+                    if(UserGroup.search(friend.getId())!=null)
+                        history.add(friend);
+                }
     }
 
     @Override
@@ -78,5 +80,9 @@ public class User implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(id);
+    }
+
+    public void setHeadImg(int random){
+        this.headImg = "/image/headimg"+random+".jpg";
     }
 }

@@ -48,6 +48,12 @@ public class UserController {
         return "index";
     }
 
+    @PostMapping("/register")
+    @ResponseBody
+    public WebResult doRegister(String username, String password) {
+        return IMService.register(username, password);
+    }
+
     @RequestMapping("/getOnlineUser")
     @ResponseBody
     public WebResult getOnlineUser(){

@@ -1,61 +1,131 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<title>胡聊</title>
-	<link rel="shortcut icon" th:href="@{/static/favicon.ico}">
 	<meta charset="utf-8">
 	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0" />
+	<title>胡聊</title>
+	<link rel="shortcut icon" th:href="@{/static/favicon.ico}">
+	<link rel="stylesheet" th:href="@{/static/css/frozenui.css}">
+	<link rel="stylesheet" th:href="@{/static/css/index.css}">
+	<script type="text/javascript" th:src="@{/static/js/lib/vue.js}"></script>
+	<script type="text/javascript" th:src="@{/static/js/lib/zepto.min.js}"></script>
 </head>
 <body>
 <div id="app">
-	<div class="ui-form ui-border-t">
-		<section class="ui-panel ui-panel-center ui-border-tb">
-			<h2><span>登陆</span></h2>
-		</section>
-		<div v-if="showMsg==true" class="ui-tooltips ui-tooltips-warn">
-			<div class="ui-tooltips-cnt ui-border-b">
-				{{message}}<a class="ui-icon-close"></a>
+	<!-- 顶部tabbar -->
+	<div class="ui-tab">
+		<ul class="ui-tab-nav ui-border-b" style="position:absolute;height: 10%;">
+			<li :class="active=='login'?'current':''" @click="toLogin"><span>登陆</span></li>
+			<li :class="active=='register'?'current':''" @click="toRegister"><span>注册</span></li>
+		</ul>
+		<!-- 占位 -->
+	</div>
+	<div v-if="active=='login'" :class="anistyle" style="position:absolute;top:10%;width: 100%">
+		<div class="ui-form ui-border-t">
+			<form id="logForm" th:action="@{/login}" method="post">
+				<div class="ui-form-item ui-border-b">
+					<input type="text" name="username" v-model="l_username" placeholder="用户名">
+				</div>
+				<div class="ui-form-item ui-border-b">
+					<input type="password" name="password" v-model="l_password" placeholder="密码">
+				</div>
+			</form>
+			<div class="ui-btn-wrap">
+				<button @click="login" class="ui-btn-lg ui-btn-primary">登陆</button>
 			</div>
 		</div>
-		<form id="logForm" th:action="@{/login}" method="post">
-			<div class="ui-form-item ui-border-b">
-				<input type="text" name="username" v-model="username" placeholder="用户名">
+	</div>
+	<div v-if="active=='register'" :class="anistyle" style="position:absolute;top:10%;width: 100%">
+		<div class="ui-form ui-border-t">
+			<form id="regForm" th:action="@{/register}" method="post">
+				<div class="ui-form-item ui-border-b">
+					<input type="text" name="username" v-model="r_username" placeholder="用户名">
+				</div>
+				<div class="ui-form-item ui-border-b">
+					<input type="password" name="password" v-model="r_password" placeholder="密码">
+				</div>
+			</form>
+			<div class="ui-btn-wrap">
+				<button @click="register" class="ui-btn-lg ui-btn-primary">注册</button>
 			</div>
-			<div class="ui-form-item ui-form-item-link ui-border-b">
-				<input type="password" name="password" v-model="password" placeholder="密码">
-			</div>
-		</form>
-		<div class="ui-btn-wrap">
-			<button @click="submit" class="ui-btn-lg ui-btn-primary">确定</button>
+		</div>
+	</div>
+	<div v-if="show_msg" class="ui-tooltips ui-tooltips-warn" style="position: fixed;z-index: 10;;bottom: 0;">
+		<div class="ui-tooltips-cnt ui-border-b">
+			{{message}}<a class="ui-icon-close"></a>
 		</div>
 	</div>
 </div>
 </body>
 </html>
 <script>
+	/*<![CDATA[*/
+	_ctx = /*[[@{/}]]*/'';
+	/*]]>*/
 	new Vue({
 		el: '#app',
-		data() {
-		    return{
-                username:"",
-                password:"",
-                message:"",
-                showMsg:false
-			}
+		data:{
+			active:"login",
+            anistyle:'',
+            l_username:"",
+            l_password:"",
+            r_username:"",
+            r_password:"",
+            message:"",
+            show_msg:false
 		},
 		methods: {
-			submit:function () {
-				if($.trim(this.username)==''){
-                    this.showMsg = true;
-					this.message = "请输入用户名";
+			login:function () {
+				if($.trim(this.l_username)==''){
+                    this.alertRemind("请输入用户名")
 					return;
 				}
-				if($.trim(this.password)==''){
-                    this.showMsg = true;
-					this.message = "请输入密码";
+				if($.trim(this.l_password)==''){
+					this.alertRemind("请输入密码");
 					return;
 				}
 				$("#logForm").submit();
+            },
+			register:function () {
+				if($.trim(this.r_username)==''){
+                    this.alertRemind("请输入用户名")
+					return;
+				}
+				if($.trim(this.r_password)==''){
+					this.alertRemind("请输入密码");
+					return;
+				}
+				let that = this;
+				$.post(_ctx+"register",{
+				    username:this.r_username,
+                    password:this.r_password
+				},function (data) {
+					if(data.status == 200){
+                        that.alertRemind("注册成功，请登陆");
+                        that.r_username = "";
+                        that.r_password = "";
+                        that.toLogin();
+					}else{
+                        that.alertRemind(data.message);
+					}
+                })
+            },
+            toLogin:function () {
+                this.active = "login";
+                this.anistyle = "";
+            },
+            toRegister:function () {
+                this.active = "register";
+                this.anistyle = "";
+            },
+			alertRemind:function (message) {
+                this.message=message;
+                this.show_msg=true;
+                let that = this;
+                setTimeout(function () {
+                    that.message='';
+                    that.show_msg=false;
+                },1000);
             }
 		}
 	})
