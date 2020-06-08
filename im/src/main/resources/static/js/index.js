@@ -6,8 +6,8 @@ new Vue({
         message: '',
         groupflag:'0',
         anistyle:'',            //切换动画样式类
-        tab:'message',       //当前页面类型
-        sub_tab:'friend',    //当前选项卡
+        tab:'tab1',             //当前页面类型
+        sub_tab:'friend',       //当前选项卡
         chat_type:'',           //聊天类型
         chat_id: 0,             //聊天对象id
         curr_friend:{},
@@ -38,6 +38,15 @@ new Vue({
             else
                 return false;
         },
+        enableSearch:function () {
+            $('.ui-searchbar').tap(function(){
+                $('.ui-searchbar-wrap').addClass('focus');
+                $('.ui-searchbar-input input').focus();
+            });
+            $('.ui-searchbar-cancel').tap(function(){
+                $('.ui-searchbar-wrap').removeClass('focus');
+            });
+        },
         //tab跳转
         goToTab: function(tab) {
             if(this.tab > tab)
@@ -47,6 +56,7 @@ new Vue({
             this.tab=tab;
             document.documentElement.scrollTop=0;
             document.body.scrollTop=0;
+            this.enableSearch();
         },
         //获取朋友信息
         getFriend:function (id) {
@@ -82,6 +92,9 @@ new Vue({
             }else{
                 record && friend.records.push(record);
             }
+            if(friend != this.curr_friend){
+                friend.unread_num++;
+            }
             this.scroll();
         },
         //展开收拢
@@ -103,8 +116,8 @@ new Vue({
         scroll:function () {
             if(this.tab=='chat')
                 this.$nextTick(function() {
-                    let msg = document.getElementById('gundong') // 获取对象
-                    msg.scrollTop = msg.scrollHeight // 滚动高度
+                    let msg = document.getElementById('gundong');   // 获取对象
+                    msg.scrollTop = msg.scrollHeight;               // 滚动高度
                 });
         },
         //发消息
