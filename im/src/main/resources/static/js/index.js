@@ -13,6 +13,8 @@ new Vue({
         curr_friend:{},
         curr_records:[],
         curr_user:_user,
+        searchFlag:'',
+        searchInput:'',
         TopImg:[
             {
                 src:"/image/headimg1.jpg",
@@ -38,25 +40,30 @@ new Vue({
             else
                 return false;
         },
-        enableSearch:function () {
-            $('.ui-searchbar').tap(function(){
-                $('.ui-searchbar-wrap').addClass('focus');
-                $('.ui-searchbar-input input').focus();
-            });
-            $('.ui-searchbar-cancel').tap(function(){
-                $('.ui-searchbar-wrap').removeClass('focus');
-            });
+        doSearch:function () {
+            this.searchFlag = 'focus';
+            this.$nextTick(function() {
+                this.$refs.search.focus();
+            })
+        },
+        cancelSearch:function () {
+            this.searchFlag = '';
+        },
+        clearSearch:function () {
+            this.searchInput="";
         },
         //tab跳转
         goToTab: function(tab) {
             if(this.tab > tab)
+                this.anistyle='rtol';
+            else if(this.tab < tab)
                 this.anistyle='ltor';
             else
-                this.anistyle='rtol';
+                this.anistyle='';
+            this.cancelSearch();
             this.tab=tab;
             document.documentElement.scrollTop=0;
             document.body.scrollTop=0;
-            this.enableSearch();
         },
         //获取朋友信息
         getFriend:function (id) {

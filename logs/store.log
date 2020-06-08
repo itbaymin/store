@@ -2066,3 +2066,1221 @@ Sec-WebSocket-Key: dPpCmAfHHvuCSLeqFFF9ZA==
 Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
 content-length: 0
 [2020-06-08 19:56:35 194 INFO ] [nioEventLoopGroup-3-4] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:04:36 435 INFO ] [nioEventLoopGroup-3-4] / - 客户端断开连接：[id: 0x12a448e4, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:63382]
+[2020-06-08 20:04:36 550 INFO ] [nioEventLoopGroup-3-5] / - 客户端加入连接：[id: 0xca9c53d3, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:52934]
+[2020-06-08 20:04:36 551 INFO ] [nioEventLoopGroup-3-5] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: tZRgscXZFlFpuNKlxZyLVg==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:04:36 555 INFO ] [nioEventLoopGroup-3-5] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:04:40 517 INFO ] [nioEventLoopGroup-3-5] / - 客户端断开连接：[id: 0xca9c53d3, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:52934]
+[2020-06-08 20:04:40 640 INFO ] [nioEventLoopGroup-3-6] / - 客户端加入连接：[id: 0xbb992805, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:52945]
+[2020-06-08 20:04:40 641 INFO ] [nioEventLoopGroup-3-6] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: eDl7kwaMOPMrdLshC5A3Ng==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:04:40 645 INFO ] [nioEventLoopGroup-3-6] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:05:17 867 INFO ] [nioEventLoopGroup-3-6] / - 客户端断开连接：[id: 0xbb992805, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:52945]
+[2020-06-08 20:05:17 964 INFO ] [nioEventLoopGroup-3-7] / - 客户端加入连接：[id: 0xb876b98f, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:52989]
+[2020-06-08 20:05:17 964 INFO ] [nioEventLoopGroup-3-7] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: OBVkBKAJ33MoWNeP/jEZng==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:05:17 967 INFO ] [nioEventLoopGroup-3-7] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:05:18 062 INFO ] [nioEventLoopGroup-3-7] / - 客户端断开连接：[id: 0xb876b98f, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:52989]
+[2020-06-08 20:05:18 160 INFO ] [nioEventLoopGroup-3-8] / - 客户端加入连接：[id: 0x78739a3c, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:52992]
+[2020-06-08 20:05:18 161 INFO ] [nioEventLoopGroup-3-8] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: UYUS/TDzqGmTB4grB/58aQ==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:05:18 164 INFO ] [nioEventLoopGroup-3-8] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:05:18 237 INFO ] [nioEventLoopGroup-3-8] / - 客户端断开连接：[id: 0x78739a3c, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:52992]
+[2020-06-08 20:05:18 321 INFO ] [nioEventLoopGroup-3-9] / - 客户端加入连接：[id: 0xa5d4fc3a, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:52995]
+[2020-06-08 20:05:18 322 INFO ] [nioEventLoopGroup-3-9] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: JZHMD07DvBYrPeuJvElelQ==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:05:18 322 INFO ] [nioEventLoopGroup-3-9] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:06:50 758 INFO ] [nioEventLoopGroup-3-9] / - 客户端断开连接：[id: 0xa5d4fc3a, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:52995]
+[2020-06-08 20:06:50 847 INFO ] [nioEventLoopGroup-3-10] / - 客户端加入连接：[id: 0xa0c1daa9, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:53118]
+[2020-06-08 20:06:50 848 INFO ] [nioEventLoopGroup-3-10] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: aohdGUZwFh62Fp5yzAKdTA==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:06:50 848 INFO ] [nioEventLoopGroup-3-10] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:06:50 985 INFO ] [nioEventLoopGroup-3-10] / - 客户端断开连接：[id: 0xa0c1daa9, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:53118]
+[2020-06-08 20:06:51 055 INFO ] [nioEventLoopGroup-3-11] / - 客户端加入连接：[id: 0x59e0eac3, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:53120]
+[2020-06-08 20:06:51 057 INFO ] [nioEventLoopGroup-3-11] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: s8R35XWeXOE2ghvAO4s6gA==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:06:51 057 INFO ] [nioEventLoopGroup-3-11] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:07:18 846 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 13076 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-06-08 20:07:18 848 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-06-08 20:07:20 508 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-06-08 20:07:20 603 INFO ] [main] / - Finished Spring Data repository scanning in 78ms. Found 2 repository interfaces.
+[2020-06-08 20:07:21 691 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-06-08 20:07:21 727 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:07:21 747 INFO ] [main] / - Starting service [Tomcat]
+[2020-06-08 20:07:21 747 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-06-08 20:07:21 793 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-06-08 20:07:21 793 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-06-08 20:07:21 793 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-06-08 20:07:21 793 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-06-08 20:07:22 949 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-06-08 20:07:23 124 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-06-08 20:07:23 124 INFO ] [main] / - Root WebApplicationContext: initialization completed in 4220 ms
+[2020-06-08 20:07:23 868 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-06-08 20:07:24 177 INFO ] [cluster-ClusterId{value='5ede29fbe9ea6b331422de8a', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:756}] to 47.105.209.57:27017
+[2020-06-08 20:07:24 257 INFO ] [cluster-ClusterId{value='5ede29fbe9ea6b331422de8a', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=79029561}
+[2020-06-08 20:07:24 421 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-06-08 20:07:24 755 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0xd2bb3359, L:/0:0:0:0:0:0:0:0:1234]
+[2020-06-08 20:07:24 756 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-06-08 20:07:24 944 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-06-08 20:07:25 078 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-06-08 20:07:25 239 INFO ] [main] / - Adding welcome page template: index
+[2020-06-08 20:07:25 392 INFO ] [main] / - Context refreshed
+[2020-06-08 20:07:25 424 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-06-08 20:07:25 462 INFO ] [main] / - Scanning for api listing references
+[2020-06-08 20:07:25 758 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:07:25 778 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-06-08 20:07:25 781 INFO ] [main] / - Started IMApplication in 7.465 seconds (JVM running for 8.042)
+[2020-06-08 20:07:28 825 INFO ] [http-nio-8081-exec-2] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-06-08 20:07:28 825 INFO ] [http-nio-8081-exec-2] / - Initializing Servlet 'dispatcherServlet'
+[2020-06-08 20:07:28 833 INFO ] [http-nio-8081-exec-2] / - Completed initialization in 8 ms
+[2020-06-08 20:07:39 815 INFO ] [http-nio-8081-exec-5] / - Opened connection [connectionId{localValue:2, serverValue:757}] to 47.105.209.57:27017
+[2020-06-08 20:07:40 549 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0xaae2e772, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:53277]
+[2020-06-08 20:07:40 584 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: GNl+QYbcrucA2TfQEsTbtg==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:07:40 591 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:08:15 066 INFO ] [nioEventLoopGroup-3-1] / - 客户端断开连接：[id: 0xaae2e772, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:53277]
+[2020-06-08 20:08:15 262 INFO ] [nioEventLoopGroup-3-2] / - 客户端加入连接：[id: 0xc49838a2, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:53333]
+[2020-06-08 20:08:15 263 INFO ] [nioEventLoopGroup-3-2] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: pcLsBjnOzoge+IyV7y0CMw==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:08:15 264 INFO ] [nioEventLoopGroup-3-2] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:15:13 423 INFO ] [nioEventLoopGroup-3-2] / - 客户端断开连接：[id: 0xc49838a2, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:53333]
+[2020-06-08 20:15:13 536 INFO ] [nioEventLoopGroup-3-3] / - 客户端加入连接：[id: 0x4cf21d21, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:53838]
+[2020-06-08 20:15:13 537 INFO ] [nioEventLoopGroup-3-3] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: ygZ9R6ib/EJT48JcHAweXg==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:15:13 537 INFO ] [nioEventLoopGroup-3-3] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:20:55 500 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 21248 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-06-08 20:20:55 502 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-06-08 20:20:56 969 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-06-08 20:20:57 071 INFO ] [main] / - Finished Spring Data repository scanning in 79ms. Found 2 repository interfaces.
+[2020-06-08 20:20:58 174 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-06-08 20:20:58 193 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:20:58 203 INFO ] [main] / - Starting service [Tomcat]
+[2020-06-08 20:20:58 203 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-06-08 20:20:58 212 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-06-08 20:20:58 213 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-06-08 20:20:58 213 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-06-08 20:20:58 213 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-06-08 20:20:59 305 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-06-08 20:20:59 521 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-06-08 20:20:59 521 INFO ] [main] / - Root WebApplicationContext: initialization completed in 3971 ms
+[2020-06-08 20:20:59 922 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-06-08 20:21:00 159 INFO ] [cluster-ClusterId{value='5ede2d2be9ea6b53004dfc7b', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:758}] to 47.105.209.57:27017
+[2020-06-08 20:21:00 222 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-06-08 20:21:00 223 INFO ] [cluster-ClusterId{value='5ede2d2be9ea6b53004dfc7b', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=62064099}
+[2020-06-08 20:21:00 473 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0xcc035d20, L:/0:0:0:0:0:0:0:0:1234]
+[2020-06-08 20:21:00 473 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-06-08 20:21:00 673 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-06-08 20:21:00 821 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-06-08 20:21:00 965 INFO ] [main] / - Adding welcome page template: index
+[2020-06-08 20:21:01 114 INFO ] [main] / - Context refreshed
+[2020-06-08 20:21:01 142 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-06-08 20:21:01 174 INFO ] [main] / - Scanning for api listing references
+[2020-06-08 20:21:01 528 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:21:01 549 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-06-08 20:21:01 551 INFO ] [main] / - Started IMApplication in 6.906 seconds (JVM running for 7.669)
+[2020-06-08 20:21:04 227 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-06-08 20:21:04 227 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-06-08 20:21:04 236 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 9 ms
+[2020-06-08 20:21:04 770 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:759}] to 47.105.209.57:27017
+[2020-06-08 20:21:05 388 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0x7ebb0321, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:54351]
+[2020-06-08 20:21:05 516 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: 3wBTwiAVUy6EVBAFhfVubA==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:21:05 521 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:21:44 093 INFO ] [nioEventLoopGroup-3-1] / - 客户端断开连接：[id: 0x7ebb0321, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:54351]
+[2020-06-08 20:21:44 192 INFO ] [nioEventLoopGroup-3-2] / - 客户端加入连接：[id: 0xeceb8257, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:54403]
+[2020-06-08 20:21:44 193 INFO ] [nioEventLoopGroup-3-2] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: df/8lgAKF3eHRZ++HRcaPg==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:21:44 195 INFO ] [nioEventLoopGroup-3-2] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:23:56 254 INFO ] [nioEventLoopGroup-3-2] / - 客户端断开连接：[id: 0xeceb8257, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:54403]
+[2020-06-08 20:23:56 358 INFO ] [nioEventLoopGroup-3-3] / - 客户端加入连接：[id: 0x25508d4d, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:60557]
+[2020-06-08 20:23:56 359 INFO ] [nioEventLoopGroup-3-3] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: G5xifdxuRtDnmzI2oo2e+A==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:23:56 362 INFO ] [nioEventLoopGroup-3-3] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:24:09 303 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 23620 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-06-08 20:24:09 304 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-06-08 20:24:10 596 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-06-08 20:24:10 693 INFO ] [main] / - Finished Spring Data repository scanning in 77ms. Found 2 repository interfaces.
+[2020-06-08 20:24:11 562 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-06-08 20:24:11 583 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:24:11 598 INFO ] [main] / - Starting service [Tomcat]
+[2020-06-08 20:24:11 598 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-06-08 20:24:11 610 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-06-08 20:24:11 610 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-06-08 20:24:11 610 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-06-08 20:24:11 611 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-06-08 20:24:12 674 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-06-08 20:24:12 897 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-06-08 20:24:12 897 INFO ] [main] / - Root WebApplicationContext: initialization completed in 3543 ms
+[2020-06-08 20:24:13 248 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-06-08 20:24:13 485 INFO ] [cluster-ClusterId{value='5ede2dede9ea6b5c44d60ea0', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:760}] to 47.105.209.57:27017
+[2020-06-08 20:24:13 551 INFO ] [cluster-ClusterId{value='5ede2dede9ea6b5c44d60ea0', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=65454746}
+[2020-06-08 20:24:13 564 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-06-08 20:24:13 851 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0xb2cdc627, L:/0:0:0:0:0:0:0:0:1234]
+[2020-06-08 20:24:13 851 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-06-08 20:24:14 053 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-06-08 20:24:14 213 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-06-08 20:24:14 383 INFO ] [main] / - Adding welcome page template: index
+[2020-06-08 20:24:14 498 INFO ] [main] / - Context refreshed
+[2020-06-08 20:24:14 527 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-06-08 20:24:14 558 INFO ] [main] / - Scanning for api listing references
+[2020-06-08 20:24:14 820 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:24:14 834 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-06-08 20:24:14 836 INFO ] [main] / - Started IMApplication in 5.92 seconds (JVM running for 6.569)
+[2020-06-08 20:24:29 670 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-06-08 20:24:29 670 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-06-08 20:24:29 676 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 6 ms
+[2020-06-08 20:24:30 251 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:761}] to 47.105.209.57:27017
+[2020-06-08 20:24:30 943 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0x2ef3fb89, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:60690]
+[2020-06-08 20:24:31 101 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: +tyoqFvji+rLnKt5sND8NA==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:24:31 106 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:24:48 083 INFO ] [nioEventLoopGroup-3-1] / - 客户端断开连接：[id: 0x2ef3fb89, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:60690]
+[2020-06-08 20:24:48 235 INFO ] [nioEventLoopGroup-3-2] / - 客户端加入连接：[id: 0x87aee036, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:60714]
+[2020-06-08 20:24:48 237 INFO ] [nioEventLoopGroup-3-2] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: Uj6jCjaBs0YSkAdsuSvOKw==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:24:48 237 INFO ] [nioEventLoopGroup-3-2] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:24:56 379 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 16532 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-06-08 20:24:56 380 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-06-08 20:24:57 788 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-06-08 20:24:57 885 INFO ] [main] / - Finished Spring Data repository scanning in 77ms. Found 2 repository interfaces.
+[2020-06-08 20:24:58 801 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-06-08 20:24:58 819 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:24:58 831 INFO ] [main] / - Starting service [Tomcat]
+[2020-06-08 20:24:58 831 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-06-08 20:24:58 845 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-06-08 20:24:58 845 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-06-08 20:24:58 845 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-06-08 20:24:58 846 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-06-08 20:24:59 913 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-06-08 20:25:00 163 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-06-08 20:25:00 163 INFO ] [main] / - Root WebApplicationContext: initialization completed in 3727 ms
+[2020-06-08 20:25:00 497 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-06-08 20:25:00 748 INFO ] [cluster-ClusterId{value='5ede2e1ce9ea6b4094e338ba', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:762}] to 47.105.209.57:27017
+[2020-06-08 20:25:00 815 INFO ] [cluster-ClusterId{value='5ede2e1ce9ea6b4094e338ba', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=65423458}
+[2020-06-08 20:25:00 822 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-06-08 20:25:01 123 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0x19349994, L:/0:0:0:0:0:0:0:0:1234]
+[2020-06-08 20:25:01 123 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-06-08 20:25:01 293 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-06-08 20:25:01 422 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-06-08 20:25:01 594 INFO ] [main] / - Adding welcome page template: index
+[2020-06-08 20:25:01 774 INFO ] [main] / - Context refreshed
+[2020-06-08 20:25:01 821 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-06-08 20:25:01 868 INFO ] [main] / - Scanning for api listing references
+[2020-06-08 20:25:02 184 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:25:02 202 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-06-08 20:25:02 204 INFO ] [main] / - Started IMApplication in 6.227 seconds (JVM running for 6.819)
+[2020-06-08 20:25:37 106 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-06-08 20:25:37 106 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-06-08 20:25:37 116 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 9 ms
+[2020-06-08 20:25:37 679 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:763}] to 47.105.209.57:27017
+[2020-06-08 20:25:38 302 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0xefcf463d, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:60869]
+[2020-06-08 20:25:38 444 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: 9bZnXbXpQDiH59F0GsLO8g==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:25:38 448 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:27:05 855 INFO ] [nioEventLoopGroup-3-1] / - 客户端断开连接：[id: 0xefcf463d, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:60869]
+[2020-06-08 20:27:05 982 INFO ] [nioEventLoopGroup-3-2] / - 客户端加入连接：[id: 0xf2d927ed, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:60989]
+[2020-06-08 20:27:05 983 INFO ] [nioEventLoopGroup-3-2] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: +fYbxhKLkfTQq0FsezBvQw==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:27:05 985 INFO ] [nioEventLoopGroup-3-2] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:27:28 348 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 13996 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-06-08 20:27:28 349 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-06-08 20:27:29 837 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-06-08 20:27:29 922 INFO ] [main] / - Finished Spring Data repository scanning in 66ms. Found 2 repository interfaces.
+[2020-06-08 20:27:30 618 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-06-08 20:27:30 647 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:27:30 660 INFO ] [main] / - Starting service [Tomcat]
+[2020-06-08 20:27:30 660 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-06-08 20:27:30 697 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-06-08 20:27:30 697 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-06-08 20:27:30 697 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-06-08 20:27:30 697 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-06-08 20:27:31 783 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-06-08 20:27:31 907 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-06-08 20:27:31 908 INFO ] [main] / - Root WebApplicationContext: initialization completed in 3503 ms
+[2020-06-08 20:27:32 330 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-06-08 20:27:32 581 INFO ] [cluster-ClusterId{value='5ede2eb4e9ea6b36ac73ff77', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:764}] to 47.105.209.57:27017
+[2020-06-08 20:27:32 619 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-06-08 20:27:32 656 INFO ] [cluster-ClusterId{value='5ede2eb4e9ea6b36ac73ff77', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=69678191}
+[2020-06-08 20:27:32 920 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0x136cecc3, L:/0:0:0:0:0:0:0:0:1234]
+[2020-06-08 20:27:32 920 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-06-08 20:27:33 091 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-06-08 20:27:33 211 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-06-08 20:27:33 338 INFO ] [main] / - Adding welcome page template: index
+[2020-06-08 20:27:33 466 INFO ] [main] / - Context refreshed
+[2020-06-08 20:27:33 491 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-06-08 20:27:33 522 INFO ] [main] / - Scanning for api listing references
+[2020-06-08 20:27:33 787 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:27:33 809 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-06-08 20:27:33 812 INFO ] [main] / - Started IMApplication in 5.845 seconds (JVM running for 6.516)
+[2020-06-08 20:27:42 380 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-06-08 20:27:42 380 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-06-08 20:27:42 385 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 5 ms
+[2020-06-08 20:27:42 867 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:765}] to 47.105.209.57:27017
+[2020-06-08 20:27:43 490 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0x24eb4e78, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:61125]
+[2020-06-08 20:27:43 511 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: ffmnozdpXKlLWwTLQG5uEg==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:27:43 516 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:34:07 662 INFO ] [nioEventLoopGroup-3-1] / - 客户端断开连接：[id: 0x24eb4e78, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:61125]
+[2020-06-08 20:34:07 785 INFO ] [nioEventLoopGroup-3-2] / - 客户端加入连接：[id: 0xd464a01f, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:61667]
+[2020-06-08 20:34:07 786 INFO ] [nioEventLoopGroup-3-2] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: 0UhJZvNEiyNfuHUIpxUEOw==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:34:07 790 INFO ] [nioEventLoopGroup-3-2] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:34:16 094 INFO ] [nioEventLoopGroup-3-2] / - 客户端断开连接：[id: 0xd464a01f, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:61667]
+[2020-06-08 20:34:16 206 INFO ] [nioEventLoopGroup-3-3] / - 客户端加入连接：[id: 0xa1b35438, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:61684]
+[2020-06-08 20:34:16 207 INFO ] [nioEventLoopGroup-3-3] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: NzJpR3IhXgSL5NJ51TPD8w==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:34:16 209 INFO ] [nioEventLoopGroup-3-3] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:34:28 048 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 15424 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-06-08 20:34:28 050 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-06-08 20:34:29 530 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-06-08 20:34:29 615 INFO ] [main] / - Finished Spring Data repository scanning in 68ms. Found 2 repository interfaces.
+[2020-06-08 20:34:30 293 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-06-08 20:34:30 309 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:34:30 323 INFO ] [main] / - Starting service [Tomcat]
+[2020-06-08 20:34:30 323 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-06-08 20:34:30 335 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-06-08 20:34:30 335 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-06-08 20:34:30 335 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-06-08 20:34:30 335 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-06-08 20:34:31 437 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-06-08 20:34:31 678 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-06-08 20:34:31 678 INFO ] [main] / - Root WebApplicationContext: initialization completed in 3568 ms
+[2020-06-08 20:34:32 029 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-06-08 20:34:32 242 INFO ] [cluster-ClusterId{value='5ede3058e9ea6b3c406b6719', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:766}] to 47.105.209.57:27017
+[2020-06-08 20:34:32 305 INFO ] [cluster-ClusterId{value='5ede3058e9ea6b3c406b6719', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=60883730}
+[2020-06-08 20:34:32 366 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-06-08 20:34:32 615 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0x257fe539, L:/0:0:0:0:0:0:0:0:1234]
+[2020-06-08 20:34:32 615 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-06-08 20:34:32 812 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-06-08 20:34:32 974 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-06-08 20:34:33 142 INFO ] [main] / - Adding welcome page template: index
+[2020-06-08 20:34:33 298 INFO ] [main] / - Context refreshed
+[2020-06-08 20:34:33 328 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-06-08 20:34:33 361 INFO ] [main] / - Scanning for api listing references
+[2020-06-08 20:34:33 625 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:34:33 639 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-06-08 20:34:33 641 INFO ] [main] / - Started IMApplication in 6.014 seconds (JVM running for 6.712)
+[2020-06-08 20:34:37 017 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-06-08 20:34:37 017 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-06-08 20:34:37 023 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 6 ms
+[2020-06-08 20:34:37 495 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:767}] to 47.105.209.57:27017
+[2020-06-08 20:34:38 229 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0xa4d08936, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:61798]
+[2020-06-08 20:34:38 264 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: 5+ADwdWMxj7wrocZS8Vg+Q==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:34:38 268 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:34:41 664 INFO ] [nioEventLoopGroup-3-1] / - 客户端断开连接：[id: 0xa4d08936, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:61798]
+[2020-06-08 20:34:41 800 INFO ] [nioEventLoopGroup-3-2] / - 客户端加入连接：[id: 0x0743386d, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:61804]
+[2020-06-08 20:34:41 801 INFO ] [nioEventLoopGroup-3-2] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: yTLHCMUvdxpI4Sy0bfCa9g==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:34:41 801 INFO ] [nioEventLoopGroup-3-2] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:35:38 143 INFO ] [nioEventLoopGroup-3-2] / - 客户端断开连接：[id: 0x0743386d, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:61804]
+[2020-06-08 20:35:38 272 INFO ] [nioEventLoopGroup-3-3] / - 客户端加入连接：[id: 0x80da56cf, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:61880]
+[2020-06-08 20:35:38 273 INFO ] [nioEventLoopGroup-3-3] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: CphD9LMDw1ym4SSoeBb1Vw==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:35:38 273 INFO ] [nioEventLoopGroup-3-3] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:35:38 359 INFO ] [nioEventLoopGroup-3-3] / - 客户端断开连接：[id: 0x80da56cf, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:61880]
+[2020-06-08 20:35:38 454 INFO ] [nioEventLoopGroup-3-4] / - 客户端加入连接：[id: 0xd4ca05d3, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:61882]
+[2020-06-08 20:35:38 455 INFO ] [nioEventLoopGroup-3-4] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: hytdXOJdZ256gdwE0DoZ3Q==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:35:38 456 INFO ] [nioEventLoopGroup-3-4] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:35:38 545 INFO ] [nioEventLoopGroup-3-4] / - 客户端断开连接：[id: 0xd4ca05d3, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:61882]
+[2020-06-08 20:35:38 611 INFO ] [nioEventLoopGroup-3-5] / - 客户端加入连接：[id: 0x4b278f84, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:61884]
+[2020-06-08 20:35:38 612 INFO ] [nioEventLoopGroup-3-5] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: OrHR1Siz064V3/6jRnSXqw==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:35:38 613 INFO ] [nioEventLoopGroup-3-5] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:42:21 394 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 9240 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-06-08 20:42:21 396 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-06-08 20:42:22 963 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-06-08 20:42:23 061 INFO ] [main] / - Finished Spring Data repository scanning in 78ms. Found 2 repository interfaces.
+[2020-06-08 20:42:24 220 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-06-08 20:42:24 254 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:42:24 271 INFO ] [main] / - Starting service [Tomcat]
+[2020-06-08 20:42:24 272 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-06-08 20:42:24 309 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-06-08 20:42:24 309 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-06-08 20:42:24 309 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-06-08 20:42:24 309 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-06-08 20:42:25 400 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-06-08 20:42:25 629 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-06-08 20:42:25 630 INFO ] [main] / - Root WebApplicationContext: initialization completed in 4176 ms
+[2020-06-08 20:42:25 991 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-06-08 20:42:26 213 INFO ] [cluster-ClusterId{value='5ede3231e9ea6b2418409287', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:768}] to 47.105.209.57:27017
+[2020-06-08 20:42:26 277 INFO ] [cluster-ClusterId{value='5ede3231e9ea6b2418409287', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=62123259}
+[2020-06-08 20:42:26 300 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-06-08 20:42:26 576 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0x348e2b5d, L:/0:0:0:0:0:0:0:0:1234]
+[2020-06-08 20:42:26 576 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-06-08 20:42:26 749 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-06-08 20:42:26 891 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-06-08 20:42:27 061 INFO ] [main] / - Adding welcome page template: index
+[2020-06-08 20:42:27 210 INFO ] [main] / - Context refreshed
+[2020-06-08 20:42:27 241 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-06-08 20:42:27 276 INFO ] [main] / - Scanning for api listing references
+[2020-06-08 20:42:27 595 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:42:27 614 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-06-08 20:42:27 618 INFO ] [main] / - Started IMApplication in 6.793 seconds (JVM running for 7.4)
+[2020-06-08 20:42:40 477 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-06-08 20:42:40 477 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-06-08 20:42:40 484 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 7 ms
+[2020-06-08 20:42:40 994 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:769}] to 47.105.209.57:27017
+[2020-06-08 20:42:41 569 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0x99dfd513, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:62619]
+[2020-06-08 20:42:41 699 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: CL4H0KvGQ+CtqeIZQEK04Q==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:42:41 703 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:43:05 651 INFO ] [nioEventLoopGroup-3-1] / - 客户端断开连接：[id: 0x99dfd513, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:62619]
+[2020-06-08 20:43:05 783 INFO ] [nioEventLoopGroup-3-2] / - 客户端加入连接：[id: 0x9b2bb106, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:62649]
+[2020-06-08 20:43:05 785 INFO ] [nioEventLoopGroup-3-2] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: jxSCGRUpjPm7MBNgL3ywyA==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:43:05 785 INFO ] [nioEventLoopGroup-3-2] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:45:22 543 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 22104 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-06-08 20:45:22 547 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-06-08 20:45:24 194 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-06-08 20:45:24 293 INFO ] [main] / - Finished Spring Data repository scanning in 77ms. Found 2 repository interfaces.
+[2020-06-08 20:45:25 445 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-06-08 20:45:25 476 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:45:25 491 INFO ] [main] / - Starting service [Tomcat]
+[2020-06-08 20:45:25 491 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-06-08 20:45:25 511 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-06-08 20:45:25 511 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-06-08 20:45:25 511 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-06-08 20:45:25 512 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-06-08 20:45:26 659 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-06-08 20:45:26 925 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-06-08 20:45:26 926 INFO ] [main] / - Root WebApplicationContext: initialization completed in 4328 ms
+[2020-06-08 20:45:27 357 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-06-08 20:45:27 622 INFO ] [cluster-ClusterId{value='5ede32e7e9ea6b5658ed1636', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:770}] to 47.105.209.57:27017
+[2020-06-08 20:45:27 719 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-06-08 20:45:27 951 INFO ] [cluster-ClusterId{value='5ede32e7e9ea6b5658ed1636', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=327596265}
+[2020-06-08 20:45:28 041 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0x74fdd6d6, L:/0:0:0:0:0:0:0:0:1234]
+[2020-06-08 20:45:28 041 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-06-08 20:45:28 227 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-06-08 20:45:28 383 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-06-08 20:45:28 578 INFO ] [main] / - Adding welcome page template: index
+[2020-06-08 20:45:28 750 INFO ] [main] / - Context refreshed
+[2020-06-08 20:45:28 803 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-06-08 20:45:28 847 INFO ] [main] / - Scanning for api listing references
+[2020-06-08 20:45:29 155 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:45:29 176 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-06-08 20:45:29 178 INFO ] [main] / - Started IMApplication in 7.291 seconds (JVM running for 8.07)
+[2020-06-08 20:45:56 780 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-06-08 20:45:56 780 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-06-08 20:45:56 786 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 6 ms
+[2020-06-08 20:45:57 275 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:771}] to 47.105.209.57:27017
+[2020-06-08 20:45:58 078 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0x1267be18, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:63016]
+[2020-06-08 20:45:58 097 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: Ynhs3hlyKaiXmDN/VI3Hrg==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:45:58 101 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:49:48 913 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 24476 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-06-08 20:49:48 915 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-06-08 20:49:50 373 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-06-08 20:49:50 473 INFO ] [main] / - Finished Spring Data repository scanning in 78ms. Found 2 repository interfaces.
+[2020-06-08 20:49:51 739 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-06-08 20:49:51 761 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:49:51 773 INFO ] [main] / - Starting service [Tomcat]
+[2020-06-08 20:49:51 773 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-06-08 20:49:51 784 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-06-08 20:49:51 784 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-06-08 20:49:51 784 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-06-08 20:49:51 785 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-06-08 20:49:52 855 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-06-08 20:49:53 079 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-06-08 20:49:53 080 INFO ] [main] / - Root WebApplicationContext: initialization completed in 4114 ms
+[2020-06-08 20:49:53 439 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-06-08 20:49:53 680 INFO ] [cluster-ClusterId{value='5ede33f1e9ea6b5f9cf65a32', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:772}] to 47.105.209.57:27017
+[2020-06-08 20:49:53 720 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-06-08 20:49:53 744 INFO ] [cluster-ClusterId{value='5ede33f1e9ea6b5f9cf65a32', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=63060160}
+[2020-06-08 20:49:54 017 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0x1b6157c6, L:/0:0:0:0:0:0:0:0:1234]
+[2020-06-08 20:49:54 017 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-06-08 20:49:54 214 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-06-08 20:49:54 342 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-06-08 20:49:54 507 INFO ] [main] / - Adding welcome page template: index
+[2020-06-08 20:49:54 640 INFO ] [main] / - Context refreshed
+[2020-06-08 20:49:54 667 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-06-08 20:49:54 709 INFO ] [main] / - Scanning for api listing references
+[2020-06-08 20:49:54 987 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:49:55 007 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-06-08 20:49:55 009 INFO ] [main] / - Started IMApplication in 6.671 seconds (JVM running for 7.33)
+[2020-06-08 20:50:20 936 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-06-08 20:50:20 936 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-06-08 20:50:20 942 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 6 ms
+[2020-06-08 20:50:21 474 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:773}] to 47.105.209.57:27017
+[2020-06-08 20:50:22 193 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0x05ed836e, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:63455]
+[2020-06-08 20:50:22 217 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: hB/coGAeX/K6lG7cr+wybA==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:50:22 221 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:52:18 862 INFO ] [nioEventLoopGroup-3-1] / - 客户端断开连接：[id: 0x05ed836e, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:63455]
+[2020-06-08 20:52:18 983 INFO ] [nioEventLoopGroup-3-2] / - 客户端加入连接：[id: 0xb61f377b, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:63613]
+[2020-06-08 20:52:18 984 INFO ] [nioEventLoopGroup-3-2] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: ReHHlvCeumaAkB+Ifj6oTA==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:52:18 985 INFO ] [nioEventLoopGroup-3-2] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:53:05 206 INFO ] [nioEventLoopGroup-3-2] / - 客户端断开连接：[id: 0xb61f377b, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:63613]
+[2020-06-08 20:53:05 317 INFO ] [nioEventLoopGroup-3-3] / - 客户端加入连接：[id: 0x2b49578c, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:63671]
+[2020-06-08 20:53:05 318 INFO ] [nioEventLoopGroup-3-3] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: naWjQ4ATDkLQP4WsheL19w==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:53:05 322 INFO ] [nioEventLoopGroup-3-3] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:54:33 399 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 16772 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-06-08 20:54:33 401 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-06-08 20:54:34 757 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-06-08 20:54:34 872 INFO ] [main] / - Finished Spring Data repository scanning in 94ms. Found 2 repository interfaces.
+[2020-06-08 20:54:36 147 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-06-08 20:54:36 174 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:54:36 221 INFO ] [main] / - Starting service [Tomcat]
+[2020-06-08 20:54:36 221 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-06-08 20:54:36 243 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-06-08 20:54:36 244 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-06-08 20:54:36 245 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-06-08 20:54:36 245 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-06-08 20:54:37 394 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-06-08 20:54:37 807 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-06-08 20:54:37 807 INFO ] [main] / - Root WebApplicationContext: initialization completed in 4340 ms
+[2020-06-08 20:54:38 229 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-06-08 20:54:38 503 INFO ] [cluster-ClusterId{value='5ede350ee9ea6b418407ea72', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:774}] to 47.105.209.57:27017
+[2020-06-08 20:54:38 577 INFO ] [cluster-ClusterId{value='5ede350ee9ea6b418407ea72', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=72633950}
+[2020-06-08 20:54:38 638 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-06-08 20:54:39 002 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0x2c44619e, L:/0:0:0:0:0:0:0:0:1234]
+[2020-06-08 20:54:39 002 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-06-08 20:54:39 218 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-06-08 20:54:39 407 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-06-08 20:54:39 607 INFO ] [main] / - Adding welcome page template: index
+[2020-06-08 20:54:39 765 INFO ] [main] / - Context refreshed
+[2020-06-08 20:54:39 796 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-06-08 20:54:39 840 INFO ] [main] / - Scanning for api listing references
+[2020-06-08 20:54:40 142 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:54:40 161 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-06-08 20:54:40 163 INFO ] [main] / - Started IMApplication in 7.464 seconds (JVM running for 8.088)
+[2020-06-08 20:54:45 115 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-06-08 20:54:45 115 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-06-08 20:54:45 122 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 7 ms
+[2020-06-08 20:54:45 669 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:775}] to 47.105.209.57:27017
+[2020-06-08 20:54:46 236 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0x4cd41c15, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:63829]
+[2020-06-08 20:54:46 399 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: oqTkJfhv3tARJX83rxIuxw==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:54:46 403 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:54:57 226 INFO ] [nioEventLoopGroup-3-1] / - 客户端断开连接：[id: 0x4cd41c15, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:63829]
+[2020-06-08 20:54:57 337 INFO ] [nioEventLoopGroup-3-2] / - 客户端加入连接：[id: 0x3da1dc35, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:63848]
+[2020-06-08 20:54:57 338 INFO ] [nioEventLoopGroup-3-2] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: mRmmT9N8r0TMUpUl/UyqsQ==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:54:57 340 INFO ] [nioEventLoopGroup-3-2] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:56:35 764 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 14956 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-06-08 20:56:35 766 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-06-08 20:56:37 130 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-06-08 20:56:37 250 INFO ] [main] / - Finished Spring Data repository scanning in 104ms. Found 2 repository interfaces.
+[2020-06-08 20:56:38 436 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-06-08 20:56:38 460 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:56:38 474 INFO ] [main] / - Starting service [Tomcat]
+[2020-06-08 20:56:38 474 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-06-08 20:56:38 487 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-06-08 20:56:38 487 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-06-08 20:56:38 488 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-06-08 20:56:38 488 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-06-08 20:56:39 578 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-06-08 20:56:39 827 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-06-08 20:56:39 827 INFO ] [main] / - Root WebApplicationContext: initialization completed in 4004 ms
+[2020-06-08 20:56:40 203 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-06-08 20:56:40 448 INFO ] [cluster-ClusterId{value='5ede3588e9ea6b3a6c468303', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:776}] to 47.105.209.57:27017
+[2020-06-08 20:56:40 511 INFO ] [cluster-ClusterId{value='5ede3588e9ea6b3a6c468303', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=62103350}
+[2020-06-08 20:56:40 529 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-06-08 20:56:40 832 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0xb3eb3f5f, L:/0:0:0:0:0:0:0:0:1234]
+[2020-06-08 20:56:40 832 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-06-08 20:56:41 028 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-06-08 20:56:41 158 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-06-08 20:56:41 307 INFO ] [main] / - Adding welcome page template: index
+[2020-06-08 20:56:41 434 INFO ] [main] / - Context refreshed
+[2020-06-08 20:56:41 460 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-06-08 20:56:41 494 INFO ] [main] / - Scanning for api listing references
+[2020-06-08 20:56:41 768 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:56:41 790 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-06-08 20:56:41 793 INFO ] [main] / - Started IMApplication in 6.415 seconds (JVM running for 6.957)
+[2020-06-08 20:56:42 733 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-06-08 20:56:42 734 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-06-08 20:56:42 742 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 8 ms
+[2020-06-08 20:56:43 300 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:777}] to 47.105.209.57:27017
+[2020-06-08 20:56:43 956 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0x255ae6c2, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:64082]
+[2020-06-08 20:56:44 116 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: dZZv7krhqlUh4T9gvJSDsg==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:56:44 119 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 20:58:42 446 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 16748 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-06-08 20:58:42 448 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-06-08 20:58:43 909 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-06-08 20:58:43 989 INFO ] [main] / - Finished Spring Data repository scanning in 64ms. Found 2 repository interfaces.
+[2020-06-08 20:58:45 125 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-06-08 20:58:45 159 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:58:45 179 INFO ] [main] / - Starting service [Tomcat]
+[2020-06-08 20:58:45 179 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-06-08 20:58:45 263 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-06-08 20:58:45 263 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-06-08 20:58:45 263 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-06-08 20:58:45 263 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-06-08 20:58:46 405 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-06-08 20:58:46 608 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-06-08 20:58:46 610 INFO ] [main] / - Root WebApplicationContext: initialization completed in 4108 ms
+[2020-06-08 20:58:47 194 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-06-08 20:58:47 416 INFO ] [cluster-ClusterId{value='5ede3607e9ea6b416c7e9e69', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:778}] to 47.105.209.57:27017
+[2020-06-08 20:58:47 482 INFO ] [cluster-ClusterId{value='5ede3607e9ea6b416c7e9e69', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=64513294}
+[2020-06-08 20:58:47 499 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-06-08 20:58:47 757 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0x1572f47c, L:/0:0:0:0:0:0:0:0:1234]
+[2020-06-08 20:58:47 757 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-06-08 20:58:47 936 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-06-08 20:58:48 067 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-06-08 20:58:48 229 INFO ] [main] / - Adding welcome page template: index
+[2020-06-08 20:58:48 364 INFO ] [main] / - Context refreshed
+[2020-06-08 20:58:48 392 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-06-08 20:58:48 423 INFO ] [main] / - Scanning for api listing references
+[2020-06-08 20:58:48 696 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-06-08 20:58:48 715 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-06-08 20:58:48 717 INFO ] [main] / - Started IMApplication in 6.688 seconds (JVM running for 7.207)
+[2020-06-08 20:58:51 033 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-06-08 20:58:51 033 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-06-08 20:58:51 039 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 6 ms
+[2020-06-08 20:58:51 592 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:779}] to 47.105.209.57:27017
+[2020-06-08 20:58:52 200 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0x2b8d757f, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:64343]
+[2020-06-08 20:58:52 221 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: q4Pz95nHwrxzu+q3+Qhm8g==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 20:58:52 226 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 21:00:23 054 INFO ] [nioEventLoopGroup-3-1] / - 客户端断开连接：[id: 0x2b8d757f, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:64343]
+[2020-06-08 21:00:23 155 INFO ] [nioEventLoopGroup-3-2] / - 客户端加入连接：[id: 0x841b32e3, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:64462]
+[2020-06-08 21:00:23 156 INFO ] [nioEventLoopGroup-3-2] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: 6ZZmzQgw7Mt5w6DeSc+peQ==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 21:00:23 156 INFO ] [nioEventLoopGroup-3-2] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 21:00:33 444 INFO ] [nioEventLoopGroup-3-2] / - 客户端断开连接：[id: 0x841b32e3, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:64462]
+[2020-06-08 21:00:33 525 INFO ] [nioEventLoopGroup-3-3] / - 客户端加入连接：[id: 0x8b448902, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:64477]
+[2020-06-08 21:00:33 525 INFO ] [nioEventLoopGroup-3-3] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: 5BWIM4ME6FFCEg+8J/PUqA==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 21:00:33 529 INFO ] [nioEventLoopGroup-3-3] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 21:04:56 168 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 16876 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-06-08 21:04:56 169 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-06-08 21:04:57 773 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-06-08 21:04:57 905 INFO ] [main] / - Finished Spring Data repository scanning in 110ms. Found 2 repository interfaces.
+[2020-06-08 21:04:59 357 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-06-08 21:04:59 382 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-06-08 21:04:59 400 INFO ] [main] / - Starting service [Tomcat]
+[2020-06-08 21:04:59 401 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-06-08 21:04:59 418 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-06-08 21:04:59 418 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-06-08 21:04:59 418 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-06-08 21:04:59 418 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-06-08 21:05:00 543 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-06-08 21:05:00 751 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-06-08 21:05:00 751 INFO ] [main] / - Root WebApplicationContext: initialization completed in 4412 ms
+[2020-06-08 21:05:01 128 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-06-08 21:05:01 370 INFO ] [cluster-ClusterId{value='5ede377de9ea6b41ec67381a', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:780}] to 47.105.209.57:27017
+[2020-06-08 21:05:01 420 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-06-08 21:05:01 432 INFO ] [cluster-ClusterId{value='5ede377de9ea6b41ec67381a', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=60767684}
+[2020-06-08 21:05:01 691 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0x2ae67c3c, L:/0:0:0:0:0:0:0:0:1234]
+[2020-06-08 21:05:01 691 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-06-08 21:05:01 877 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-06-08 21:05:02 040 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-06-08 21:05:02 214 INFO ] [main] / - Adding welcome page template: index
+[2020-06-08 21:05:02 388 INFO ] [main] / - Context refreshed
+[2020-06-08 21:05:02 422 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-06-08 21:05:02 465 INFO ] [main] / - Scanning for api listing references
+[2020-06-08 21:05:02 761 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-06-08 21:05:02 787 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-06-08 21:05:02 789 INFO ] [main] / - Started IMApplication in 7.167 seconds (JVM running for 7.754)
+[2020-06-08 21:05:11 053 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-06-08 21:05:11 053 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-06-08 21:05:11 060 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 7 ms
+[2020-06-08 21:05:11 665 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:781}] to 47.105.209.57:27017
+[2020-06-08 21:05:12 382 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0xb1f27e96, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:64926]
+[2020-06-08 21:05:12 403 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: VMgunbYc5H9NzQBKPl3EvQ==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 21:05:12 407 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 21:05:54 781 INFO ] [nioEventLoopGroup-3-1] / - 客户端断开连接：[id: 0xb1f27e96, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:64926]
+[2020-06-08 21:05:54 904 INFO ] [nioEventLoopGroup-3-2] / - 客户端加入连接：[id: 0xe8c6999f, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:64984]
+[2020-06-08 21:05:54 905 INFO ] [nioEventLoopGroup-3-2] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: 96QPx8tbXtSpYRl2JhOfVA==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 21:05:54 906 INFO ] [nioEventLoopGroup-3-2] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 21:06:07 331 INFO ] [main] / - Starting IMApplication on HYGK-PC with PID 5776 (F:\IdeaWorkspace\store\im\target\classes started by Admin in F:\IdeaWorkspace\store)
+[2020-06-08 21:06:07 333 INFO ] [main] / - No active profile set, falling back to default profiles: default
+[2020-06-08 21:06:08 788 INFO ] [main] / - Bootstrapping Spring Data repositories in DEFAULT mode.
+[2020-06-08 21:06:08 932 INFO ] [main] / - Finished Spring Data repository scanning in 113ms. Found 2 repository interfaces.
+[2020-06-08 21:06:09 912 INFO ] [main] / - Tomcat initialized with port(s): 8081 (http)
+[2020-06-08 21:06:09 941 INFO ] [main] / - Initializing ProtocolHandler ["http-nio-8081"]
+[2020-06-08 21:06:09 958 INFO ] [main] / - Starting service [Tomcat]
+[2020-06-08 21:06:09 959 INFO ] [main] / - Starting Servlet engine: [Apache Tomcat/9.0.19]
+[2020-06-08 21:06:09 975 INFO ] [main] / - An older version [1.2.16] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.21]
+[2020-06-08 21:06:09 975 INFO ] [main] / - Loaded APR based Apache Tomcat Native library [1.2.16] using APR version [1.6.3].
+[2020-06-08 21:06:09 975 INFO ] [main] / - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+[2020-06-08 21:06:09 975 INFO ] [main] / - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+[2020-06-08 21:06:11 091 INFO ] [main] / - OpenSSL successfully initialized [OpenSSL 1.0.2m  2 Nov 2017]
+[2020-06-08 21:06:11 424 INFO ] [main] / - Initializing Spring embedded WebApplicationContext
+[2020-06-08 21:06:11 424 INFO ] [main] / - Root WebApplicationContext: initialization completed in 4008 ms
+[2020-06-08 21:06:11 904 INFO ] [main] / - Cluster created with settings {hosts=[47.105.209.57:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms', maxWaitQueueSize=500}
+[2020-06-08 21:06:12 165 INFO ] [cluster-ClusterId{value='5ede37c3e9ea6b169004758b', description='null'}-47.105.209.57:27017] / - Opened connection [connectionId{localValue:1, serverValue:782}] to 47.105.209.57:27017
+[2020-06-08 21:06:12 237 INFO ] [cluster-ClusterId{value='5ede37c3e9ea6b169004758b', description='null'}-47.105.209.57:27017] / - Monitor thread successfully connected to server with description ServerDescription{address=47.105.209.57:27017, type=STANDALONE, state=CONNECTED, ok=true, version=ServerVersion{versionList=[4, 2, 2]}, minWireVersion=0, maxWireVersion=8, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=70770388}
+[2020-06-08 21:06:12 363 INFO ] [Thread-2] / - 正在启动websocket服务器
+[2020-06-08 21:06:12 821 INFO ] [Thread-2] / - webSocket服务器启动成功：[id: 0xc7823da2, L:/0:0:0:0:0:0:0:0:1234]
+[2020-06-08 21:06:12 821 INFO ] [Thread-2] / - webSocket服务器启动成功：1234
+[2020-06-08 21:06:13 144 INFO ] [main] / - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+[2020-06-08 21:06:13 288 INFO ] [main] / - Initializing ExecutorService 'applicationTaskExecutor'
+[2020-06-08 21:06:13 454 INFO ] [main] / - Adding welcome page template: index
+[2020-06-08 21:06:13 595 INFO ] [main] / - Context refreshed
+[2020-06-08 21:06:13 625 INFO ] [main] / - Found 1 custom documentation plugin(s)
+[2020-06-08 21:06:13 657 INFO ] [main] / - Scanning for api listing references
+[2020-06-08 21:06:13 977 INFO ] [main] / - Starting ProtocolHandler ["http-nio-8081"]
+[2020-06-08 21:06:13 995 INFO ] [main] / - Tomcat started on port(s): 8081 (http) with context path ''
+[2020-06-08 21:06:13 999 INFO ] [main] / - Started IMApplication in 7.241 seconds (JVM running for 7.906)
+[2020-06-08 21:06:29 923 INFO ] [http-nio-8081-exec-1] / - Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2020-06-08 21:06:29 923 INFO ] [http-nio-8081-exec-1] / - Initializing Servlet 'dispatcherServlet'
+[2020-06-08 21:06:29 929 INFO ] [http-nio-8081-exec-1] / - Completed initialization in 6 ms
+[2020-06-08 21:06:30 421 INFO ] [http-nio-8081-exec-1] / - Opened connection [connectionId{localValue:2, serverValue:783}] to 47.105.209.57:27017
+[2020-06-08 21:06:31 196 INFO ] [nioEventLoopGroup-3-1] / - 客户端加入连接：[id: 0x1275ad3b, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:65127]
+[2020-06-08 21:06:31 214 INFO ] [nioEventLoopGroup-3-1] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: 6wQ1cwwF4cN+ahhnPinCuw==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 21:06:31 218 INFO ] [nioEventLoopGroup-3-1] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 21:08:39 589 INFO ] [nioEventLoopGroup-3-1] / - 客户端断开连接：[id: 0x1275ad3b, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:65127]
+[2020-06-08 21:08:39 760 INFO ] [nioEventLoopGroup-3-2] / - 客户端加入连接：[id: 0xc1c8845c, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:65411]
+[2020-06-08 21:08:39 764 INFO ] [nioEventLoopGroup-3-2] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: BfLa2t3ub0ut+N604De3tw==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 21:08:39 764 INFO ] [nioEventLoopGroup-3-2] / - 地址：ws://localhost:1234/websocket
+[2020-06-08 21:08:57 653 INFO ] [nioEventLoopGroup-3-2] / - 客户端断开连接：[id: 0xc1c8845c, L:/0:0:0:0:0:0:0:1:1234 ! R:/0:0:0:0:0:0:0:1:65411]
+[2020-06-08 21:08:57 782 INFO ] [nioEventLoopGroup-3-3] / - 客户端加入连接：[id: 0xda69f187, L:/0:0:0:0:0:0:0:1:1234 - R:/0:0:0:0:0:0:0:1:65437]
+[2020-06-08 21:08:57 782 INFO ] [nioEventLoopGroup-3-3] / - 收到消息：HttpObjectAggregator$AggregatedFullHttpRequest(decodeResult: success, version: HTTP/1.1, content: CompositeByteBuf(ridx: 0, widx: 0, cap: 0, components=0))
+GET /websocket?7 HTTP/1.1
+Host: localhost:1234
+Connection: Upgrade
+Pragma: no-cache
+Cache-Control: no-cache
+User-Agent: Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1
+Upgrade: websocket
+Origin: http://localhost:8081
+Sec-WebSocket-Version: 13
+Accept-Encoding: gzip, deflate, br
+Accept-Language: zh-CN,zh;q=0.9
+Sec-WebSocket-Key: ekikFtS/HJWK99+J6Glw/w==
+Sec-WebSocket-Extensions: permessage-deflate; client_max_window_bits
+content-length: 0
+[2020-06-08 21:08:57 786 INFO ] [nioEventLoopGroup-3-3] / - 地址：ws://localhost:1234/websocket
