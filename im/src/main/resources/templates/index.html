@@ -2,13 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<title>胡聊</title>
-	<!--<link rel="stylesheet" href="http://i.gtimg.cn/vipstyle/frozenui/2.0.0/css/frozen.css">-->
 	<link rel="stylesheet" th:href="@{/static/css/frozenui.css}">
 	<link rel="stylesheet" th:href="@{/static/css/index.css}">
 	<link rel="shortcut icon" th:href="@{/static/favicon.ico}">
 	<meta charset="utf-8">
 	<meta name = "viewport" content = "width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0" />
-	<!--<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>-->
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
@@ -186,7 +184,7 @@
 	</div>
 </div>
 </body>
-<script type="text/javascript" th:src="@{/static/js/zepto.min.js}"></script>
+<script type="text/javascript" th:src="@{/static/js/lib/zepto.min.js}"></script>
 <script th:inline="javascript">
 	/*<![CDATA[*/
     _user = /*[[${user}]]*/ {};
@@ -201,9 +199,6 @@
     $.ajaxSettings = $.extend($.ajaxSettings, {
         async: false
     });
-//	$.ajaxSetup({
-//        async: false
-//    });
 </script>
 <script type="text/javascript" th:src="@{/static/js/index.js}"></script>
 <script type="text/javascript">
