@@ -128,10 +128,9 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
             handshaker.handshake(ctx.channel(), req);
             SocketChannelGroup.addChannel(ctx.channel());
             //保存用户名和channelId
-            ObjectMapper objectMapper = new ObjectMapper();
-            Messages message = Messages.build(Messages.SYS,objectMapper.writeValueAsString(user));
-            TextWebSocketFrame tws = new TextWebSocketFrame(message.toString());
-            ctx.channel().writeAndFlush(tws);
+            //Messages message = Messages.build(Messages.SYS,user);
+            //TextWebSocketFrame tws = new TextWebSocketFrame(message.toString());
+            //ctx.channel().writeAndFlush(tws);
         }
     }
     /**
@@ -161,18 +160,9 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
         try {
             Messages messages = objectMapper.readValue(request.getBytes(), Messages.class);
             String type=messages.getPayLoad().getType();
-            if (type.equals(Messages.PVP)){
-                Long targetId = messages.getPayLoad().getTarget();
-                String channelId = UserGroup.search(targetId).getChannelId();
-                Channel channel = SocketChannelGroup.findChannel(channelId);
-                if (channel!=null){
-                    //保存消息
-                    Object data = messages.getPayLoad().getData();
-                    service.saveMessage(Message.From.USER,data,messages.getPayLoad());
-                    channel.writeAndFlush(new TextWebSocketFrame(request));
-                }else{
-                    throw new IOException();
-                }
+            if (type.equals(Messages.PVP) && p2p(messages,request)){
+                Object data = messages.getPayLoad().getData();
+                service.saveMessage(Message.From.USER,data,messages.getPayLoad());
             }else if (type.equals(Messages.PVG)){
                 Long targetId = messages.getPayLoad().getTarget();
                 Long sourceId = messages.getPayLoad().getSource();
@@ -187,9 +177,24 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
                 }else {
                     throw new IOException();
                 }
+            }else if(type.equals(Messages.FRIEND_APPLY)){
+                p2p(messages,request);
             }
         } catch (IOException e) {
             ctx.writeAndFlush(new TextWebSocketFrame(Messages.err("消息发送失败！[ "+request+" ]").toString()));
         }
+    }
+
+    /**一对一消息*/
+    private boolean p2p(Messages messages, String request){
+        Long targetId = messages.getPayLoad().getTarget();
+        String channelId = UserGroup.search(targetId).getChannelId();
+        Channel channel = SocketChannelGroup.findChannel(channelId);
+        if (channel!=null){
+            //保存消息
+            channel.writeAndFlush(new TextWebSocketFrame(request));
+            return true;
+        }
+        return false;
     }
 }

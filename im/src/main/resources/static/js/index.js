@@ -3,6 +3,7 @@ new Vue({
     el: '#app',
     data: {
         remind:{show:false,message:''},
+        remind1:[],
         message: '',
         groupflag:'0',
         anistyle:'',            //切换动画样式类
@@ -13,8 +14,9 @@ new Vue({
         curr_friend:{},
         curr_records:[],
         curr_user:_user,
-        searchFlag:'',
-        searchInput:'',
+        searchFlag:'',          //是否处于搜索状态的标记
+        searchInput:'',         //搜索输入的内容
+        searchedUsers:[],       //扩展空间的搜索结果
         TopImg:[
             {
                 src:"/image/headimg1.jpg",
@@ -40,7 +42,7 @@ new Vue({
             else
                 return false;
         },
-        doSearch:function () {
+        focusSearch:function () {
             this.searchFlag = 'focus';
             this.$nextTick(function() {
                 this.$refs.search.focus();
@@ -52,6 +54,56 @@ new Vue({
         },
         clearSearch:function () {
             this.searchInput="";
+        },
+        //搜索
+        doSearch:function () {
+            let that = this;
+            if(that.tab=='tab1'){          //搜索聊天
+
+            }else if(that.tab=='tab2'){   //搜索朋友
+
+            }else {                        //搜索在线用户
+                $.post(_ctx+"searchOnlineUser",{keyWord:that.searchInput},function (data) {
+                    if(data.status==200){
+                      that.searchedUsers = data.data.filter(item => item.id!=that.curr_user.id);
+                    }else {
+                      that.searchedUsers = [];
+                      that.alertRemind(data.message);
+                    }
+                });
+            }
+        },
+        //添加朋友
+        applyFriend:function (item) {
+            let msg={
+                code:"200",
+                payLoad:{
+                    source:this.curr_user.id,
+                    target:item.id,
+                    type: "FAPPLY",
+                    data:{username:this.curr_user.username}
+                }
+            };
+            if(socket.readyState == WebSocket.OPEN)
+                socket.send(JSON.stringify(msg));
+        },
+        addFriend:function (user) {
+            this.curr_user.history.push(user);
+            friends.push(user);
+            console.log(this.curr_user.groups);
+            if(this.curr_user.groups)
+                for(let i in this.curr_user.groups){
+                    if(this.curr_user.groups[i].name=='默认') {
+                        this.curr_user.groups[i].friends.push(user);
+                    }
+                }
+            else
+                this.curr_user.groups = [{
+                    name:'默认',
+                    flag:1,
+                    friends:[user]
+                }];
+            console.log(this.curr_user.groups);
         },
         //tab跳转
         goToTab: function(tab) {
@@ -101,8 +153,13 @@ new Vue({
                 record && friend.records.push(record);
             }
             if(friend != this.curr_friend){
-                friend.unread_num++;
+                for (let i in this.curr_user.history){
+                    if(this.curr_user.history[i].id==target)
+                        this.curr_user.history[i].unReadNum++;
+                }
             }
+
+            console.log(this.curr_user.history);
             this.scroll();
         },
         //展开收拢
@@ -136,7 +193,7 @@ new Vue({
                     content:this.message,
                     headImg:this.curr_user.headImg
                 }
-            }
+            };
             this.addRecord(this.curr_friend.id,newMsg);
             this.scroll();
             let msg={
@@ -154,8 +211,11 @@ new Vue({
         },
         //用户上线
         online:function (data) {
-            this.curr_user.history.push(data);
-            this.alertRemind(data.username+"上线");
+            let friend = this.getFriend(data.id);
+            if(friend) {
+                this.curr_user.history.push(friend);
+                this.alertRemind(data.username + "上线");
+            }
         },
         //用户下线
         offline:function (data) {
@@ -166,6 +226,17 @@ new Vue({
                 }
             }
         },
+        //同意好友请求
+        agreeFApply:function (data) {
+            let that = this;
+            $.post(_ctx+"agreeeFriend",data,function (data) {
+                if(data.status==200){
+                    that.alertRemind("添加成功");
+                }else {
+                    that.alertRemind("获取消息失败");
+                }
+            })
+        },
         //提示
         alertRemind:function (message) {
             this.remind.message=message;
@@ -175,6 +246,16 @@ new Vue({
                 that.remind.message='';
                 that.remind.show=false;
             },1000);
+        },
+        addRemind1:function (payload) {
+            this.remind1.push({
+                message: payload.data.username,
+                apply: payload.source,
+                agree: payload.target
+            });
+        },
+        cancelRemind1:function (index) {
+            this.remind1.splice(index,1);
         }
     },
     created:function(){
@@ -204,6 +285,11 @@ new Vue({
                     that.offline(obj.payLoad.data)
                 }else if (obj.payLoad.type=="SYS") {
                     // channelId=obj.data.channelId;
+                }else if (obj.payLoad.type=="FAPPLY") {     //好友申请
+                    //弹出是否同意
+                    that.addRemind1(obj.payLoad);
+                }else if (obj.payLoad.type=="FAGREE") {     //添加好友
+                    that.addFriend(obj.payLoad.data);
                 }
             };
             socket.onopen = function(){
@@ -218,6 +304,10 @@ new Vue({
     },
     watch:{
         curr_friend: {
+            handler(n,o){},
+            deep: true
+        },
+        curr_user: {
             handler(n,o){},
             deep: true
         }

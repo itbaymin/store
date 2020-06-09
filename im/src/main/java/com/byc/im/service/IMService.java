@@ -5,9 +5,13 @@ import com.byc.common.utils.AssertUtil;
 import com.byc.im.entity.Message;
 import com.byc.im.entity.User;
 import com.byc.im.repository.UserRepository;
+import com.byc.im.support.SocketChannelGroup;
+import com.byc.im.support.UserGroup;
 import com.byc.im.support.pojo.Messages;
 import com.byc.im.utils.MongoHelper;
 import com.byc.im.utils.StateCode;
+import io.netty.channel.Channel;
+import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import org.apache.commons.lang3.RandomUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -72,5 +76,30 @@ public class IMService {
         user.setHeadImg(random);
         mongoTemplate.save(user);
         return WebResult.success("");
+    }
+
+    /**添加好友*/
+    public void addFriend(Long apply, Long agree) {
+        User send = userRepository.findById(apply).get();
+        User target = userRepository.findById(agree).get();
+        AssertUtil.assertTrue(send!=null && target!=null,StateCode.CODE_BUSINESS,"用户不存在");
+        send.addFriend(target);
+        target.addFriend(send);
+        mongoTemplate.save(send);
+        mongoTemplate.save(target);
+        //发送消息
+        Messages message1 = Messages.build(Messages.AGREE_FRIEND,apply,agree,send);
+        p2p(message1);
+        Messages message2 = Messages.build(Messages.AGREE_FRIEND, agree, apply, target);
+        p2p(message2);
+    }
+
+    private void p2p(Messages messages){
+        Long targetId = messages.getPayLoad().getTarget();
+        String channelId = UserGroup.search(targetId).getChannelId();
+        Channel channel = SocketChannelGroup.findChannel(channelId);
+        if (channel!=null){
+            channel.writeAndFlush(new TextWebSocketFrame(messages.toString()));
+        }
     }
 }

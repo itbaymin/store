@@ -2,6 +2,7 @@ package com.byc.im.entity;
 
 import com.byc.im.support.UserGroup;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -10,6 +11,7 @@ import org.springframework.util.CollectionUtils;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -19,6 +21,7 @@ import java.util.Objects;
  * Description：用户
  */
 @Data
+@Slf4j
 @Document("user")
 public class User implements Serializable {
     @Transient
@@ -36,10 +39,36 @@ public class User implements Serializable {
     @Transient
     private List<Club> clubs;       //群聊
 
+    /**添加好友*/
+    public void addFriend(User target) {
+        if(!CollectionUtils.isEmpty(groups)){
+            for (Group group:groups){
+                if(group.getName().equals("默认")){
+                    if(CollectionUtils.isEmpty(group.getFriends())){
+                        List<Friend> friends = new ArrayList();
+                        friends.add(Friend.of(target));
+                        group.setFriends(friends);
+                    }else {
+                        group.getFriends().add(Friend.of(target));
+                    }
+                    return;
+                }
+            }
+        }
+        Group group = new Group();
+        List<Friend> friends = new ArrayList();
+        friends.add(Friend.of(target));
+        group.setFriends(friends);
+        if(CollectionUtils.isEmpty(groups))
+            this.setGroups(Arrays.asList(group));
+        else
+            this.getGroups().add(group);
+    }
+
     @Data
     public static class Group{
-        private String name;
-        private int flag;
+        private String name = "默认";
+        private int flag = 1;
         @Field("create_time")
         private LocalDateTime createTime;
         private List<Friend> friends;
@@ -52,9 +81,17 @@ public class User implements Serializable {
         @Field("head_img")
         private String headImg;
         @Field("unread_num")
-        private int unReadNum;
+        private int unReadNum = 0;
         private String time;
         private String content;
+
+        public static Friend of(User target) {
+            Friend friend = new Friend();
+            friend.setId(target.getId());
+            friend.setUsername(target.getUsername());
+            friend.setHeadImg(target.getHeadImg());
+            return friend;
+        }
     }
 
     //构建参数

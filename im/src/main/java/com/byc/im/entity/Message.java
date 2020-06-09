@@ -32,8 +32,10 @@ public class Message implements Serializable {
         Message message = new Message();
         message.setFrom(from);
         message.setSend(payLoad.getSource());
-        message.setHeadImg(((Map)data).get("headImg").toString());
-        message.setContent(((Map)data).get("content").toString());
+        if(payLoad.getType().equalsIgnoreCase(Messages.PVP)) {
+            message.setHeadImg(((Map) data).get("headImg").toString());
+            message.setContent(((Map) data).get("content").toString());
+        }
         message.setRecive(payLoad.getTarget());
         message.setType(MsgType.TXT);
         message.setCreateTime(LocalDateTime.now());

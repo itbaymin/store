@@ -15,6 +15,7 @@ import io.netty.channel.group.ChannelGroup;
 import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
 import io.netty.util.concurrent.GlobalEventExecutor;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,11 +25,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 public class UserController {
     @Autowired
-    IMService IMService;
+    IMService service;
     @Autowired
     APPConfig config;
 
@@ -39,8 +41,9 @@ public class UserController {
     }
 
     @PostMapping("/login")
+    /**登陆*/
     public String doLogin(String username, String password, Model model) {
-        User user = IMService.login(username, password);
+        User user = service.login(username, password);
         UserGroup.addUser(user);
         user.build();
         model.addAttribute("address",config.getWebsocket().getAddr());
@@ -50,15 +53,29 @@ public class UserController {
 
     @PostMapping("/register")
     @ResponseBody
+    /**注册*/
     public WebResult doRegister(String username, String password) {
-        return IMService.register(username, password);
+        return service.register(username, password);
     }
 
-    @RequestMapping("/getOnlineUser")
+    @RequestMapping("/searchOnlineUser")
     @ResponseBody
-    public WebResult getOnlineUser(){
-        return WebResult.success(UserGroup.USER);
+    /**搜索用户*/
+    public WebResult getOnlineUser(String keyWord){
+        AssertUtil.assertTrue(StringUtils.isNotBlank(keyWord),StateCode.CODE_BUSINESS,"请输出关键字");
+        List<User> users = UserGroup.USER.stream().filter(user -> user.getUsername().contains(keyWord)).collect(Collectors.toList());
+        return WebResult.success(users);
     }
+
+    @RequestMapping("/agreeeFriend")
+    @ResponseBody
+    /**搜索用户*/
+    public WebResult agreeFriend(Long apply,Long agree){
+        service.addFriend(apply,agree);
+        return WebResult.success("");
+    }
+
+
 
     @RequestMapping("/createGroups")
     @ResponseBody

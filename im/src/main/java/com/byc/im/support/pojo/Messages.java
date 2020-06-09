@@ -23,6 +23,7 @@ public class Messages {
      * on   上线通知
      * off  离线通知
      * error错误反馈
+     * Apply好友验证
      * Apply群聊验证
      * **/
     public final static String SYS="SYS";
@@ -31,7 +32,9 @@ public class Messages {
     public final static String ONLINE="ON";
     public final static String OFFLINE="OFF";
     public final static String ERROR="ERROR";
-    public final static String GROUP_APPLY="APPLY";
+    public final static String FRIEND_APPLY="FAPPLY";
+    public final static String AGREE_FRIEND="FAGREE";
+    public final static String GROUP_APPLY="GAPPLY";
 
 
     @Data
@@ -43,9 +46,15 @@ public class Messages {
     }
 
     public static Messages build(String type,Object data){
+        return build(type,null,null,data);
+    }
+
+    public static Messages build(String type,Long send,Long target,Object data){
         Payload payload = new Payload();
         payload.setData(data);
         payload.setType(type);
+        payload.setTarget(target);
+        payload.setSource(send);
         Messages messages = new Messages();
         messages.setPayLoad(payload);
         return messages;
