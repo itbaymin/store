@@ -298,10 +298,12 @@ new Vue({
     },
     created:function(){
         var that = this;
-        if(!window.WebSocket){
-            window.WebSocket = window.MozWebSocket;
+        if ('WebSocket' in window) {
+            socket = new WebSocket(socket_addr);
+        } else if ('MozWebSocket' in window) {
+            socket = new MozWebSocket(socket_addr);
         }
-        if(window.WebSocket){
+        if(socket){
             socket = new WebSocket(socket_addr);
             socket.onmessage = function(event){
                 let obj=eval('(' + event.data + ')');
