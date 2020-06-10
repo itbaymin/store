@@ -1,5 +1,6 @@
 package com.byc.im.entity;
 
+import com.byc.common.utils.TimeFormatter;
 import com.byc.im.support.UserGroup;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
@@ -10,10 +11,7 @@ import org.springframework.util.CollectionUtils;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Created by baiyc
@@ -59,6 +57,7 @@ public class User implements Serializable {
         List<Friend> friends = new ArrayList();
         friends.add(Friend.of(target));
         group.setFriends(friends);
+        group.setCreateTime(LocalDateTime.now());
         if(CollectionUtils.isEmpty(groups))
             this.setGroups(Arrays.asList(group));
         else
@@ -82,7 +81,7 @@ public class User implements Serializable {
         private String headImg;
         @Field("unread_num")
         private int unReadNum = 0;
-        private String time;
+        private String createTime;
         private String content;
 
         public static Friend of(User target) {
@@ -90,6 +89,8 @@ public class User implements Serializable {
             friend.setId(target.getId());
             friend.setUsername(target.getUsername());
             friend.setHeadImg(target.getHeadImg());
+            friend.setContent("我们已经是好友了，欢迎来撩");
+            friend.setCreateTime(TimeFormatter.formatDate(TimeFormatter.Format.SIMPLE));
             return friend;
         }
     }
@@ -104,6 +105,18 @@ public class User implements Serializable {
                     if(UserGroup.search(friend.getId())!=null)
                         history.add(friend);
                 }
+    }
+
+    public void updataFriend(Object data,Long source){
+        for (Group group:groups) {
+            for (Friend friend : group.getFriends()) {
+                if (friend.getId().equals(source)) {
+                    friend.setCreateTime(((Map) data).get("createTime").toString());
+                    friend.setContent(((Map) data).get("content").toString());
+                    return;
+                }
+            }
+        }
     }
 
     @Override

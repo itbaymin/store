@@ -1,7 +1,6 @@
 package com.byc.im.websocket;
 
 import com.byc.im.entity.Message;
-import com.byc.im.entity.User;
 import com.byc.im.service.IMService;
 import com.byc.im.support.ChatGroup;
 import com.byc.im.support.SocketChannelGroup;
@@ -124,13 +123,9 @@ public class WebsocketHandler extends SimpleChannelInboundHandler<Object> {
                     .sendUnsupportedVersionResponse(ctx.channel());
         } else {
             //绑定到用户
-            User user = UserGroup.bindUserChannel(Long.valueOf(uri.substring(uri.indexOf("?") + 1)), ctx.channel().id().toString());
+            UserGroup.bindUserChannel(Long.valueOf(uri.substring(uri.indexOf("?") + 1)), ctx.channel().id().toString());
             handshaker.handshake(ctx.channel(), req);
             SocketChannelGroup.addChannel(ctx.channel());
-            //保存用户名和channelId
-            //Messages message = Messages.build(Messages.SYS,user);
-            //TextWebSocketFrame tws = new TextWebSocketFrame(message.toString());
-            //ctx.channel().writeAndFlush(tws);
         }
     }
     /**

@@ -53,7 +53,7 @@ public class UserControllerTest {
         friend1.setHeadImg("background-image:url(http://img.52z.com/upload/news/image/20180213/20180213062640_77463.jpg)");
         friend1.setUnReadNum(1);
         friend1.setContent("hello！");
-        friend1.setTime("下午2点");
+        friend1.setCreateTime("下午2点");
         User.Group group1 = new User.Group();
         group1.setName("家人");
         group1.setFlag(1);
@@ -71,7 +71,7 @@ public class UserControllerTest {
         friend2.setHeadImg("background-image:url(http://img.52z.com/upload/news/image/20180419/20180419051254_75804.jpg)");
         friend2.setUnReadNum(1);
         friend2.setContent("你好！");
-        friend2.setTime("下午2点");
+        friend2.setCreateTime("下午2点");
         User.Group group2 = new User.Group();
         group1.setName("家人");
         group1.setFlag(1);

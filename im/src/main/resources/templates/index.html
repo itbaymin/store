@@ -47,7 +47,7 @@
 					<p>{{item.content}}</p>
 				</div>
 				<!-- 条目右侧时间 -->
-				<div class="ui-btn disabled shadow">{{item.time}}</div>
+				<div class="ui-btn disabled shadow">{{item.createTime}}</div>
 				<!-- 条目右侧未读个数 -->
 				<div class="messageList" v-if="item.unReadNum>0">{{item.unReadNum}}</div>
 			</li>
@@ -169,13 +169,11 @@
 	<!--聊天框-->
 	<div v-if="tab=='chat'" style="position:absolute;top:0;width: 100%" :class="anistyle">
 		<section class="ui-panel ui-panel-center ui-border-tb" style="margin-bottom:0">
-			<button style="border-radius:5px;
-			position:absolute;
-			border: 2px solid #bbb;
-			padding: 3px 8px;
+			<button class="ui-btn" style="position:absolute;
 			z-index: 1000;
 			top: 20%;
 			left:2%" @click="curr_friend={};goToTab('tab1')">返回</button><h2><span>{{curr_friend.username}}</span></h2>
+			<i class="icon icon-min" style="font-family: 'icon-min';position:absolute;z-index: 1000;top: 20%;right:4%;font-size:21px"></i>
 		</section>
 		<div class="board ui-border-t ui-border-radius chatbt" id="gundong" style="height:600px;overflow-y:auto;overflow-x:hidden;margin-bottom:10px;">
 			<div v-if="curr_records.length==0" class="noContent">
@@ -227,6 +225,24 @@
     $.ajaxSettings = $.extend($.ajaxSettings, {
         async: false
     });
+	//时间格式化
+    function dateFormat(fmt, date) {
+        let ret;
+        const opt = {
+            "Y+": date.getFullYear().toString(),        // 年
+            "m+": (date.getMonth() + 1).toString(),     // 月
+            "d+": date.getDate().toString(),            // 日
+            "H+": date.getHours().toString(),           // 时
+            "M+": date.getMinutes().toString(),         // 分
+            "S+": date.getSeconds().toString()          // 秒
+        };
+        for (let k in opt) {
+            ret = new RegExp("(" + k + ")").exec(fmt);
+            if (ret)
+                fmt = fmt.replace(ret[1], (ret[1].length == 1) ? (opt[k]) : (opt[k].padStart(ret[1].length, "0")));
+        }
+        return fmt;
+    }
 </script>
 <script type="text/javascript" th:src="@{/static/js/index.js}"></script>
 </html>

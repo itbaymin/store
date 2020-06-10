@@ -60,6 +60,9 @@ public class IMService {
      * @param payLoad */
     public void saveMessage(Message.From user, Object jsonNode, Messages.Payload payLoad){
         Message message = Message.build(user, jsonNode, payLoad);
+        //更新用户聊天历史
+        User target = UserGroup.search(payLoad.getTarget());
+        target.updataFriend(jsonNode,payLoad.getSource());
         message.setId(mongoHelper.getNextSequence(MongoHelper.Collection.MESSAGE));
         mongoTemplate.save(message);
     }
@@ -101,5 +104,10 @@ public class IMService {
         if (channel!=null){
             channel.writeAndFlush(new TextWebSocketFrame(messages.toString()));
         }
+    }
+
+    /**更新用户*/
+    public void updateUser(User user) {
+        userRepository.save(user);
     }
 }

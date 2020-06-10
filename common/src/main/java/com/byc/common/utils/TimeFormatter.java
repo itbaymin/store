@@ -9,7 +9,8 @@ public class TimeFormatter {
 
     public enum Format{
         SECOND("yyyyMMddHHmmss"),
-        SIMPLE("yyyy-MM-dd");
+        SIMPLE("yyyy-MM-dd HH:mm"),
+        SIMPLE1("yyyy-MM-dd");
         private String value;
         private SimpleDateFormat format;
 
@@ -76,7 +77,7 @@ public class TimeFormatter {
     }
 
     public static String formatDate(Format format) {
-        return format.getFormat().format(new Date());
+        return formatDate(format,new Date());
     }
 
     public static Date parseStr(Format format, String dateStr){

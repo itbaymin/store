@@ -1,6 +1,8 @@
 package com.byc.im.support;
 
 import com.byc.im.entity.User;
+import com.byc.im.service.IMService;
+import com.byc.im.support.common.SpringContextHolder;
 import com.byc.im.support.pojo.Messages;
 import io.netty.channel.Channel;
 import io.netty.handler.codec.http.websocketx.TextWebSocketFrame;
@@ -75,6 +77,9 @@ public class UserGroup {
         User user = search(channel);
         if(user==null)
             return;
+        IMService service = SpringContextHolder.getBean(IMService.class);
+        if(service!=null)
+            service.updateUser(user);
         USER.remove(user);
         Messages message = Messages.build(Messages.OFFLINE, user);
         TextWebSocketFrame textWebSocketFrame = new TextWebSocketFrame(message.toString());

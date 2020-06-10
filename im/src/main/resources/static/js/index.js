@@ -130,6 +130,7 @@ new Vue({
         goToChat:function(item) {
             this.curr_friend = this.getFriend(item.id);
             this.addRecord(item.id);
+            item.unReadNum=0;
             this.curr_records = this.curr_friend.records;
             this.gochat();
         },
@@ -154,8 +155,11 @@ new Vue({
             }
             if(friend != this.curr_friend){
                 for (let i in this.curr_user.history){
-                    if(this.curr_user.history[i].id==target)
+                    if(this.curr_user.history[i].id==target) {
                         this.curr_user.history[i].unReadNum++;
+                        this.curr_user.history[i].content = record.data.content;
+                        this.curr_user.history[i].createTime = record.data.createTime;
+                    }
                 }
             }
 
@@ -191,7 +195,8 @@ new Vue({
                 send: this.curr_user.id,
                 data: {
                     content:this.message,
-                    headImg:this.curr_user.headImg
+                    headImg:this.curr_user.headImg,
+                    createTime:dateFormat("YYYY-mm-dd HH:MM",new Date())
                 }
             };
             this.addRecord(this.curr_friend.id,newMsg);
