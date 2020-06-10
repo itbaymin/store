@@ -83,13 +83,11 @@ public class IMService {
 
     /**添加好友*/
     public void addFriend(Long apply, Long agree) {
-        User send = userRepository.findById(apply).get();
-        User target = userRepository.findById(agree).get();
+        User send = UserGroup.search(apply);
+        User target = UserGroup.search(agree);
         AssertUtil.assertTrue(send!=null && target!=null,StateCode.CODE_BUSINESS,"用户不存在");
         send.addFriend(target);
         target.addFriend(send);
-        mongoTemplate.save(send);
-        mongoTemplate.save(target);
         //发送消息
         Messages message1 = Messages.build(Messages.AGREE_FRIEND,apply,agree,send);
         p2p(message1);
