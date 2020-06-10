@@ -97,7 +97,7 @@
 			<button class="ui-searchbar-cancel" @click="cancelSearch">取消</button>
 		</div>
 		<!--两图区域 -->
-		<div class="ui-feeds">
+		<div class="ui-feeds" v-if="TopImg.length>0">
 			<ul>
 				<li v-for="item in TopImg"><span :style="buildbg(item.headImg)" @click="goToChat(item)"></span></li>
 			</ul>
@@ -233,6 +233,7 @@
     for (let i in _user.groups){
 		friends.push.apply(friends,_user.groups[i].friends);
 	}
+	favorite = _user.favorite || [];
     $.ajaxSettings = $.extend($.ajaxSettings, {
         async: false
     });

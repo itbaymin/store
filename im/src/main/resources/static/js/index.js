@@ -18,7 +18,7 @@ new Vue({
         searchFlag:'',          //是否处于搜索状态的标记
         searchInput:'',         //搜索输入的内容
         searchedUsers:[],       //扩展空间的搜索结果
-        TopImg:_user.favorite || [],  //特别关注
+        TopImg:favorite,        //特别关注
         //群聊列表
         grolists:[{
             headImg:"/image/headimg2.jpg",
