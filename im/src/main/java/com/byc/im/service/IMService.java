@@ -110,4 +110,17 @@ public class IMService {
     public void updateUser(User user) {
         userRepository.save(user);
     }
+
+    /**添加特别关注*/
+    public User addSpecial(Long from, Long to) {
+        User user1 = UserGroup.search(from);
+        User user2 = userRepository.findById(to).get();
+        user1.addFavorite(user2);
+        return user2;
+    }
+
+    public void delFriend(Long from, Long to) {
+        User user1 = UserGroup.search(from);
+        user1.delFriend(to);
+    }
 }

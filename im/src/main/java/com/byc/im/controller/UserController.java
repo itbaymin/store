@@ -75,6 +75,21 @@ public class UserController {
         return WebResult.success("");
     }
 
+    @RequestMapping("/addSpecial")
+    @ResponseBody
+    /**搜索用户*/
+    public WebResult addSpecial(Long from,Long to){
+        return WebResult.success(service.addSpecial(from,to));
+    }
+
+    @RequestMapping("/delFriend")
+    @ResponseBody
+    /**搜索用户*/
+    public WebResult delFriend(Long from,Long to){
+        service.delFriend(from,to);
+        return WebResult.success("");
+    }
+
 
 
     @RequestMapping("/createGroups")

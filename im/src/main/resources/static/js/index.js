@@ -3,7 +3,8 @@ new Vue({
     el: '#app',
     data: {
         remind:{show:false,message:''},
-        remind1:[],
+        remind1:[],             //好友申请
+        remind2:[],             //好友操作
         message: '',
         groupflag:'0',
         anistyle:'',            //切换动画样式类
@@ -17,15 +18,7 @@ new Vue({
         searchFlag:'',          //是否处于搜索状态的标记
         searchInput:'',         //搜索输入的内容
         searchedUsers:[],       //扩展空间的搜索结果
-        TopImg:[
-            {
-                src:"/image/headimg1.jpg",
-                link:"http://www.fanze.online",
-            },{
-                src:"/image/headimg2.jpg",
-                link:"http://fanze.online",
-            }
-        ],
+        TopImg:_user.favorite || [],  //特别关注
         //群聊列表
         grolists:[{
             headImg:"/image/headimg2.jpg",
@@ -105,6 +98,47 @@ new Vue({
                 }];
             console.log(this.curr_user.groups);
         },
+        //打开朋友操作
+        showFriendOpt:function () {
+            this.remind2.push({
+                name: this.curr_friend.username,
+                from: this.curr_user.id,
+                to: this.curr_friend.id
+            });
+        },
+        //取消
+        cancelFriendOpt:function (index) {
+            this.remind2.splice(index,1);
+        },
+        //特别关注
+        addSpecial:function (item,index) {
+            let that = this;
+            $.post(_ctx+"addSpecial",item,function (data) {
+                if(data.status==200){
+                    that.TopImg.push(data.data);
+                    that.cancelFriendOpt(index);
+                    that.alertRemind("操作成功");
+                }else {
+                    that.alertRemind(data.message);
+                }
+            })
+        },
+        //删除好友
+        delFriend:function (item,index) {
+            let that = this;
+            $.post(_ctx+"delFriend",item,function (data) {
+                if(data.status==200){
+                    for(let i in friends){
+                        if(friends[i].id==item.to)
+                            friends.splice(i,1);
+                    }
+                    that.cancelFriendOpt(index);
+                    that.alertRemind("操作成功");
+                }else {
+                    that.alertRemind(data.message);
+                }
+            })
+        },
         //tab跳转
         goToTab: function(tab) {
             if(this.tab > tab)
@@ -178,7 +212,6 @@ new Vue({
         //进入聊天页
         gochat:function(){
             this.tab='chat';
-            this.anistyle='chattol';
             this.scroll();
         },
         //滚动到低端

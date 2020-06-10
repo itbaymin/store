@@ -1,7 +1,9 @@
 package com.byc.im.entity;
 
+import com.byc.common.utils.AssertUtil;
 import com.byc.common.utils.TimeFormatter;
 import com.byc.im.support.UserGroup;
+import com.byc.im.utils.StateCode;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.annotation.Transient;
@@ -62,6 +64,27 @@ public class User implements Serializable {
             this.setGroups(Arrays.asList(group));
         else
             this.getGroups().add(group);
+    }
+
+    /**添加最爱*/
+    public void addFavorite(User user){
+        if(CollectionUtils.isEmpty(favorite))
+            favorite = new ArrayList();
+        AssertUtil.assertTrue(favorite.size()<=2, StateCode.CODE_BUSINESS,"您当前已拥有两名特殊关注好友");
+        favorite.add(Friend.of(user));
+    }
+
+    /**删除好友*/
+    public void delFriend(Long friendId) {
+        for (Group group:groups) {
+            Iterator<Friend> iterator = group.getFriends().iterator();
+            while (iterator.hasNext()){
+                Friend friend = iterator.next();
+                if (friend.getId().equals(friendId)) {
+                    iterator.remove();
+                }
+            }
+        }
     }
 
     @Data

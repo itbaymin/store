@@ -99,7 +99,7 @@
 		<!--两图区域 -->
 		<div class="ui-feeds">
 			<ul>
-				<li v-for="item in TopImg"><span :style="buildbg(item.src)" @click="topImgClicked(item.link)"></span></li>
+				<li v-for="item in TopImg"><span :style="buildbg(item.headImg)" @click="goToChat(item)"></span></li>
 			</ul>
 		</div>
 		<!-- 列表选项卡 -->
@@ -159,6 +159,7 @@
 	<div v-if="remind.show==true" class="ui-tooltips ui-tooltips-warn" style="position: fixed;bottom: 0;">
 		<div class="ui-tooltips-cnt ui-border-b">{{remind.message}}</div>
 	</div>
+	<!--加好友提示-->
 	<div v-if="remind1.length>0" v-for="item,index in remind1" class="ui-actionsheet show">
 		<div class="ui-actionsheet-cnt am-actionsheet-down">
 			<h4><span style="color:#00c795">{{item.message}}</span>发来的好友申请</h4>
@@ -166,14 +167,24 @@
 			<button @click="cancelRemind1(index)" class="ui-actionsheet-del">拒绝</button>
 		</div>
 	</div>
+	<!--好友操作-->
+	<div v-if="remind2.length>0" v-for="item,index in remind2" class="ui-actionsheet show">
+		<div class="ui-actionsheet-cnt am-actionsheet-down">
+			<h4>请对进行下面操作</h4>
+			<button @click="addSpecial(item,index)" style="border-bottom:1px #e9e9e9 solid">特别关注</button>
+			<button @click="delFriend(item,index)" class="ui-actionsheet-del">删除好友</button>
+			<div class="ui-actionsheet-split-line"></div>
+			<button @click="cancelFriendOpt(index)">取消</button>
+		</div>
+	</div>
 	<!--聊天框-->
-	<div v-if="tab=='chat'" style="position:absolute;top:0;width: 100%" :class="anistyle">
+	<div v-if="tab=='chat'" style="position:absolute;top:0;width: 100%">
 		<section class="ui-panel ui-panel-center ui-border-tb" style="margin-bottom:0">
 			<button class="ui-btn" style="position:absolute;
 			z-index: 1000;
 			top: 20%;
 			left:2%" @click="curr_friend={};goToTab('tab1')">返回</button><h2><span>{{curr_friend.username}}</span></h2>
-			<i class="icon icon-min" style="font-family: 'icon-min';position:absolute;z-index: 1000;top: 20%;right:4%;font-size:21px"></i>
+			<i class="icon icon-min" style="font-family: 'icon-min';position:absolute;z-index: 1000;top: 20%;right:4%;font-size:21px" @click="showFriendOpt"></i>
 		</section>
 		<div class="board ui-border-t ui-border-radius chatbt" id="gundong" style="height:600px;overflow-y:auto;overflow-x:hidden;margin-bottom:10px;">
 			<div v-if="curr_records.length==0" class="noContent">
