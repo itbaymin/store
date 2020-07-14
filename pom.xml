@@ -43,10 +43,17 @@
         <shiro-thymeleaf.version>2.0.0</shiro-thymeleaf.version>
         <easyexcel.version>2.1.6</easyexcel.version>
         <netty.version>4.1.50.Final</netty.version>
+        <hutool.version>5.3.9</hutool.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-data-jpa</artifactId>
